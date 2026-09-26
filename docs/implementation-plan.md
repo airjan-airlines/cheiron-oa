@@ -158,7 +158,7 @@ These came from studying how other implementations of the same problem handled t
 | `country` | str | – | 1–100 chars | `filters.location` |
 | `trial_phases` | list[Phase enum] | – | EARLY_PHASE1, PHASE1–4, NA | `filters.phases` |
 | `statuses` | list[Status enum] | – | API status values | `filters.statuses` |
-| `start_year` / `end_year` | int | – | 1990–2035, start ≤ end | `filters.start_year_min/max` |
+| `start_year` / `end_year` | int | – | 1900–2100, start ≤ end (registry has trials from the 1970s) | `filters.start_year_min/max` |
 | `chart_type` | VizType enum | – | must be compatible (D4) | chart override |
 | `top_n` | int | – | 1–50, default 15 | plan `top_n` |
 | `max_records` | int | – | 100–5000, default 5000 | fetch cap |
