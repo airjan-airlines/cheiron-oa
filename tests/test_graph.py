@@ -101,3 +101,25 @@ def test_no_trial_data_reaches_the_llm():
         title = study["protocolSection"]["identificationModule"]["briefTitle"]
         assert title not in sent
     assert "74" not in sent  # not even the match count
+
+
+def test_caller_contradiction_fails_fast_without_repair_or_fetch():
+    llm = ScriptedLLM(
+        draft(
+            analysis="comparison",
+            group_by="phase",
+            compare=[{"label": "Semaglutide", "filters": {"intervention": "semaglutide"}}, {"label": "Tirzepatide", "filters": {"intervention": "tirzepatide"}}],
+        )
+    )
+    registry = FixtureRegistry()
+    resp = run(llm, registry, query="Compare semaglutide vs tirzepatide", drug_name="pembrolizumab")
+    assert resp.status == "error" and resp.error.code == "conflicting_constraints"
+    assert "drug_name" in resp.error.message
+    assert len(llm.calls) == 1 and registry.searches == []
+
+
+def test_count_with_zero_matches_is_a_metric_of_zero():
+    llm = ScriptedLLM(draft(analysis="count", filters={"intervention": "pembrolizumab", "location": "Iceland"}))
+    resp = run(llm, FixtureRegistry(), query="How many?")
+    assert resp.status == "ok" and resp.visualization.type == "metric"
+    assert resp.visualization.data[0].model_extra["trial_count"] == 0

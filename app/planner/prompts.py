@@ -18,6 +18,8 @@ compute everything. Your only output is the plan.
   "How has the number of pembrolizumab trials changed since 2015?"
 - geographic: counts per country. group_by=country.
   "Which countries have the most recruiting breast cancer trials?"
+  A country that is only a filter does not make a question geographic:
+  "Which sponsors run breast cancer trials in Japan?" -> distribution, group_by=sponsor, location=Japan
 - comparison: 2-4 cohorts side by side. Put what the cohorts share in `filters` and only what
   differs in each cohort's filters. group_by is the breakdown (null for plain counts).
   "Compare phases for semaglutide vs tirzepatide" -> cohorts by intervention, group_by=phase

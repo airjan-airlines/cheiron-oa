@@ -70,6 +70,9 @@ def build_graph(llm: PlannerLLM, client: CTGovClient):
         check = finalize(state["draft"], state["request"])
         if check.plan is not None:
             return {"plan": check.plan, "errors": [], "notes": check.notes}
+        if check.conflicts:  # the caller's own input contradicts itself; re-asking the LLM can't fix that
+            message = "The request's structured fields contradict the question: " + " ".join(check.conflicts)
+            return {"errors": check.conflicts, "response": response_builder.error("conflicting_constraints", message, check.notes)}
         if state["attempts"] >= MAX_PLAN_ATTEMPTS:
             message = "The question could not be turned into a valid query plan: " + "; ".join(check.errors)
             return {"errors": check.errors, "response": response_builder.error("invalid_plan", message, check.notes)}
@@ -80,6 +83,7 @@ def build_graph(llm: PlannerLLM, client: CTGovClient):
         notes = list(state.get("notes", []))
         # A count needs only the API's total; fetch just enough records to cite.
         cap = max(request.max_citations_per_datum, 1) if plan.analysis == Analysis.COUNT else request.max_records
+        # (comparison cohorts arrive fully merged and validated from `finalize`)
         specs = []
         for label, filters in searches(plan):
             filters, changes = normalize_filters(filters)
@@ -96,7 +100,8 @@ def build_graph(llm: PlannerLLM, client: CTGovClient):
             for (label, filters, params), result in zip(specs, results)
         ]
         update: PipelineState = {"queries": queries, "notes": notes, "data_as_of": data_as_of}
-        if all(q.total_matching == 0 for q in queries):
+        # A count of zero is an answer (metric 0), not a failed search.
+        if plan.analysis != Analysis.COUNT and all(q.total_matching == 0 for q in queries):
             update["response"] = response_builder.no_data(plan, queries, notes, data_as_of)
         return update
 

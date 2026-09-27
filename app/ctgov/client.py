@@ -17,6 +17,7 @@ import httpx
 from app.errors import UpstreamRejectedQuery, UpstreamUnavailable
 
 PAGE_SIZE_MAX = 1000
+CACHE_MAX_ENTRIES = 256
 _RETRYABLE_STATUS = {429, 500, 502, 503, 504}
 
 
@@ -114,7 +115,12 @@ class CTGovClient:
         return None
 
     def _store(self, key: tuple, value: Any) -> None:
-        self._cache[key] = (time.monotonic() + self._cache_ttl_s, value)
+        now = time.monotonic()
+        for stale in [k for k, (expires, _) in self._cache.items() if expires <= now]:
+            del self._cache[stale]
+        while len(self._cache) >= CACHE_MAX_ENTRIES:
+            del self._cache[next(iter(self._cache))]  # oldest insertion first
+        self._cache[key] = (now + self._cache_ttl_s, value)
 
 
 def _retry_after(resp: httpx.Response) -> float | None:

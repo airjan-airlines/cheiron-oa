@@ -1,5 +1,6 @@
 """HTTP layer: validation, routing and error-to-status mapping. No business logic lives here."""
 
+import logging
 from collections.abc import Awaitable, Callable
 from typing import Annotated
 
@@ -62,3 +63,11 @@ async def _upstream_unavailable(_: Request, exc: UpstreamUnavailable) -> JSONRes
 @app.exception_handler(PlannerUnavailable)
 async def _planner_unavailable(_: Request, exc: PlannerUnavailable) -> JSONResponse:
     return _unavailable("planner_unavailable", str(exc) or "The LLM planner is unavailable.")
+
+
+@app.exception_handler(Exception)
+async def _unexpected(_: Request, exc: Exception) -> JSONResponse:
+    """Our bug, not the caller's: log it, and still answer with the documented envelope."""
+    logging.getLogger("app").exception("Unhandled error while answering a request")
+    body = VisualizeResponse(status="error", error=ErrorInfo(code="internal_error", message="An unexpected error occurred."))
+    return JSONResponse(status_code=500, content=body.model_dump(mode="json", exclude_none=True))

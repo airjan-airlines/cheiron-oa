@@ -83,3 +83,104 @@ def test_comparison_searches_layer_cohort_filters_on_shared_ones():
         ("Semaglutide", "obesity", "semaglutide"),
         ("Tirzepatide", "obesity", "tirzepatide"),
     ]
+
+
+# --- comparisons vs structured fields (cohorts narrow shared filters, never contradict the caller) ---
+
+SEMA = {"label": "Semaglutide", "filters": {"intervention": "semaglutide"}}
+TIRZ = {"label": "Tirzepatide", "filters": {"intervention": "tirzepatide"}}
+
+
+def _compare(*cohorts, **draft_fields):
+    return draft(analysis="comparison", group_by="phase", compare=list(cohorts), **draft_fields)
+
+
+def test_structured_field_contradicting_every_cohort_is_a_conflict_not_silently_dropped():
+    check = finalize(_compare(SEMA, TIRZ), VisualizeRequest(query="q", drug_name="pembrolizumab"))
+    assert check.plan is None and check.errors == []
+    assert len(check.conflicts) == 2 and "drug_name" in check.conflicts[0]
+
+
+def test_structured_field_that_is_one_side_of_the_comparison_is_allowed_and_noted():
+    check = finalize(_compare(SEMA, TIRZ), VisualizeRequest(query="q", drug_name="Semaglutide"))
+    assert check.plan is not None
+    assert check.plan.filters.intervention is None  # no longer claimed to apply to every cohort
+    assert [c.filters.intervention for c in check.plan.compare] == ["semaglutide", "tirzepatide"]
+    assert any("one of the compared cohorts" in n for n in check.notes)
+
+
+def test_structured_field_not_varied_by_cohorts_applies_to_every_cohort():
+    cohorts = ({"label": "Lung", "filters": {"condition": "lung cancer"}}, {"label": "Breast", "filters": {"condition": "breast cancer"}})
+    check = finalize(_compare(*cohorts), VisualizeRequest(query="q", country="Japan", trial_phases=["PHASE3"]))
+    assert [(c.filters.condition, c.filters.location, c.filters.phases) for c in check.plan.compare] == [
+        ("lung cancer", "Japan", [Phase.PHASE3]),
+        ("breast cancer", "Japan", [Phase.PHASE3]),
+    ]
+
+
+def test_year_range_conflict_with_structured_fields_is_reported_not_a_500():
+    # Reviewer repro: "Compare phases of melanoma trials that started before 2012 vs from 2012 onward" + start_year=2015
+    before = {"label": "Before 2012", "filters": {"start_year_max": 2011}}
+    after = {"label": "2012 onward", "filters": {"start_year_min": 2012}}
+    check = finalize(_compare(before, after, filters={"condition": "melanoma"}), VisualizeRequest(query="q", start_year=2015))
+    assert check.plan is None
+    assert any("Before 2012" in c and "start_year" in c for c in check.conflicts)
+
+
+def test_cohort_years_narrow_the_shared_range():
+    cohorts = ({"label": "Early", "filters": {"start_year_max": 2018}}, {"label": "Late", "filters": {"start_year_min": 2019}})
+    check = finalize(_compare(*cohorts, filters={"condition": "melanoma"}), VisualizeRequest(query="q", start_year=2015, end_year=2024))
+    assert [(c.filters.start_year_min, c.filters.start_year_max) for c in check.plan.compare] == [(2015, 2018), (2019, 2024)]
+
+
+def test_llm_inconsistent_year_range_goes_back_for_repair():
+    cohorts = ({"label": "A", "filters": {"start_year_max": 2011}}, {"label": "B", "filters": {"start_year_min": 2012}})
+    check = finalize(_compare(*cohorts, filters={"start_year_min": 2015}), Q)
+    assert check.conflicts == [] and check.errors
+
+
+def test_list_fields_intersect_and_empty_intersection_with_caller_is_a_conflict():
+    p23 = {"label": "Phase 2/3", "filters": {"phases": ["PHASE2", "PHASE3"]}}
+    p4 = {"label": "Phase 4", "filters": {"phases": ["PHASE4"]}}
+    ok = finalize(_compare(p23, p4), VisualizeRequest(query="q", trial_phases=["PHASE3", "PHASE4"]))
+    assert [c.filters.phases for c in ok.plan.compare] == [[Phase.PHASE3], [Phase.PHASE4]]
+    p2 = {"label": "Phase 2", "filters": {"phases": ["PHASE2"]}}
+    bad = finalize(_compare(p2, p4), VisualizeRequest(query="q", trial_phases=["PHASE3"]))
+    assert bad.plan is None and any("no phases in common" in c for c in bad.conflicts)
+
+
+def test_caller_phase_filter_is_never_widened_by_a_cohort():
+    # trial_phases=[PHASE3] + "Phase 2 vs Phase 3": the Phase 2 cohort contradicts the caller.
+    p2 = {"label": "Phase 2", "filters": {"phases": ["PHASE2"]}}
+    p3 = {"label": "Phase 3", "filters": {"phases": ["PHASE3"]}}
+    check = finalize(_compare(p2, p3), VisualizeRequest(query="q", trial_phases=["PHASE3"]))
+    assert check.plan is None and len(check.conflicts) == 1 and "Phase 2" in check.conflicts[0]
+
+
+def test_cohorts_identical_after_merging_go_back_for_repair():
+    a = {"label": "A", "filters": {"phases": ["PHASE2", "PHASE3"]}}
+    b = {"label": "B", "filters": {"phases": ["PHASE3"]}}
+    check = finalize(_compare(a, b), VisualizeRequest(query="q", trial_phases=["PHASE3"]))
+    assert check.plan is None and check.errors == ["cohorts must differ once shared filters are applied."]
+
+
+def test_llm_shared_value_replaced_by_cohort_value_is_noted():
+    check = finalize(_compare(SEMA, TIRZ, filters={"intervention": "pembrolizumab"}), Q)
+    assert [c.filters.intervention for c in check.plan.compare] == ["semaglutide", "tirzepatide"]
+    assert any("instead of the shared" in n for n in check.notes)
+
+
+def test_geographic_question_grouped_by_something_else_keeps_that_grouping():
+    # Reviewer repro: "which sponsors run recruiting breast cancer trials in Japan" came back grouped by country.
+    check = finalize(draft(analysis="geographic", group_by="sponsor", filters={"location": "Japan"}), Q)
+    assert (check.plan.analysis, check.plan.group_by, check.plan.filters.location) == (Analysis.DISTRIBUTION, Dimension.SPONSOR, "Japan")
+
+
+def test_cohort_repeating_the_caller_value_does_not_strip_it_from_other_cohorts():
+    # drug_name=semaglutide; cohorts differ by condition, one also names semaglutide: every cohort keeps the drug.
+    a = {"label": "Obesity", "filters": {"condition": "obesity", "intervention": "semaglutide"}}
+    b = {"label": "Diabetes", "filters": {"condition": "type 2 diabetes"}}
+    check = finalize(_compare(a, b), VisualizeRequest(query="q", drug_name="semaglutide"))
+    assert [c.filters.intervention for c in check.plan.compare] == ["semaglutide", "semaglutide"]
+    assert check.plan.filters.intervention == "semaglutide"
+    assert not any("one of the compared cohorts" in n for n in check.notes)

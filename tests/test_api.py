@@ -44,3 +44,13 @@ def test_upstream_outage_returns_502_with_envelope():
     body = resp.json()
     assert body["status"] == "error"
     assert body["error"]["code"] == "upstream_unavailable"
+
+
+def test_unexpected_error_still_returns_the_envelope():
+    async def broken(request):
+        raise RuntimeError("bug")
+
+    _use_pipeline(broken)
+    resp = TestClient(app, raise_server_exceptions=False).post("/v1/visualize", json={"query": "trials"})
+    assert resp.status_code == 500
+    assert resp.json()["error"]["code"] == "internal_error"

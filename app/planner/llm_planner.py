@@ -31,7 +31,7 @@ class OpenAIPlanner:
             completion = await self._client.chat.completions.parse(
                 model=self._model, messages=messages, response_format=QueryPlanLLM, **self._extra
             )
-        except (openai.APIConnectionError, openai.APITimeoutError, openai.RateLimitError, openai.AuthenticationError, openai.InternalServerError) as exc:
+        except openai.OpenAIError as exc:  # API errors (connection, auth, rate limit, bad request) and parse failures
             raise PlannerUnavailable(f"OpenAI request failed: {type(exc).__name__}") from exc
         message = completion.choices[0].message
         if message.parsed is not None:

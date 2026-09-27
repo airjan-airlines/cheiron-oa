@@ -4,7 +4,9 @@ Three kinds of outcome:
 - errors: the draft is unusable as-is; they are sent back to the LLM for one repair attempt;
 - normalizations: unambiguous slips (a time trend grouped by phase) are fixed deterministically
   and reported in `notes`, rather than spending an LLM round trip;
-- overrides: the caller's structured fields always win over what the LLM inferred.
+- overrides: the caller's structured fields always win over what the LLM inferred;
+- conflicts: the caller's own input contradicts itself (e.g. `drug_name` names a drug that none
+  of the compared cohorts use). No repair can fix that, so the request fails without fetching.
 """
 
 from dataclasses import dataclass, field
@@ -29,11 +31,16 @@ REQUEST_FIELD_NAMES = {
 }
 
 
+TEXT_FIELDS = ("condition", "intervention", "sponsor", "location")
+LIST_FIELDS = ("phases", "statuses")
+
+
 @dataclass
 class PlanCheck:
     plan: QueryPlan | None
-    errors: list[str] = field(default_factory=list)
+    errors: list[str] = field(default_factory=list)  # sent back to the LLM for repair
     notes: list[str] = field(default_factory=list)
+    conflicts: list[str] = field(default_factory=list)  # contradictions in the caller's input; not repairable
 
 
 def _empty(value) -> bool:
@@ -91,7 +98,11 @@ def finalize(draft: QueryPlanLLM, request: VisualizeRequest) -> PlanCheck:
         return PlanCheck(None, errors=_format_errors(exc), notes=notes)
 
     plan, errors = _check_semantics(plan, notes)
-    return PlanCheck(None if errors else plan, errors=errors, notes=notes)
+    conflicts: list[str] = []
+    if not errors and plan.analysis == Analysis.COMPARISON:
+        plan, errors, conflicts = _merge_cohorts(plan, request.structured_filters(), notes)
+    ok = not errors and not conflicts
+    return PlanCheck(plan if ok else None, errors=errors, notes=notes, conflicts=conflicts)
 
 
 def _check_semantics(plan: QueryPlan, notes: list[str]) -> tuple[QueryPlan, list[str]]:
@@ -102,6 +113,11 @@ def _check_semantics(plan: QueryPlan, notes: list[str]) -> tuple[QueryPlan, list
     if a is None:
         return plan, ["analysis is required for a clinical-trial question."]
 
+    if a == Analysis.GEOGRAPHIC and plan.group_by not in (None, Dimension.COUNTRY):
+        # "Which sponsors run trials in Japan?": the country is a filter, the grouping is the question.
+        notes.append(f"Treated as a breakdown by {plan.group_by.value}; the location is a filter, not the grouping.")
+        a = Analysis.DISTRIBUTION
+        update["analysis"] = a
     fixed_group_by = {Analysis.TIME_TREND: Dimension.START_YEAR, Analysis.GEOGRAPHIC: Dimension.COUNTRY}
     if a in fixed_group_by and plan.group_by != fixed_group_by[a]:
         if plan.group_by is not None:
@@ -146,12 +162,93 @@ def _check_semantics(plan: QueryPlan, notes: list[str]) -> tuple[QueryPlan, list
     return plan.model_copy(update=update), errors
 
 
+def _fmt(value) -> str:
+    return ", ".join(str(v) for v in value) if isinstance(value, list) else str(value)
+
+
+def _merge_cohorts(plan: QueryPlan, structured: Filters, notes: list[str]) -> tuple[QueryPlan, list[str], list[str]]:
+    """Combine each cohort's filters with the shared ones. Cohorts narrow shared filters; they may
+    not contradict the caller's structured fields.
+
+    Returns the plan with fully merged cohort filters, repairable errors, and caller conflicts.
+    """
+    shared = plan.filters.model_dump()
+    forced = structured.model_dump()
+    labels = [c.label for c in plan.compare]
+    cohorts = [c.filters.model_dump() for c in plan.compare]
+    merged = [dict(shared) for _ in cohorts]
+    shared_update: dict = {}
+    errors: list[str] = []
+    conflicts: list[str] = []
+
+    for name in TEXT_FIELDS + LIST_FIELDS:
+        values = [c[name] for c in cohorts]
+        if all(_empty(v) for v in values):
+            continue  # cohorts don't vary this field: the shared value applies to all of them
+        common = shared[name]
+        if _empty(common):
+            for m, v in zip(merged, values):
+                if not _empty(v):
+                    m[name] = v
+            continue
+        from_request = not _empty(forced[name])
+        field_name = REQUEST_FIELD_NAMES[name] if from_request else f"filters.{name}"
+        set_values = [v for v in values if not _empty(v)]
+        one_side = any(_same(v, common) for v in set_values) and any(not _same(v, common) for v in set_values)
+        if from_request and name in TEXT_FIELDS and one_side:
+            # e.g. drug_name=semaglutide + "compare semaglutide vs tirzepatide": the caller's field is one
+            # side of the comparison (typical when a UI passes the drug being viewed). Lists never take
+            # this path: they always intersect, so a cohort can't widen the caller's phases or statuses.
+            for m, v in zip(merged, values):
+                if not _empty(v):
+                    m[name] = v
+            shared_update[name] = [] if name in LIST_FIELDS else None
+            notes.append(f"Request field '{field_name}' ({_fmt(common)}) is one of the compared cohorts; the other cohorts use their own value.")
+            continue
+        for label, m, v in zip(labels, merged, values):
+            if _empty(v):
+                continue  # this cohort inherits the shared value
+            if name in LIST_FIELDS:
+                narrowed = [x for x in v if x in common]
+                if narrowed:
+                    m[name] = narrowed
+                    continue
+                problem = f"{field_name} ({_fmt(common)}) and cohort '{label}' ({_fmt(v)}) have no {name} in common."
+                (conflicts if from_request else errors).append(problem)
+            elif not _same(v, common):
+                if from_request:
+                    conflicts.append(f"Request field '{field_name}' ({common}) contradicts cohort '{label}' ({v}).")
+                else:
+                    m[name] = v
+                    notes.append(f"Cohort '{label}' uses {name}='{v}' instead of the shared '{common}'.")
+
+    # Year bounds intersect: a cohort can only narrow the shared range.
+    for label, m, c in zip(labels, merged, cohorts):
+        lows = [y for y in (shared["start_year_min"], c["start_year_min"]) if y is not None]
+        highs = [y for y in (shared["start_year_max"], c["start_year_max"]) if y is not None]
+        lo, hi = (max(lows) if lows else None), (min(highs) if highs else None)
+        m["start_year_min"], m["start_year_max"] = lo, hi
+        if lo is not None and hi is not None and lo > hi:
+            problem = f"Cohort '{label}' covers start years that the shared range excludes (would need {lo} to {hi})."
+            from_request = forced["start_year_min"] is not None or forced["start_year_max"] is not None
+            (conflicts if from_request else errors).append(problem + (" The range comes from start_year/end_year." if from_request else ""))
+
+    if errors or conflicts:
+        return plan, errors, conflicts
+    try:
+        final = [Cohort(label=label, filters=Filters(**m)) for label, m in zip(labels, merged)]
+    except ValidationError as exc:
+        return plan, _format_errors(exc), []
+    if len({c.filters.model_dump_json() for c in final}) != len(final):
+        return plan, ["cohorts must differ once shared filters are applied."], []
+    return plan.model_copy(update={"compare": final, "filters": plan.filters.model_copy(update=shared_update)}), [], []
+
+
 def searches(plan: QueryPlan) -> list[tuple[str | None, Filters]]:
-    """The registry searches a plan needs: one per cohort for comparisons, else one."""
+    """The registry searches a plan needs: one per cohort for comparisons, else one.
+
+    Cohort filters are already merged with the shared ones by `finalize`.
+    """
     if plan.analysis != Analysis.COMPARISON:
         return [(None, plan.filters)]
-    out = []
-    for cohort in plan.compare:
-        overlay = {k: v for k, v in cohort.filters.model_dump().items() if not _empty(v)}
-        out.append((cohort.label, plan.filters.model_copy(update=overlay)))
-    return out
+    return [(cohort.label, cohort.filters) for cohort in plan.compare]
