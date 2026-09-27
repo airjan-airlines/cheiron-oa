@@ -1,0 +1,740 @@
+{
+  "request": {
+    "query": "What is the distribution of enrollment sizes for completed Phase 3 psoriasis trials?"
+  },
+  "http_status": 200,
+  "response": {
+    "schema_version": "1.0",
+    "status": "ok",
+    "visualization": {
+      "type": "histogram",
+      "title": "Completed Phase 3 psoriasis trials: enrollment sizes",
+      "encoding": {
+        "x": {
+          "field": "bin_start",
+          "type": "quantitative",
+          "label": "Enrollment (participants)",
+          "label_field": "bin_label"
+        },
+        "x2": {
+          "field": "bin_end",
+          "type": "quantitative",
+          "label": "Enrollment (participants)"
+        },
+        "y": {
+          "field": "trial_count",
+          "type": "quantitative",
+          "label": "Number of trials"
+        }
+      },
+      "data": [
+        {
+          "supporting_nct_ids": [
+            "NCT00109252",
+            "NCT02533375"
+          ],
+          "citation_count": 2,
+          "citations": [
+            {
+              "nct_id": "NCT00109252",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "0",
+              "title": "A Study to Evaluate Raptiva in Adults With Plaque Psoriasis Previously Enrolled in Study ACD2390g",
+              "url": "https://clinicaltrials.gov/study/NCT00109252"
+            },
+            {
+              "nct_id": "NCT02533375",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "10",
+              "title": "Study to Investigate Efficacy and Safety of Adalimumab in Japanese Subjects With Generalized Pustular Psoriasis (GPP)",
+              "url": "https://clinicaltrials.gov/study/NCT02533375"
+            }
+          ],
+          "bin_start": 0,
+          "bin_end": 10,
+          "bin_label": "0–10",
+          "trial_count": 2
+        },
+        {
+          "supporting_nct_ids": [
+            "NCT02065713",
+            "NCT01782937",
+            "NCT00350116",
+            "NCT02196701",
+            "NCT01445886",
+            "NCT00353119",
+            "NCT06323356",
+            "NCT05020249",
+            "NCT05352893",
+            "NCT03358134",
+            "NCT00629772",
+            "NCT01321164",
+            "NCT01765985",
+            "NCT02343744",
+            "NCT00115076",
+            "NCT05203315",
+            "NCT03518047",
+            "NCT05239039",
+            "NCT05200247",
+            "NCT06084663",
+            "NCT00002143",
+            "NCT04711902",
+            "NCT01412944",
+            "NCT00686686",
+            "NCT00116181",
+            "NCT00999687",
+            "NCT03022045",
+            "NCT05684744",
+            "NCT04123795",
+            "NCT02698475",
+            "NCT02330237",
+            "NCT01007591",
+            "NCT02387801",
+            "NCT01952015"
+          ],
+          "citation_count": 34,
+          "citations": [
+            {
+              "nct_id": "NCT02065713",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "44",
+              "title": "Efficacy of Golimumab in Combination With Methotrexate (MTX) Versus MTX Monotherapy, in Improving Dactylitis, in MTX naïve Psoriatic Arthritis Patients",
+              "url": "https://clinicaltrials.gov/study/NCT02065713"
+            },
+            {
+              "nct_id": "NCT01782937",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "30",
+              "title": "An Open-label, Non-controlled Study of KHK4827 in Subjects With Psoriasis",
+              "url": "https://clinicaltrials.gov/study/NCT01782937"
+            },
+            {
+              "nct_id": "NCT00350116",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "48",
+              "title": "Topical Vitamin B12 in Chronic Plaque Psoriasis",
+              "url": "https://clinicaltrials.gov/study/NCT00350116"
+            }
+          ],
+          "bin_start": 11,
+          "bin_end": 50,
+          "bin_label": "11–50",
+          "trial_count": 34
+        },
+        {
+          "supporting_nct_ids": [
+            "NCT02905331",
+            "NCT03897075",
+            "NCT02982005",
+            "NCT04108468",
+            "NCT00927069",
+            "NCT03217734",
+            "NCT04146558",
+            "NCT03668613",
+            "NCT06088199",
+            "NCT01871649",
+            "NCT01680159",
+            "NCT01229085",
+            "NCT00051623",
+            "NCT01763424",
+            "NCT02164214",
+            "NCT03736161",
+            "NCT01901185",
+            "NCT01624233",
+            "NCT03924427",
+            "NCT01519089",
+            "NCT00674063"
+          ],
+          "citation_count": 21,
+          "citations": [
+            {
+              "nct_id": "NCT02905331",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "78",
+              "title": "Efficacy and Safety Study of Guselkumab in the Treatment of Participants With Moderate to Severe Plaque-Type Psoriasis",
+              "url": "https://clinicaltrials.gov/study/NCT02905331"
+            },
+            {
+              "nct_id": "NCT03897075",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "99",
+              "title": "Efficacy and Safety Study of Tildrakizumab in the Treatment of Nail Psoriasis",
+              "url": "https://clinicaltrials.gov/study/NCT03897075"
+            },
+            {
+              "nct_id": "NCT02982005",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "62",
+              "title": "A Study of KHK4827 (Brodalumab) in Subjects With Moderate to Severe Psoriasis in Korea",
+              "url": "https://clinicaltrials.gov/study/NCT02982005"
+            }
+          ],
+          "bin_start": 51,
+          "bin_end": 100,
+          "bin_label": "51–100",
+          "trial_count": 21
+        },
+        {
+          "supporting_nct_ids": [
+            "NCT01782924",
+            "NCT02474082",
+            "NCT04632927",
+            "NCT02515097",
+            "NCT02310646",
+            "NCT01421069",
+            "NCT02052609",
+            "NCT01961609",
+            "NCT00687401",
+            "NCT03766685",
+            "NCT03073200",
+            "NCT06648772",
+            "NCT07008547",
+            "NCT07746479",
+            "NCT05272150",
+            "NCT02362789",
+            "NCT01807520",
+            "NCT03875482",
+            "NCT01925768",
+            "NCT03759197",
+            "NCT00338754",
+            "NCT06122649",
+            "NCT02462122",
+            "NCT02902861",
+            "NCT04167462",
+            "NCT01195831",
+            "NCT02951533",
+            "NCT03148860",
+            "NCT00367237",
+            "NCT02471144",
+            "NCT02326272",
+            "NCT02462070",
+            "NCT02326298",
+            "NCT01106079",
+            "NCT00427362",
+            "NCT02641730",
+            "NCT00715975",
+            "NCT00747344",
+            "NCT01206660",
+            "NCT03219437",
+            "NCT03930186",
+            "NCT02718898",
+            "NCT04109976",
+            "NCT00438360",
+            "NCT02668692",
+            "NCT02559622",
+            "NCT00317499",
+            "NCT05174065",
+            "NCT04175613",
+            "NCT02662985",
+            "NCT00141921",
+            "NCT01777191",
+            "NCT03806790",
+            "NCT00673556",
+            "NCT02325219",
+            "NCT04435600",
+            "NCT01177800",
+            "NCT00647400",
+            "NCT01882647",
+            "NCT00279162",
+            "NCT05108766",
+            "NCT02748863",
+            "NCT04713592",
+            "NCT03486457",
+            "NCT01690299",
+            "NCT03998683",
+            "NCT01251614",
+            "NCT06011733",
+            "NCT03255382",
+            "NCT02618759",
+            "NCT03701763",
+            "NCT02368210",
+            "NCT00527072",
+            "NCT01090427",
+            "NCT04451720",
+            "NCT03897088",
+            "NCT03598751",
+            "NCT00566722",
+            "NCT03390101",
+            "NCT03731052",
+            "NCT02367911",
+            "NCT01636687",
+            "NCT00438399",
+            "NCT02771210",
+            "NCT00078819",
+            "NCT01806597",
+            "NCT01206387",
+            "NCT00333034",
+            "NCT04061252",
+            "NCT02514577",
+            "NCT00513370",
+            "NCT00723528",
+            "NCT03051217",
+            "NCT03875508",
+            "NCT02267135",
+            "NCT02008890",
+            "NCT02016482",
+            "NCT02634801",
+            "NCT01555125",
+            "NCT03589885",
+            "NCT02595970",
+            "NCT04102007",
+            "NCT00692172",
+            "NCT01871402"
+          ],
+          "citation_count": 104,
+          "citations": [
+            {
+              "nct_id": "NCT01782924",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "145",
+              "title": "A Phase 3 Clinical Study of KHK4827",
+              "url": "https://clinicaltrials.gov/study/NCT01782924"
+            },
+            {
+              "nct_id": "NCT02474082",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "202",
+              "title": "Study of Secukinumab Compared to Fumaderm® in Adults With Moderate to Severe Psoriasis.",
+              "url": "https://clinicaltrials.gov/study/NCT02474082"
+            },
+            {
+              "nct_id": "NCT04632927",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "119",
+              "title": "Efficacy of Secukinumab Compared to Ustekinumab in Adults With Active Psoriatic Arthritis and Failure of TNFα-Inhibitor Treatment",
+              "url": "https://clinicaltrials.gov/study/NCT04632927"
+            }
+          ],
+          "bin_start": 101,
+          "bin_end": 250,
+          "bin_label": "101–250",
+          "trial_count": 104
+        },
+        {
+          "supporting_nct_ids": [
+            "NCT05120297",
+            "NCT01008995",
+            "NCT01077362",
+            "NCT01313221",
+            "NCT06588283",
+            "NCT05028582",
+            "NCT01908595",
+            "NCT00658788",
+            "NCT01087788",
+            "NCT03123471",
+            "NCT02635204",
+            "NCT01695239",
+            "NCT01001208",
+            "NCT00710580",
+            "NCT00258713",
+            "NCT04761627",
+            "NCT01860976",
+            "NCT03410992",
+            "NCT02024646",
+            "NCT01139580",
+            "NCT01866163",
+            "NCT03504852",
+            "NCT01752634",
+            "NCT00689481",
+            "NCT05073315",
+            "NCT06398652",
+            "NCT01265667",
+            "NCT00121615",
+            "NCT01970488",
+            "NCT02932462",
+            "NCT01967069",
+            "NCT00233662",
+            "NCT00265096",
+            "NCT06588296",
+            "NCT00235820",
+            "NCT00400725",
+            "NCT01646073",
+            "NCT03478787",
+            "NCT03896581",
+            "NCT02349295",
+            "NCT01882439",
+            "NCT01212757",
+            "NCT04595409",
+            "NCT02762955",
+            "NCT00244842",
+            "NCT02933866",
+            "NCT02394561",
+            "NCT05536726",
+            "NCT00096603",
+            "NCT00670241",
+            "NCT02294227",
+            "NCT00235885",
+            "NCT01877668",
+            "NCT05637515",
+            "NCT01947491",
+            "NCT00482170",
+            "NCT00106834",
+            "NCT03162796",
+            "NCT03731091",
+            "NCT02561806",
+            "NCT01815424",
+            "NCT04936308",
+            "NCT03796858",
+            "NCT02584855",
+            "NCT01892436",
+            "NCT02181673",
+            "NCT04211389",
+            "NCT00243464",
+            "NCT04211363",
+            "NCT00691964",
+            "NCT03849404",
+            "NCT03316781",
+            "NCT01232283",
+            "NCT04209205",
+            "NCT02850965",
+            "NCT00688519",
+            "NCT04839328",
+            "NCT00679731",
+            "NCT03364309",
+            "NCT04286607",
+            "NCT05174598",
+            "NCT06488664",
+            "NCT06066125",
+            "NCT01989468",
+            "NCT01550744",
+            "NCT02445807",
+            "NCT00195689",
+            "NCT02742441",
+            "NCT02714322",
+            "NCT01468233",
+            "NCT02750293",
+            "NCT03210259",
+            "NCT02016105",
+            "NCT02486939",
+            "NCT03552276",
+            "NCT05645627",
+            "NCT03671148",
+            "NCT06039189",
+            "NCT02606760",
+            "NCT05763082",
+            "NCT02660580",
+            "NCT03412747",
+            "NCT03802344",
+            "NCT05495568",
+            "NCT01468207",
+            "NCT05335356",
+            "NCT03777436"
+          ],
+          "citation_count": 107,
+          "citations": [
+            {
+              "nct_id": "NCT05120297",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "452",
+              "title": "A Phase 3 Study of Efficacy and Safety of AK101 in Subjects With Psoriasis",
+              "url": "https://clinicaltrials.gov/study/NCT05120297"
+            },
+            {
+              "nct_id": "NCT01008995",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "322",
+              "title": "A Study of the Safety and Effectiveness of Ustekinumab (Stelara) in Chinese Patients With Psoriasis",
+              "url": "https://clinicaltrials.gov/study/NCT01008995"
+            },
+            {
+              "nct_id": "NCT01077362",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "312",
+              "title": "A Study of the Safety and Efficacy of Ustekinumab in Patients With Psoriatic Arthritis With and Without Prior Exposure to Anti-TNF Agents",
+              "url": "https://clinicaltrials.gov/study/NCT01077362"
+            }
+          ],
+          "bin_start": 251,
+          "bin_end": 500,
+          "bin_label": "251–500",
+          "trial_count": 107
+        },
+        {
+          "supporting_nct_ids": [
+            "NCT06088043",
+            "NCT01891864",
+            "NCT04967508",
+            "NCT02132936",
+            "NCT01194219",
+            "NCT00111449",
+            "NCT06049810",
+            "NCT02886702",
+            "NCT03721172",
+            "NCT01406938",
+            "NCT03331523",
+            "NCT02404350",
+            "NCT05509361",
+            "NCT03168256",
+            "NCT02721966",
+            "NCT04728360",
+            "NCT06742957",
+            "NCT04930042",
+            "NCT01726933",
+            "NCT02376790",
+            "NCT00254982",
+            "NCT04053387",
+            "NCT02581345",
+            "NCT01009086",
+            "NCT03066609",
+            "NCT04607980",
+            "NCT03158285",
+            "NCT03536884",
+            "NCT06586112",
+            "NCT02489227",
+            "NCT03983980",
+            "NCT00640822",
+            "NCT02462083",
+            "NCT07712731",
+            "NCT01365455",
+            "NCT06973291",
+            "NCT01422434",
+            "NCT01212770",
+            "NCT05046431",
+            "NCT02474069",
+            "NCT00216879",
+            "NCT00293917",
+            "NCT02694523",
+            "NCT05975268",
+            "NCT02672852",
+            "NCT07357831",
+            "NCT00267969",
+            "NCT01235442",
+            "NCT02684357",
+            "NCT00293891",
+            "NCT00109317",
+            "NCT02074982",
+            "NCT07712705",
+            "NCT01186744",
+            "NCT03956355",
+            "NCT04785326",
+            "NCT06588738",
+            "NCT00106847",
+            "NCT02134210",
+            "NCT01172938",
+            "NCT01640951",
+            "NCT02899962",
+            "NCT02684370",
+            "NCT03624127",
+            "NCT01873677",
+            "NCT03308799",
+            "NCT03104374",
+            "NCT01307423",
+            "NCT02207231",
+            "NCT06624228",
+            "NCT02207244",
+            "NCT00454584",
+            "NCT01309737",
+            "NCT01878461",
+            "NCT00293930",
+            "NCT00111436",
+            "NCT01989429",
+            "NCT04453137",
+            "NCT02745080",
+            "NCT01276639",
+            "NCT00251641",
+            "NCT03818035",
+            "NCT04673786",
+            "NCT03370133",
+            "NCT02346240",
+            "NCT00574249",
+            "NCT01392326",
+            "NCT00408187",
+            "NCT05919082",
+            "NCT01976364",
+            "NCT00256139",
+            "NCT01722331",
+            "NCT03895203",
+            "NCT02160665",
+            "NCT02203032",
+            "NCT05377944",
+            "NCT03482011"
+          ],
+          "citation_count": 97,
+          "citations": [
+            {
+              "nct_id": "NCT06088043",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "693",
+              "title": "A Study About How Well TAK-279 Works and Its Safety in Participants With Moderate-to-severe Plaque Psoriasis During 52 Weeks of Treatment",
+              "url": "https://clinicaltrials.gov/study/NCT06088043"
+            },
+            {
+              "nct_id": "NCT01891864",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "531",
+              "title": "Study to Demonstrate Equivalent Efficacy and to Compare Safety of Biosimilar Etanercept (GP2015) and Enbrel",
+              "url": "https://clinicaltrials.gov/study/NCT01891864"
+            },
+            {
+              "nct_id": "NCT04967508",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "503",
+              "title": "A Study to Compare SB17 (Proposed Ustekinumab Biosimilar) to Stelara® in Subject With Moderate to Severe Plaque Psoriasis",
+              "url": "https://clinicaltrials.gov/study/NCT04967508"
+            }
+          ],
+          "bin_start": 501,
+          "bin_end": 1000,
+          "bin_label": "501–1,000",
+          "trial_count": 97
+        },
+        {
+          "supporting_nct_ids": [
+            "NCT02513550",
+            "NCT00338143",
+            "NCT01597245",
+            "NCT03090100",
+            "NCT00195676",
+            "NCT02826603",
+            "NCT01241591",
+            "NCT03535194",
+            "NCT00216827",
+            "NCT01544595",
+            "NCT01729754",
+            "NCT04009499",
+            "NCT01188928",
+            "NCT01646177",
+            "NCT04036435",
+            "NCT00570986",
+            "NCT03598790",
+            "NCT03047395",
+            "NCT06108544",
+            "NCT00216840",
+            "NCT03104400",
+            "NCT00237887",
+            "NCT00626002",
+            "NCT03611751",
+            "NCT00307437",
+            "NCT01358578",
+            "NCT00691002",
+            "NCT01474512"
+          ],
+          "citation_count": 28,
+          "citations": [
+            {
+              "nct_id": "NCT02513550",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "1257",
+              "title": "A Study Comparing Different Dosing Regimens of Ixekizumab (LY2439821) in Participants With Moderate to Severe Plaque Psoriasis",
+              "url": "https://clinicaltrials.gov/study/NCT02513550"
+            },
+            {
+              "nct_id": "NCT00338143",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "1200",
+              "title": "A Study to Evaluate Efalizumab in Adults With Plaque Psoriasis, Including Those Who Are Receiving Concomitant Antipsoriatic Therapies",
+              "url": "https://clinicaltrials.gov/study/NCT00338143"
+            },
+            {
+              "nct_id": "NCT01597245",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "1224",
+              "title": "A Phase 3 Study in Participants With Moderate to Severe Psoriasis (UNCOVER-2)",
+              "url": "https://clinicaltrials.gov/study/NCT01597245"
+            }
+          ],
+          "bin_start": 1001,
+          "bin_end": 5000,
+          "bin_label": "1,001–5,000",
+          "trial_count": 28
+        },
+        {
+          "supporting_nct_ids": [
+            "NCT02409667"
+          ],
+          "citation_count": 1,
+          "citations": [
+            {
+              "nct_id": "NCT02409667",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "16487",
+              "title": "Plaque Psoriasis Efficacy and Safety With Secukinumab",
+              "url": "https://clinicaltrials.gov/study/NCT02409667"
+            }
+          ],
+          "bin_start": 5001,
+          "bin_end": 16487,
+          "bin_label": "5,001+",
+          "trial_count": 1
+        }
+      ]
+    },
+    "meta": {
+      "interpretation": "Binned completed Phase 3 psoriasis trials by enrollment size.",
+      "queries": [
+        {
+          "filters": {
+            "condition": "psoriasis",
+            "phases": [
+              "PHASE3"
+            ],
+            "statuses": [
+              "COMPLETED"
+            ]
+          },
+          "api_params": {
+            "query.cond": "psoriasis",
+            "filter.overallStatus": "COMPLETED",
+            "filter.advanced": "AREA[Phase]PHASE3"
+          },
+          "total_matching": 396,
+          "records_analyzed": 396,
+          "truncated": false
+        }
+      ],
+      "coverage": {
+        "groupby_semantics": "partition",
+        "bucket_sum": 394,
+        "unclassified_count": 2,
+        "excluded": [
+          {
+            "reason": "no enrollment count recorded",
+            "count": 2
+          }
+        ],
+        "buckets_not_shown": 0
+      },
+      "render": {
+        "sort": {
+          "field": "bin_start",
+          "order": "ascending"
+        },
+        "units": {
+          "x": "participants",
+          "y": "trials"
+        }
+      },
+      "visualization_rationale": {
+        "chosen": "histogram",
+        "source": "llm",
+        "reason": "A histogram is suitable to show the distribution of enrollment sizes across completed Phase 3 psoriasis trials."
+      },
+      "assumptions": [
+        "Enrollment is the registry's enrollment count: actual for completed trials, anticipated otherwise.",
+        "Bins widen with size because enrollment spans several orders of magnitude."
+      ],
+      "notes": [],
+      "plan": {
+        "supported": true,
+        "analysis": "numeric_distribution",
+        "metric": "enrollment",
+        "filters": {
+          "condition": "psoriasis",
+          "phases": [
+            "PHASE3"
+          ],
+          "statuses": [
+            "COMPLETED"
+          ]
+        },
+        "compare": [],
+        "top_n": 15,
+        "chart_type_suggestion": "histogram",
+        "chart_rationale": "A histogram is suitable to show the distribution of enrollment sizes across completed Phase 3 psoriasis trials."
+      },
+      "source": "ClinicalTrials.gov API v2",
+      "data_as_of": "2026-09-25T09:00:04",
+      "generated_at": "2026-09-27T00:30:32.777544Z"
+    }
+  }
+}

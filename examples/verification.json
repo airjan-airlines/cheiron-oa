@@ -1,0 +1,75 @@
+{
+  "data_timestamp_checked": null,
+  "examples": {
+    "01_time_trend_pembrolizumab.json": {
+      "status": "ok",
+      "type": "time_series",
+      "citations_checked": 39,
+      "citations_verified": 39,
+      "partition_reconciles_with_api_total": true,
+      "problems": []
+    },
+    "02_geographic_breast_cancer.json": {
+      "status": "ok",
+      "type": "bar_chart",
+      "citations_checked": 30,
+      "citations_verified": 30,
+      "partition_reconciles_with_api_total": null,
+      "problems": []
+    },
+    "03_comparison_semaglutide_tirzepatide.json": {
+      "status": "ok",
+      "type": "grouped_bar_chart",
+      "citations_checked": 54,
+      "citations_verified": 54,
+      "partition_reconciles_with_api_total": null,
+      "problems": []
+    },
+    "04_network_kras_nsclc.json": {
+      "status": "ok",
+      "type": "network_graph",
+      "citations_checked": 144,
+      "citations_verified": 144,
+      "partition_reconciles_with_api_total": null,
+      "problems": []
+    },
+    "05_korean_gastric_cancer_phases.json": {
+      "status": "ok",
+      "type": "bar_chart",
+      "citations_checked": 19,
+      "citations_verified": 19,
+      "partition_reconciles_with_api_total": true,
+      "problems": []
+    },
+    "06_extra_drug_cooccurrence_myeloma.json": {
+      "status": "ok",
+      "type": "network_graph",
+      "citations_checked": 180,
+      "citations_verified": 180,
+      "partition_reconciles_with_api_total": null,
+      "problems": []
+    },
+    "07_extra_enrollment_histogram_psoriasis.json": {
+      "status": "ok",
+      "type": "histogram",
+      "citations_checked": 21,
+      "citations_verified": 21,
+      "partition_reconciles_with_api_total": true,
+      "problems": []
+    },
+    "08_extra_count_pfizer.json": {
+      "status": "ok",
+      "type": "metric",
+      "citations_checked": 3,
+      "citations_verified": 3,
+      "partition_reconciles_with_api_total": null,
+      "problems": []
+    },
+    "09_extra_unsupported.json": {
+      "status": "unsupported",
+      "checked": "no visualization"
+    }
+  },
+  "cited_trials_fetched": 267,
+  "total_problems": 0
+}

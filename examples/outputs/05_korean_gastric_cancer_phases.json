@@ -1,0 +1,375 @@
+{
+  "request": {
+    "query": "한국에서 모집 중인 위암 임상시험은 단계별로 어떻게 분포되어 있나요?"
+  },
+  "http_status": 200,
+  "response": {
+    "schema_version": "1.0",
+    "status": "ok",
+    "visualization": {
+      "type": "bar_chart",
+      "title": "Recruiting gastric cancer trials in South Korea by trial phase",
+      "encoding": {
+        "x": {
+          "field": "phase",
+          "type": "ordinal",
+          "label": "Trial phase",
+          "label_field": "phase_label"
+        },
+        "y": {
+          "field": "trial_count",
+          "type": "quantitative",
+          "label": "Number of trials"
+        }
+      },
+      "data": [
+        {
+          "supporting_nct_ids": [
+            "NCT06663319",
+            "NCT04389632",
+            "NCT07812805",
+            "NCT05768932",
+            "NCT05365581",
+            "NCT07481357",
+            "NCT06253871",
+            "NCT05005403",
+            "NCT07358806"
+          ],
+          "citation_count": 9,
+          "citations": [
+            {
+              "nct_id": "NCT06663319",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE1\"]",
+              "title": "A Study of JNJ-89402638 for Metastatic Colorectal and Gastric Cancers",
+              "url": "https://clinicaltrials.gov/study/NCT06663319"
+            },
+            {
+              "nct_id": "NCT04389632",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE1\"]",
+              "title": "A Study of Sigvotatug Vedotin in Advanced Solid Tumors",
+              "url": "https://clinicaltrials.gov/study/NCT04389632"
+            },
+            {
+              "nct_id": "NCT07812805",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE1\"]",
+              "title": "SKL35501 With SKL35502 Imaging in Adults With NTSR1 Positive Advanced Solid Tumors",
+              "url": "https://clinicaltrials.gov/study/NCT07812805"
+            }
+          ],
+          "phase": "PHASE1",
+          "phase_label": "Phase 1",
+          "trial_count": 9
+        },
+        {
+          "supporting_nct_ids": [
+            "NCT04421820",
+            "NCT06324357",
+            "NCT07149090",
+            "NCT05150691",
+            "NCT05894824",
+            "NCT04592211",
+            "NCT07262619",
+            "NCT06732856",
+            "NCT05086692",
+            "NCT04198766",
+            "NCT05523947",
+            "NCT07115043",
+            "NCT06469944",
+            "NCT06005493",
+            "NCT05640830",
+            "NCT06427941",
+            "NCT06085755",
+            "NCT06921837"
+          ],
+          "citation_count": 18,
+          "citations": [
+            {
+              "nct_id": "NCT04421820",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE1\", \"PHASE2\"]",
+              "title": "BOLD-100 in Combination With FOLFOX for the Treatment of Advanced Solid Tumours",
+              "url": "https://clinicaltrials.gov/study/NCT04421820"
+            },
+            {
+              "nct_id": "NCT06324357",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE1\", \"PHASE2\"]",
+              "title": "Beamion BCGC-1: A Study to Find a Suitable Dose of Zongertinib Used Alone and in Combination With Other Treatments to Test Whether it Helps People With Different Types of HER2+ Cancer That Has Spread",
+              "url": "https://clinicaltrials.gov/study/NCT06324357"
+            },
+            {
+              "nct_id": "NCT07149090",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE1\", \"PHASE2\"]",
+              "title": "Lenvatinib in Combination With Nivolumab Plus Chemotherapy in Metastatic Gastric Cancer Patients With Malignant Ascites",
+              "url": "https://clinicaltrials.gov/study/NCT07149090"
+            }
+          ],
+          "phase": "PHASE1/PHASE2",
+          "phase_label": "Phase 1/Phase 2",
+          "trial_count": 18
+        },
+        {
+          "supporting_nct_ids": [
+            "NCT06038578",
+            "NCT07699939",
+            "NCT06760819",
+            "NCT05489211",
+            "NCT06695845",
+            "NCT06172478",
+            "NCT05184803",
+            "NCT05620628",
+            "NCT06630130",
+            "NCT06219941",
+            "NCT06819566",
+            "NCT05702229"
+          ],
+          "citation_count": 12,
+          "citations": [
+            {
+              "nct_id": "NCT06038578",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE2\"]",
+              "title": "A Study of TRK-950 When Used in Combination With Ramucirumab and Paclitaxel in Patients With Gastric Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT06038578"
+            },
+            {
+              "nct_id": "NCT07699939",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE2\"]",
+              "title": "Perioperative HLX10 (Serplulimab) With S-1+Oxaliplatin (SOX) in Locally Advanced and PD-L1-Positive Gastric or Esophagogastric Junction Adenocarcinoma",
+              "url": "https://clinicaltrials.gov/study/NCT07699939"
+            },
+            {
+              "nct_id": "NCT06760819",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE2\"]",
+              "title": "A Study to Learn More About How Well Treatment With Sevabertinib (BAY 2927088) Tablets Works and How Safe it is in Participants Who Have a Solid Tumor With Mutations of the Human Epidermal Growth Factor Receptor 2 (HER2)",
+              "url": "https://clinicaltrials.gov/study/NCT06760819"
+            }
+          ],
+          "phase": "PHASE2",
+          "phase_label": "Phase 2",
+          "trial_count": 12
+        },
+        {
+          "supporting_nct_ids": [
+            "NCT07221149"
+          ],
+          "citation_count": 1,
+          "citations": [
+            {
+              "nct_id": "NCT07221149",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE2\", \"PHASE3\"]",
+              "title": "A Study to Evaluate the Safety and Efficacy of Pumitamig in Combination With Chemotherapy Versus Nivolumab in Combination With Chemotherapy in Participants With Previously Untreated Advanced or Metastatic Gastric, Gastroesophageal Junction, or Esophageal Adenocarcinoma (ROSETTA Gastric-204)",
+              "url": "https://clinicaltrials.gov/study/NCT07221149"
+            }
+          ],
+          "phase": "PHASE2/PHASE3",
+          "phase_label": "Phase 2/Phase 3",
+          "trial_count": 1
+        },
+        {
+          "supporting_nct_ids": [
+            "NCT06608381",
+            "NCT06784752",
+            "NCT04214990",
+            "NCT07431281",
+            "NCT04787354",
+            "NCT07488611",
+            "NCT01935778",
+            "NCT05477576",
+            "NCT06764875",
+            "NCT06532006",
+            "NCT06901531",
+            "NCT06731478",
+            "NCT05226169"
+          ],
+          "citation_count": 13,
+          "citations": [
+            {
+              "nct_id": "NCT06608381",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE3\"]",
+              "title": "Comparison Partial Versus Total Omentectomy in Minimal Invasive Distal Gastrectomy for cT3/4a Gastric Cancer (KLASS-10)",
+              "url": "https://clinicaltrials.gov/study/NCT06608381"
+            },
+            {
+              "nct_id": "NCT06784752",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE3\"]",
+              "title": "Study to Evaluate the Efficacy and Safety of [177Lu]Lu-DOTA-TATE in Patients With Grade 1 and Grade 2 Advanced GEP-NET",
+              "url": "https://clinicaltrials.gov/study/NCT06784752"
+            },
+            {
+              "nct_id": "NCT04214990",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE3\"]",
+              "title": "Aspirin Use for Gastric Cancer Prevention in the Early Gastric Cancer Patients",
+              "url": "https://clinicaltrials.gov/study/NCT04214990"
+            }
+          ],
+          "phase": "PHASE3",
+          "phase_label": "Phase 3",
+          "trial_count": 13
+        },
+        {
+          "supporting_nct_ids": [
+            "NCT06841484",
+            "NCT07607119",
+            "NCT07749326",
+            "NCT04890171",
+            "NCT06839716",
+            "NCT07161479",
+            "NCT03385018",
+            "NCT06984952",
+            "NCT04284943",
+            "NCT06778954",
+            "NCT06690112",
+            "NCT06639490",
+            "NCT06395935",
+            "NCT07405931"
+          ],
+          "citation_count": 14,
+          "citations": [
+            {
+              "nct_id": "NCT06841484",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"NA\"]",
+              "title": "Comparison of Full Robotic Instrumentation and Assistant-Controlled Laparoscopic Instrumentation in Robotic Distal Gastrectomy",
+              "url": "https://clinicaltrials.gov/study/NCT06841484"
+            },
+            {
+              "nct_id": "NCT07607119",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"NA\"]",
+              "title": "PULSAR Combined With Immunotherapy for Unresectable Locally Advanced Gastric Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT07607119"
+            },
+            {
+              "nct_id": "NCT07749326",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"NA\"]",
+              "title": "Malignant Gastric Outlet Obstruction Study With Stomach Partitioning (GO-PART)",
+              "url": "https://clinicaltrials.gov/study/NCT07749326"
+            }
+          ],
+          "phase": "NA",
+          "phase_label": "Not Applicable",
+          "trial_count": 14
+        },
+        {
+          "supporting_nct_ids": [
+            "NCT06902545",
+            "NCT06767436",
+            "NCT04665687",
+            "NCT05205343",
+            "NCT06767449",
+            "NCT07035587",
+            "NCT06075199"
+          ],
+          "citation_count": 7,
+          "citations": [
+            {
+              "nct_id": "NCT06902545",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "(field not present in record)",
+              "title": "A Study to Observe the Safety of VYLOY (Zolbetuximab) in People in South Korea With Gastric or Gastroesophageal Junction Cancer.",
+              "url": "https://clinicaltrials.gov/study/NCT06902545"
+            },
+            {
+              "nct_id": "NCT06767436",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "(field not present in record)",
+              "title": "A Multi-center Real-world Efficacy and Safety of Trastuzumab-deruxtecan in Advanced Gastric Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT06767436"
+            },
+            {
+              "nct_id": "NCT04665687",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "(field not present in record)",
+              "title": "Clinical Application of Genetic Sequencing of Early Gastric Cancer and Gastric Adenoma Patients",
+              "url": "https://clinicaltrials.gov/study/NCT04665687"
+            }
+          ],
+          "phase": "MISSING",
+          "phase_label": "Not specified",
+          "trial_count": 7
+        }
+      ]
+    },
+    "meta": {
+      "interpretation": "Counted recruiting gastric cancer trials in South Korea in the registry, grouped by trial phase.",
+      "queries": [
+        {
+          "filters": {
+            "condition": "gastric cancer",
+            "location": "South Korea",
+            "phases": [],
+            "statuses": [
+              "RECRUITING"
+            ]
+          },
+          "api_params": {
+            "query.cond": "gastric cancer",
+            "query.locn": "South Korea",
+            "filter.overallStatus": "RECRUITING"
+          },
+          "total_matching": 74,
+          "records_analyzed": 74,
+          "truncated": false
+        }
+      ],
+      "coverage": {
+        "groupby_semantics": "partition",
+        "bucket_sum": 74,
+        "unclassified_count": 0,
+        "excluded": [],
+        "buckets_not_shown": 0
+      },
+      "render": {
+        "sort": {
+          "field": "phase",
+          "order": "ascending"
+        },
+        "units": {
+          "y": "trials"
+        }
+      },
+      "visualization_rationale": {
+        "chosen": "bar_chart",
+        "source": "llm",
+        "reason": "A bar chart effectively shows the distribution of recruiting gastric cancer trials across different phases in South Korea."
+      },
+      "assumptions": [
+        "Trials registered with two phases (e.g. Phase 1/Phase 2) are counted once, in a combined bucket. 'Not Applicable' (an explicit NA, typical of non-drug studies) and 'Not specified' (no phase recorded) are kept separate."
+      ],
+      "notes": [],
+      "plan": {
+        "supported": true,
+        "analysis": "distribution",
+        "group_by": "phase",
+        "metric": "trial_count",
+        "filters": {
+          "condition": "gastric cancer",
+          "location": "South Korea",
+          "phases": [],
+          "statuses": [
+            "RECRUITING"
+          ]
+        },
+        "compare": [],
+        "top_n": 15,
+        "chart_type_suggestion": "bar_chart",
+        "chart_rationale": "A bar chart effectively shows the distribution of recruiting gastric cancer trials across different phases in South Korea."
+      },
+      "source": "ClinicalTrials.gov API v2",
+      "data_as_of": "2026-09-25T09:00:04",
+      "generated_at": "2026-09-27T00:30:29.058666Z"
+    }
+  }
+}

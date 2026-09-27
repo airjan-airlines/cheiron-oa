@@ -1,0 +1,29 @@
+{
+  "request": {
+    "query": "What's the weather in Seoul tomorrow?"
+  },
+  "http_status": 200,
+  "response": {
+    "schema_version": "1.0",
+    "status": "unsupported",
+    "meta": {
+      "interpretation": "The question is about weather, which is not related to clinical trials data.",
+      "queries": [],
+      "assumptions": [],
+      "notes": [],
+      "plan": {
+        "supported": false,
+        "unsupported_reason": "The question is about weather, which is not related to clinical trials data.",
+        "metric": "trial_count",
+        "filters": {
+          "phases": [],
+          "statuses": []
+        },
+        "compare": [],
+        "top_n": 15
+      },
+      "source": "ClinicalTrials.gov API v2",
+      "generated_at": "2026-09-27T00:30:35.140088Z"
+    }
+  }
+}

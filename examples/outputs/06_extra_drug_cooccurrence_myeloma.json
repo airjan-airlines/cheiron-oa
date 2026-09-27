@@ -1,0 +1,3724 @@
+{
+  "request": {
+    "query": "Which drugs frequently co-occur in combination studies for multiple myeloma trials started since 2022?"
+  },
+  "http_status": 200,
+  "response": {
+    "schema_version": "1.0",
+    "status": "ok",
+    "visualization": {
+      "type": "network_graph",
+      "title": "Intervention co-occurrence network: multiple myeloma trials starting 2022 or later",
+      "encoding": {
+        "node": {
+          "id": "id",
+          "label": "label",
+          "size": "size",
+          "color": "type"
+        },
+        "edge": {
+          "source": "source",
+          "target": "target",
+          "weight": "weight"
+        }
+      },
+      "data": {
+        "nodes": [
+          {
+            "supporting_nct_ids": [
+              "NCT06163898",
+              "NCT05289492",
+              "NCT05789303",
+              "NCT06182774",
+              "NCT07605416",
+              "NCT07297329",
+              "NCT06742138",
+              "NCT06892522",
+              "NCT06413498",
+              "NCT07222761",
+              "NCT06351644",
+              "NCT07227311",
+              "NCT07285239",
+              "NCT06956170",
+              "NCT06083922",
+              "NCT05372354",
+              "NCT06106945",
+              "NCT07637526",
+              "NCT05455320",
+              "NCT07082270",
+              "NCT05922501",
+              "NCT05519085",
+              "NCT05028348",
+              "NCT05183139",
+              "NCT05573802",
+              "NCT06163040",
+              "NCT05669989",
+              "NCT05583617",
+              "NCT07649525",
+              "NCT04756401",
+              "NCT05896228",
+              "NCT05272826",
+              "NCT07555938",
+              "NCT05199311",
+              "NCT05147493",
+              "NCT06988488",
+              "NCT06505369",
+              "NCT06140966",
+              "NCT05981209",
+              "NCT05647512",
+              "NCT06615479",
+              "NCT06169215",
+              "NCT07334535",
+              "NCT07579234",
+              "NCT06356571",
+              "NCT04912427",
+              "NCT07728188",
+              "NCT06561854",
+              "NCT06762769",
+              "NCT05581875",
+              "NCT07284758",
+              "NCT07463807",
+              "NCT05730036",
+              "NCT05434689",
+              "NCT05560399",
+              "NCT07413809",
+              "NCT05561387",
+              "NCT07479979",
+              "NCT07569757",
+              "NCT06953960",
+              "NCT06348147",
+              "NCT05688475",
+              "NCT07101445",
+              "NCT05259839",
+              "NCT05123131",
+              "NCT05719701",
+              "NCT05714839",
+              "NCT06679101",
+              "NCT06121843",
+              "NCT04975997",
+              "NCT07015021",
+              "NCT05641324",
+              "NCT06232044",
+              "NCT05469893",
+              "NCT04700176",
+              "NCT07452198",
+              "NCT07665450",
+              "NCT05695508",
+              "NCT06577025",
+              "NCT05257083",
+              "NCT07614360",
+              "NCT07150091",
+              "NCT05552976",
+              "NCT05552222",
+              "NCT06232707",
+              "NCT05690984",
+              "NCT06189833",
+              "NCT04835129",
+              "NCT05308654",
+              "NCT05288062",
+              "NCT06208150",
+              "NCT05208307",
+              "NCT07811986",
+              "NCT07663253",
+              "NCT04933539",
+              "NCT06918002",
+              "NCT07428369",
+              "NCT06187441",
+              "NCT06433947",
+              "NCT06622005",
+              "NCT07095452",
+              "NCT07150104",
+              "NCT05497804",
+              "NCT06785415",
+              "NCT07742215",
+              "NCT05493618",
+              "NCT05972135",
+              "NCT05909826",
+              "NCT05572515",
+              "NCT05558319",
+              "NCT07748689",
+              "NCT07096778",
+              "NCT07609706",
+              "NCT07032714",
+              "NCT05665140",
+              "NCT05422027",
+              "NCT05432414",
+              "NCT05804032",
+              "NCT07018050",
+              "NCT04895410",
+              "NCT05527340",
+              "NCT07138209",
+              "NCT07764861",
+              "NCT06924424",
+              "NCT06932562",
+              "NCT06793475",
+              "NCT06627751",
+              "NCT05405166",
+              "NCT06997081",
+              "NCT07085728",
+              "NCT06409702",
+              "NCT07709884",
+              "NCT05392946",
+              "NCT06879379",
+              "NCT05298683",
+              "NCT06518551",
+              "NCT05623020",
+              "NCT07341867",
+              "NCT05280275",
+              "NCT05145400",
+              "NCT05900882",
+              "NCT03759093",
+              "NCT05478993",
+              "NCT05514990",
+              "NCT05820763",
+              "NCT05704049",
+              "NCT06216158",
+              "NCT06464991",
+              "NCT06050512",
+              "NCT07025005",
+              "NCT05050305",
+              "NCT07624513",
+              "NCT06353022",
+              "NCT07600151",
+              "NCT05027594",
+              "NCT06348108",
+              "NCT06158841",
+              "NCT06948084",
+              "NCT07391657",
+              "NCT06508983",
+              "NCT06042725",
+              "NCT07247097",
+              "NCT06203912",
+              "NCT04941937",
+              "NCT05530421",
+              "NCT07764978",
+              "NCT05495620",
+              "NCT07210047",
+              "NCT05911321",
+              "NCT05438043",
+              "NCT07825064",
+              "NCT05170789",
+              "NCT06142396",
+              "NCT06682637",
+              "NCT06645678",
+              "NCT06152575"
+            ],
+            "citation_count": 176,
+            "citations": [
+              {
+                "nct_id": "NCT06163898",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Dexamethasone",
+                "title": "A Study to Evaluate Alnuctamab in Combination With Mezigdomide in Participants With Relapsed and/or Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06163898"
+              },
+              {
+                "nct_id": "NCT05289492",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Dexamethasone",
+                "title": "Study of Novel Regimens in Relapsed or Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05289492"
+              },
+              {
+                "nct_id": "NCT05789303",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Dexamethasone",
+                "title": "Study of Belantamab Mafodotin With Carfilzomib, Pomalidomide, and Dexamethasone in Relapsed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05789303"
+              }
+            ],
+            "id": "intervention:dexamethasone",
+            "label": "Dexamethasone",
+            "type": "intervention",
+            "size": 176
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06182774",
+              "NCT05776979",
+              "NCT07605416",
+              "NCT07297329",
+              "NCT06892522",
+              "NCT07285239",
+              "NCT06461988",
+              "NCT05849610",
+              "NCT05183139",
+              "NCT05573802",
+              "NCT06163040",
+              "NCT05669989",
+              "NCT05583617",
+              "NCT07649525",
+              "NCT07828522",
+              "NCT05147493",
+              "NCT05243797",
+              "NCT06505369",
+              "NCT06140966",
+              "NCT07735637",
+              "NCT05827016",
+              "NCT06169215",
+              "NCT07334535",
+              "NCT05722405",
+              "NCT05561387",
+              "NCT06768489",
+              "NCT07830485",
+              "NCT06348147",
+              "NCT05259839",
+              "NCT05123131",
+              "NCT06679101",
+              "NCT06910124",
+              "NCT05641324",
+              "NCT05469893",
+              "NCT07665450",
+              "NCT05695508",
+              "NCT06577025",
+              "NCT05257083",
+              "NCT07150091",
+              "NCT05552222",
+              "NCT05690984",
+              "NCT06189833",
+              "NCT05308654",
+              "NCT06697483",
+              "NCT05288062",
+              "NCT07652905",
+              "NCT04876248",
+              "NCT07663253",
+              "NCT06918002",
+              "NCT07428369",
+              "NCT06187441",
+              "NCT05572229",
+              "NCT07095452",
+              "NCT05497804",
+              "NCT05137054",
+              "NCT05558319",
+              "NCT07485647",
+              "NCT05665140",
+              "NCT07740486",
+              "NCT05422027",
+              "NCT05032820",
+              "NCT03941860",
+              "NCT05804032",
+              "NCT07018050",
+              "NCT05344833",
+              "NCT07764861",
+              "NCT06932562",
+              "NCT06087653",
+              "NCT06997081",
+              "NCT06409702",
+              "NCT05802992",
+              "NCT06207799",
+              "NCT07709884",
+              "NCT06974786",
+              "NCT06744894",
+              "NCT05623020",
+              "NCT07341867",
+              "NCT05280275",
+              "NCT06931704",
+              "NCT06324266",
+              "NCT05145400",
+              "NCT05900882",
+              "NCT03759093",
+              "NCT05317416",
+              "NCT05820763",
+              "NCT05091372",
+              "NCT07045909",
+              "NCT07025005",
+              "NCT06353022",
+              "NCT07600151",
+              "NCT06042725",
+              "NCT07247097",
+              "NCT05846880",
+              "NCT04941937",
+              "NCT07764978",
+              "NCT05495620",
+              "NCT07210047",
+              "NCT07671287",
+              "NCT05438043",
+              "NCT06045806",
+              "NCT05556616",
+              "NCT06209606"
+            ],
+            "citation_count": 102,
+            "citations": [
+              {
+                "nct_id": "NCT06182774",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Lenalidomide",
+                "title": "Fixed Duration vs Continuous Anti-CD38 Antibody Therapy Among Transplant Ineligible Older Adults With Newly-Diagnosed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06182774"
+              },
+              {
+                "nct_id": "NCT05776979",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "lenalidomide",
+                "title": "Post-Transplant Maintenance Therapy With Isatuximab Plus Lenalidomide for High-Risk Multiple Myeloma Patients",
+                "url": "https://clinicaltrials.gov/study/NCT05776979"
+              },
+              {
+                "nct_id": "NCT07605416",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Lenalidomide",
+                "title": "Testing an Experimental Approach to Treat Patients With Plasma Cell Leukemia, The QUANTUM Trial",
+                "url": "https://clinicaltrials.gov/study/NCT07605416"
+              }
+            ],
+            "id": "intervention:lenalidomide",
+            "label": "Lenalidomide",
+            "type": "intervention",
+            "size": 102
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07107529",
+              "NCT06182774",
+              "NCT07605416",
+              "NCT06892522",
+              "NCT06413498",
+              "NCT07222761",
+              "NCT06107738",
+              "NCT06483139",
+              "NCT06083922",
+              "NCT07681596",
+              "NCT06398457",
+              "NCT05455320",
+              "NCT07082270",
+              "NCT06119685",
+              "NCT05849610",
+              "NCT07649525",
+              "NCT04756401",
+              "NCT05896228",
+              "NCT05363111",
+              "NCT07555938",
+              "NCT07623798",
+              "NCT06505369",
+              "NCT06140966",
+              "NCT05561049",
+              "NCT06615479",
+              "NCT06169215",
+              "NCT07728188",
+              "NCT05581875",
+              "NCT05434689",
+              "NCT05511428",
+              "NCT05561387",
+              "NCT06768489",
+              "NCT06953960",
+              "NCT07830485",
+              "NCT06348147",
+              "NCT05259839",
+              "NCT06679101",
+              "NCT06827860",
+              "NCT04975997",
+              "NCT07015021",
+              "NCT05243342",
+              "NCT05641324",
+              "NCT04700176",
+              "NCT07452198",
+              "NCT07665450",
+              "NCT05695508",
+              "NCT06577025",
+              "NCT06549634",
+              "NCT05257083",
+              "NCT05552222",
+              "NCT06232707",
+              "NCT06189833",
+              "NCT07029776",
+              "NCT05308654",
+              "NCT06697483",
+              "NCT05675319",
+              "NCT05835726",
+              "NCT04933539",
+              "NCT06918002",
+              "NCT07428369",
+              "NCT06187441",
+              "NCT05572229",
+              "NCT06622005",
+              "NCT07095452",
+              "NCT05497804",
+              "NCT06785415",
+              "NCT07742215",
+              "NCT05137054",
+              "NCT07485647",
+              "NCT07740486",
+              "NCT07018050",
+              "NCT04895410",
+              "NCT05284591",
+              "NCT05527340",
+              "NCT07764861",
+              "NCT06932562",
+              "NCT06055075",
+              "NCT07393282",
+              "NCT06409702",
+              "NCT05392946",
+              "NCT06974786",
+              "NCT05623020",
+              "NCT07341867",
+              "NCT05280275",
+              "NCT06931704",
+              "NCT05408026",
+              "NCT06464991",
+              "NCT07045909",
+              "NCT06353022",
+              "NCT06948084",
+              "NCT07391657",
+              "NCT06042725",
+              "NCT07247097",
+              "NCT07764978",
+              "NCT07671287",
+              "NCT05438043",
+              "NCT05556616",
+              "NCT07221032",
+              "NCT05590377"
+            ],
+            "citation_count": 99,
+            "citations": [
+              {
+                "nct_id": "NCT07107529",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Daratumumab",
+                "title": "Study for Frail Patients With Newly Diagnosed Multiple Myeloma Treated With Daratumumab With Teclistamab or Talquetamab.",
+                "url": "https://clinicaltrials.gov/study/NCT07107529"
+              },
+              {
+                "nct_id": "NCT06182774",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Daratumumab",
+                "title": "Fixed Duration vs Continuous Anti-CD38 Antibody Therapy Among Transplant Ineligible Older Adults With Newly-Diagnosed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06182774"
+              },
+              {
+                "nct_id": "NCT07605416",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Daratumumab and Recombinant Human Hyaluronidase",
+                "title": "Testing an Experimental Approach to Treat Patients With Plasma Cell Leukemia, The QUANTUM Trial",
+                "url": "https://clinicaltrials.gov/study/NCT07605416"
+              }
+            ],
+            "id": "intervention:daratumumab",
+            "label": "Daratumumab",
+            "type": "intervention",
+            "size": 99
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07720843",
+              "NCT05789303",
+              "NCT06742138",
+              "NCT06413498",
+              "NCT07222761",
+              "NCT07227311",
+              "NCT06956170",
+              "NCT06106945",
+              "NCT07637526",
+              "NCT05455320",
+              "NCT05922501",
+              "NCT05519085",
+              "NCT05028348",
+              "NCT05183139",
+              "NCT06163040",
+              "NCT05669989",
+              "NCT05378971",
+              "NCT07555938",
+              "NCT05651932",
+              "NCT07623798",
+              "NCT06615479",
+              "NCT07579234",
+              "NCT07728188",
+              "NCT05581875",
+              "NCT07463807",
+              "NCT05730036",
+              "NCT06768489",
+              "NCT07569757",
+              "NCT06953960",
+              "NCT05259839",
+              "NCT05714839",
+              "NCT07015021",
+              "NCT06255847",
+              "NCT04700176",
+              "NCT05555329",
+              "NCT07452198",
+              "NCT06232707",
+              "NCT04835129",
+              "NCT05675319",
+              "NCT05288062",
+              "NCT06208150",
+              "NCT05208307",
+              "NCT07831122",
+              "NCT07150104",
+              "NCT07742215",
+              "NCT05137054",
+              "NCT05572515",
+              "NCT07748689",
+              "NCT07096778",
+              "NCT04850599",
+              "NCT05432414",
+              "NCT07018050",
+              "NCT04895410",
+              "NCT07138209",
+              "NCT06924424",
+              "NCT05405166",
+              "NCT06879379",
+              "NCT05298683",
+              "NCT05478993",
+              "NCT05408026",
+              "NCT06464991",
+              "NCT05050305",
+              "NCT06158841",
+              "NCT06948084",
+              "NCT05556798",
+              "NCT07391657",
+              "NCT06508983",
+              "NCT04941937",
+              "NCT05911321",
+              "NCT05438043",
+              "NCT07825064",
+              "NCT05556616",
+              "NCT07757412",
+              "NCT06152575"
+            ],
+            "citation_count": 74,
+            "citations": [
+              {
+                "nct_id": "NCT07720843",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Pomalidomide",
+                "title": "TAlquetamab and BeLantamab Mafodotin in Relapsed/Refractory Multiple Myeloma (TaBleMM)",
+                "url": "https://clinicaltrials.gov/study/NCT07720843"
+              },
+              {
+                "nct_id": "NCT05789303",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Pomalidomide",
+                "title": "Study of Belantamab Mafodotin With Carfilzomib, Pomalidomide, and Dexamethasone in Relapsed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05789303"
+              },
+              {
+                "nct_id": "NCT06742138",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Pomalidomide",
+                "title": "To Evaluate the Efficacy and Safety of QL2109 and DARZALEX FASPRO® in Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06742138"
+              }
+            ],
+            "id": "intervention:pomalidomide",
+            "label": "Pomalidomide",
+            "type": "intervention",
+            "size": 74
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07297329",
+              "NCT06413498",
+              "NCT07222761",
+              "NCT07227311",
+              "NCT07285239",
+              "NCT06956170",
+              "NCT06083922",
+              "NCT07637526",
+              "NCT05519085",
+              "NCT05849610",
+              "NCT05272826",
+              "NCT07623798",
+              "NCT05147493",
+              "NCT06505369",
+              "NCT06140966",
+              "NCT05561049",
+              "NCT06169215",
+              "NCT07334535",
+              "NCT07579234",
+              "NCT04912427",
+              "NCT06284395",
+              "NCT05561387",
+              "NCT06348147",
+              "NCT05123131",
+              "NCT04975997",
+              "NCT07665450",
+              "NCT05695508",
+              "NCT06577025",
+              "NCT05257083",
+              "NCT07614360",
+              "NCT06189833",
+              "NCT06203145",
+              "NCT07652905",
+              "NCT06208150",
+              "NCT07663253",
+              "NCT06918002",
+              "NCT07428369",
+              "NCT05137054",
+              "NCT05572515",
+              "NCT05558319",
+              "NCT07609706",
+              "NCT05665140",
+              "NCT05422027",
+              "NCT05432414",
+              "NCT05804032",
+              "NCT07018050",
+              "NCT07085728",
+              "NCT05392946",
+              "NCT05623020",
+              "NCT07341867",
+              "NCT05900882",
+              "NCT03759093",
+              "NCT05514990",
+              "NCT06464991",
+              "NCT07601100",
+              "NCT07045909",
+              "NCT07025005",
+              "NCT07624513",
+              "NCT06353022",
+              "NCT07600151",
+              "NCT06158841",
+              "NCT07391657",
+              "NCT07247097",
+              "NCT07764978",
+              "NCT07671287",
+              "NCT06142396",
+              "NCT05556616",
+              "NCT06152575"
+            ],
+            "citation_count": 68,
+            "citations": [
+              {
+                "nct_id": "NCT07297329",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Bortezomib",
+                "title": "A Study to Evaluate the Safety and Efficacy of SCTC21C in Combination With Bortezomib, Lenalidomide and Dexamethasone in Patients With Newly Diagnosed Multiple Myeloma Not Eligible for Transplant",
+                "url": "https://clinicaltrials.gov/study/NCT07297329"
+              },
+              {
+                "nct_id": "NCT06413498",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Bortezomib",
+                "title": "A Study Comparing Anitocabtagene Autoleucel to Standard of Care Therapy in Participants With Relapsed/ Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06413498"
+              },
+              {
+                "nct_id": "NCT07222761",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Bortezomib",
+                "title": "A Study to Compare Linvoseltamab Monotherapy and Linvoseltamab + Carfilzomib Combination Therapy With Standard-of-Care Combination Regimens in Adult Participants With Relapsed/Refractory Multiple Myeloma (RRMM)",
+                "url": "https://clinicaltrials.gov/study/NCT07222761"
+              }
+            ],
+            "id": "intervention:bortezomib",
+            "label": "Bortezomib",
+            "type": "intervention",
+            "size": 68
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05789303",
+              "NCT07605416",
+              "NCT06892522",
+              "NCT06413498",
+              "NCT07222761",
+              "NCT07227311",
+              "NCT07082270",
+              "NCT05675449",
+              "NCT05669989",
+              "NCT04756401",
+              "NCT05896228",
+              "NCT07555938",
+              "NCT05651932",
+              "NCT05199311",
+              "NCT06140966",
+              "NCT06682156",
+              "NCT06615479",
+              "NCT06356571",
+              "NCT07728188",
+              "NCT07463807",
+              "NCT05434689",
+              "NCT07479979",
+              "NCT05552976",
+              "NCT06232707",
+              "NCT05675319",
+              "NCT04933539",
+              "NCT06622005",
+              "NCT05497804",
+              "NCT05137054",
+              "NCT05909826",
+              "NCT05572515",
+              "NCT04850599",
+              "NCT04895410",
+              "NCT06055075",
+              "NCT06793475",
+              "NCT06627751",
+              "NCT06409702",
+              "NCT07709884",
+              "NCT06879379",
+              "NCT05620238",
+              "NCT05704049",
+              "NCT06158841",
+              "NCT06948084",
+              "NCT07391657",
+              "NCT05495620",
+              "NCT05438043",
+              "NCT05556616",
+              "NCT06152575"
+            ],
+            "citation_count": 48,
+            "citations": [
+              {
+                "nct_id": "NCT05789303",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Carfilzomib",
+                "title": "Study of Belantamab Mafodotin With Carfilzomib, Pomalidomide, and Dexamethasone in Relapsed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05789303"
+              },
+              {
+                "nct_id": "NCT07605416",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Carfilzomib",
+                "title": "Testing an Experimental Approach to Treat Patients With Plasma Cell Leukemia, The QUANTUM Trial",
+                "url": "https://clinicaltrials.gov/study/NCT07605416"
+              },
+              {
+                "nct_id": "NCT06892522",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Carfilzomib",
+                "title": "A Study to Assess Change in Disease Activity and Adverse Events (AE)s in Adult Participants With Multiple Myeloma Receiving T Cell Engaging Bi/Tri-specific Antibodies Intravenously (IV)/Subcutaneously (SC) Alone or in Combinations",
+                "url": "https://clinicaltrials.gov/study/NCT06892522"
+              }
+            ],
+            "id": "intervention:carfilzomib",
+            "label": "Carfilzomib",
+            "type": "intervention",
+            "size": 48
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05347485",
+              "NCT06413498",
+              "NCT05092451",
+              "NCT06083922",
+              "NCT05909059",
+              "NCT05998928",
+              "NCT06119685",
+              "NCT06153251",
+              "NCT05147493",
+              "NCT06140966",
+              "NCT07735637",
+              "NCT06615479",
+              "NCT05005299",
+              "NCT05294055",
+              "NCT07149857",
+              "NCT05442580",
+              "NCT05950113",
+              "NCT06623630",
+              "NCT06520176",
+              "NCT04579523",
+              "NCT05767359",
+              "NCT06577025",
+              "NCT05257083",
+              "NCT06940297",
+              "NCT05517213",
+              "NCT07454382",
+              "NCT05909826",
+              "NCT06904066",
+              "NCT05032820",
+              "NCT06066359",
+              "NCT07340853",
+              "NCT07085728",
+              "NCT07341867",
+              "NCT06324266",
+              "NCT03759093",
+              "NCT07045909",
+              "NCT05400122",
+              "NCT05411497",
+              "NCT06203912",
+              "NCT07764978",
+              "NCT06045806",
+              "NCT06142396",
+              "NCT05805605",
+              "NCT06698744"
+            ],
+            "citation_count": 44,
+            "citations": [
+              {
+                "nct_id": "NCT05347485",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Lymphodepleting Therapy (Cyclophosphamide and Fludarabine)",
+                "title": "A Study of JNJ-68284528 Out-of-Specification (OOS) for Commercial Release in Participants With Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05347485"
+              },
+              {
+                "nct_id": "NCT06413498",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Cyclophosphamide",
+                "title": "A Study Comparing Anitocabtagene Autoleucel to Standard of Care Therapy in Participants With Relapsed/ Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06413498"
+              },
+              {
+                "nct_id": "NCT05092451",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Cyclophosphamide",
+                "title": "Phase I/II Study of CAR.70- Engineered IL15-transduced Cord Blood-derived NK Cells in Conjunction With Lymphodepleting Chemotherapy for the Management of Relapse/Refractory Hematological Malignances",
+                "url": "https://clinicaltrials.gov/study/NCT05092451"
+              }
+            ],
+            "id": "intervention:cyclophosphamide",
+            "label": "Cyclophosphamide",
+            "type": "intervention",
+            "size": 44
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06517017",
+              "NCT06182774",
+              "NCT05776979",
+              "NCT06119685",
+              "NCT05922501",
+              "NCT07732712",
+              "NCT05669989",
+              "NCT07828522",
+              "NCT05346809",
+              "NCT05272826",
+              "NCT05147493",
+              "NCT07334535",
+              "NCT06356571",
+              "NCT04912427",
+              "NCT06762769",
+              "NCT07479979",
+              "NCT05123131",
+              "NCT06832865",
+              "NCT05690984",
+              "NCT04835129",
+              "NCT05675319",
+              "NCT07652905",
+              "NCT07663253",
+              "NCT05137054",
+              "NCT05558319",
+              "NCT04850599",
+              "NCT05665140",
+              "NCT07585760",
+              "NCT05804032",
+              "NCT05344833",
+              "NCT05405166",
+              "NCT05298683",
+              "NCT05145400",
+              "NCT05704049",
+              "NCT06216158",
+              "NCT07601100",
+              "NCT07045909",
+              "NCT07624513",
+              "NCT07600151",
+              "NCT06203912",
+              "NCT07764978",
+              "NCT05911321"
+            ],
+            "citation_count": 42,
+            "citations": [
+              {
+                "nct_id": "NCT06517017",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Isatuximab",
+                "title": "Use of Isatuximab, Dexamethasone and Lenalidomide in a Go-Slow Fashion for Ultra-Frail Patients With Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06517017"
+              },
+              {
+                "nct_id": "NCT06182774",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Isatuximab",
+                "title": "Fixed Duration vs Continuous Anti-CD38 Antibody Therapy Among Transplant Ineligible Older Adults With Newly-Diagnosed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06182774"
+              },
+              {
+                "nct_id": "NCT05776979",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Isatuximab",
+                "title": "Post-Transplant Maintenance Therapy With Isatuximab Plus Lenalidomide for High-Risk Multiple Myeloma Patients",
+                "url": "https://clinicaltrials.gov/study/NCT05776979"
+              }
+            ],
+            "id": "intervention:isatuximab",
+            "label": "Isatuximab",
+            "type": "intervention",
+            "size": 42
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07107529",
+              "NCT07605416",
+              "NCT06855121",
+              "NCT05849610",
+              "NCT06425991",
+              "NCT07649525",
+              "NCT06100237",
+              "NCT05243797",
+              "NCT06505369",
+              "NCT07581704",
+              "NCT07728188",
+              "NCT07463807",
+              "NCT07105059",
+              "NCT05469893",
+              "NCT06577025",
+              "NCT05552222",
+              "NCT06208150",
+              "NCT06171685",
+              "NCT05572229",
+              "NCT05972135",
+              "NCT05572515",
+              "NCT07258511",
+              "NCT07030517",
+              "NCT07740486",
+              "NCT06588660",
+              "NCT07657312",
+              "NCT06477783",
+              "NCT06993675",
+              "NCT06251076",
+              "NCT06353022",
+              "NCT06948084",
+              "NCT06880601",
+              "NCT07518186",
+              "NCT07638683",
+              "NCT07671287",
+              "NCT06465316",
+              "NCT05338775"
+            ],
+            "citation_count": 37,
+            "citations": [
+              {
+                "nct_id": "NCT07107529",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Teclistamab",
+                "title": "Study for Frail Patients With Newly Diagnosed Multiple Myeloma Treated With Daratumumab With Teclistamab or Talquetamab.",
+                "url": "https://clinicaltrials.gov/study/NCT07107529"
+              },
+              {
+                "nct_id": "NCT07605416",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Teclistamab",
+                "title": "Testing an Experimental Approach to Treat Patients With Plasma Cell Leukemia, The QUANTUM Trial",
+                "url": "https://clinicaltrials.gov/study/NCT07605416"
+              },
+              {
+                "nct_id": "NCT06855121",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Teclistamab",
+                "title": "The Norwegian Immunotherapy in Multiple Myeloma Study",
+                "url": "https://clinicaltrials.gov/study/NCT06855121"
+              }
+            ],
+            "id": "intervention:teclistamab",
+            "label": "Teclistamab",
+            "type": "intervention",
+            "size": 37
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06799026",
+              "NCT06855121",
+              "NCT06015542",
+              "NCT06106945",
+              "NCT07320326",
+              "NCT06183489",
+              "NCT05675449",
+              "NCT06581848",
+              "NCT06988488",
+              "NCT07637578",
+              "NCT06215118",
+              "NCT05927571",
+              "NCT07280013",
+              "NCT06832865",
+              "NCT06121843",
+              "NCT06592222",
+              "NCT07382739",
+              "NCT06918002",
+              "NCT06504524",
+              "NCT05932290",
+              "NCT05565391",
+              "NCT06997081",
+              "NCT06207799",
+              "NCT06974786",
+              "NCT05623020",
+              "NCT06931704",
+              "NCT05317416",
+              "NCT06138275",
+              "NCT06947083",
+              "NCT06057402",
+              "NCT06711705",
+              "NCT06645678",
+              "NCT06152575"
+            ],
+            "citation_count": 33,
+            "citations": [
+              {
+                "nct_id": "NCT06799026",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Elranatamab",
+                "title": "A Phase 1 Study of Vaccination With Dendritic Cell (DC)/Multiple Myeloma (MM) Fusions in Combination With Elranatamab in Relapsed or Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06799026"
+              },
+              {
+                "nct_id": "NCT06855121",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Elranatamab",
+                "title": "The Norwegian Immunotherapy in Multiple Myeloma Study",
+                "url": "https://clinicaltrials.gov/study/NCT06855121"
+              },
+              {
+                "nct_id": "NCT06015542",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Elranatamab",
+                "title": "Self-administration of Subcutaneous Elranatamab in the Patients' Homes.",
+                "url": "https://clinicaltrials.gov/study/NCT06015542"
+              }
+            ],
+            "id": "intervention:elranatamab",
+            "label": "Elranatamab",
+            "type": "intervention",
+            "size": 33
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07720843",
+              "NCT05789303",
+              "NCT07227311",
+              "NCT07285239",
+              "NCT06956170",
+              "NCT05833737",
+              "NCT07637526",
+              "NCT05922501",
+              "NCT05117008",
+              "NCT05064358",
+              "NCT05002816",
+              "NCT05461209",
+              "NCT05714839",
+              "NCT06679101",
+              "NCT05297240",
+              "NCT06232044",
+              "NCT07614360",
+              "NCT07150091",
+              "NCT05847569",
+              "NCT04876248",
+              "NCT05208307",
+              "NCT07150104",
+              "NCT05493618",
+              "NCT07748689",
+              "NCT07609706",
+              "NCT05393024",
+              "NCT05874193",
+              "NCT05055063",
+              "NCT05853965",
+              "NCT05065047",
+              "NCT05091372",
+              "NCT05556798"
+            ],
+            "citation_count": 32,
+            "citations": [
+              {
+                "nct_id": "NCT07720843",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Belantamab mafodotin",
+                "title": "TAlquetamab and BeLantamab Mafodotin in Relapsed/Refractory Multiple Myeloma (TaBleMM)",
+                "url": "https://clinicaltrials.gov/study/NCT07720843"
+              },
+              {
+                "nct_id": "NCT05789303",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Belantamab mafodotin",
+                "title": "Study of Belantamab Mafodotin With Carfilzomib, Pomalidomide, and Dexamethasone in Relapsed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05789303"
+              },
+              {
+                "nct_id": "NCT07227311",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Belantamab mafodotin",
+                "title": "A Study to Evaluate the Efficacy and Safety of Belantamab Mafodotin in Combination With Standard of Care in Participants With Relapsed-Refractory Multiple Myeloma (RRMM)",
+                "url": "https://clinicaltrials.gov/study/NCT07227311"
+              }
+            ],
+            "id": "intervention:belantamab mafodotin",
+            "label": "Belantamab mafodotin",
+            "type": "intervention",
+            "size": 32
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05289492",
+              "NCT06892522",
+              "NCT06107738",
+              "NCT05354557",
+              "NCT05177536",
+              "NCT05583617",
+              "NCT05896228",
+              "NCT05272826",
+              "NCT05199311",
+              "NCT05827016",
+              "NCT06762769",
+              "NCT06179888",
+              "NCT05434689",
+              "NCT05560399",
+              "NCT06215118",
+              "NCT06121843",
+              "NCT04975997",
+              "NCT06232044",
+              "NCT06896916",
+              "NCT06785415",
+              "NCT05558319",
+              "NCT05527340",
+              "NCT05392946",
+              "NCT06518551",
+              "NCT06216158",
+              "NCT07601100",
+              "NCT07624513",
+              "NCT06348108",
+              "NCT06465316",
+              "NCT07727668"
+            ],
+            "citation_count": 30,
+            "citations": [
+              {
+                "nct_id": "NCT05289492",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Iberdomide",
+                "title": "Study of Novel Regimens in Relapsed or Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05289492"
+              },
+              {
+                "nct_id": "NCT06892522",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Iberdomide",
+                "title": "A Study to Assess Change in Disease Activity and Adverse Events (AE)s in Adult Participants With Multiple Myeloma Receiving T Cell Engaging Bi/Tri-specific Antibodies Intravenously (IV)/Subcutaneously (SC) Alone or in Combinations",
+                "url": "https://clinicaltrials.gov/study/NCT06892522"
+              },
+              {
+                "nct_id": "NCT06107738",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Iberdomide",
+                "title": "Iberdomide and Daratumumab as Maintenance Therapy After an Autologous Stem Cell Transplant for Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06107738"
+              }
+            ],
+            "id": "intervention:iberdomide",
+            "label": "Iberdomide",
+            "type": "intervention",
+            "size": 30
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07720843",
+              "NCT07107529",
+              "NCT06855121",
+              "NCT06461988",
+              "NCT05455320",
+              "NCT05849610",
+              "NCT06066346",
+              "NCT06500884",
+              "NCT07649525",
+              "NCT06100237",
+              "NCT06505369",
+              "NCT06572605",
+              "NCT07474961",
+              "NCT06550895",
+              "NCT05461209",
+              "NCT06827860",
+              "NCT05695508",
+              "NCT06577025",
+              "NCT05552222",
+              "NCT06208150",
+              "NCT05972135",
+              "NCT07032714",
+              "NCT07740486",
+              "NCT07657312",
+              "NCT06993675",
+              "NCT07093554",
+              "NCT06353022",
+              "NCT06348108",
+              "NCT05338775"
+            ],
+            "citation_count": 29,
+            "citations": [
+              {
+                "nct_id": "NCT07720843",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Talquetamab",
+                "title": "TAlquetamab and BeLantamab Mafodotin in Relapsed/Refractory Multiple Myeloma (TaBleMM)",
+                "url": "https://clinicaltrials.gov/study/NCT07720843"
+              },
+              {
+                "nct_id": "NCT07107529",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Talquetamab",
+                "title": "Study for Frail Patients With Newly Diagnosed Multiple Myeloma Treated With Daratumumab With Teclistamab or Talquetamab.",
+                "url": "https://clinicaltrials.gov/study/NCT07107529"
+              },
+              {
+                "nct_id": "NCT06855121",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Talquetamab",
+                "title": "The Norwegian Immunotherapy in Multiple Myeloma Study",
+                "url": "https://clinicaltrials.gov/study/NCT06855121"
+              }
+            ],
+            "id": "intervention:talquetamab",
+            "label": "Talquetamab",
+            "type": "intervention",
+            "size": 29
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05347485",
+              "NCT06413498",
+              "NCT05092451",
+              "NCT05909059",
+              "NCT05998928",
+              "NCT06119685",
+              "NCT06153251",
+              "NCT07735637",
+              "NCT06615479",
+              "NCT05005299",
+              "NCT07149857",
+              "NCT05442580",
+              "NCT05950113",
+              "NCT05767359",
+              "NCT06577025",
+              "NCT05257083",
+              "NCT06940297",
+              "NCT05032820",
+              "NCT06066359",
+              "NCT07340853",
+              "NCT07759102",
+              "NCT07045909",
+              "NCT07764978",
+              "NCT06045806",
+              "NCT05805605",
+              "NCT06698744"
+            ],
+            "citation_count": 26,
+            "citations": [
+              {
+                "nct_id": "NCT05347485",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Lymphodepleting Therapy (Cyclophosphamide and Fludarabine)",
+                "title": "A Study of JNJ-68284528 Out-of-Specification (OOS) for Commercial Release in Participants With Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05347485"
+              },
+              {
+                "nct_id": "NCT06413498",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Fludarabine",
+                "title": "A Study Comparing Anitocabtagene Autoleucel to Standard of Care Therapy in Participants With Relapsed/ Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06413498"
+              },
+              {
+                "nct_id": "NCT05092451",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Fludarabine phosphate",
+                "title": "Phase I/II Study of CAR.70- Engineered IL15-transduced Cord Blood-derived NK Cells in Conjunction With Lymphodepleting Chemotherapy for the Management of Relapse/Refractory Hematological Malignances",
+                "url": "https://clinicaltrials.gov/study/NCT05092451"
+              }
+            ],
+            "id": "intervention:fludarabine",
+            "label": "Fludarabine",
+            "type": "intervention",
+            "size": 26
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06822972",
+              "NCT06452446",
+              "NCT05028348",
+              "NCT06225310",
+              "NCT04756401",
+              "NCT07623798",
+              "NCT06169215",
+              "NCT07579234",
+              "NCT07479979",
+              "NCT07569757",
+              "NCT05675319",
+              "NCT05201118",
+              "NCT05954780",
+              "NCT05422027",
+              "NCT07138209",
+              "NCT05597345",
+              "NCT05900882",
+              "NCT05820763",
+              "NCT06158841",
+              "NCT07200102",
+              "NCT04941937",
+              "NCT05530421",
+              "NCT05170789"
+            ],
+            "citation_count": 23,
+            "citations": [
+              {
+                "nct_id": "NCT06822972",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Selinexor 40 mg",
+                "title": "HCMT/MM2401: Ph2 Study of Selinexor + Bispecific Antibody for RRMM",
+                "url": "https://clinicaltrials.gov/study/NCT06822972"
+              },
+              {
+                "nct_id": "NCT06452446",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Selinexor",
+                "title": "Telehealth-based Symptom Management for Veterans Treated With Selinexor",
+                "url": "https://clinicaltrials.gov/study/NCT06452446"
+              },
+              {
+                "nct_id": "NCT05028348",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Selinexor",
+                "title": "A Study of Combination of Selinexor, Pomalidomide, and Dexamethasone (SPd) Versus Elotuzumab, Pomalidomide, and Dexamethasone (EloPd) in Subject With Previously Treated Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05028348"
+              }
+            ],
+            "id": "intervention:selinexor",
+            "label": "Selinexor",
+            "type": "intervention",
+            "size": 23
+          }
+        ],
+        "edges": [
+          {
+            "supporting_nct_ids": [
+              "NCT06182774",
+              "NCT07605416",
+              "NCT07297329",
+              "NCT06892522",
+              "NCT07285239",
+              "NCT05183139",
+              "NCT05573802",
+              "NCT06163040",
+              "NCT05669989",
+              "NCT05583617",
+              "NCT07649525",
+              "NCT05147493",
+              "NCT06505369",
+              "NCT06140966",
+              "NCT06169215",
+              "NCT07334535",
+              "NCT05561387",
+              "NCT06348147",
+              "NCT05259839",
+              "NCT05123131",
+              "NCT06679101",
+              "NCT05641324",
+              "NCT05469893",
+              "NCT07665450",
+              "NCT05695508",
+              "NCT06577025",
+              "NCT05257083",
+              "NCT07150091",
+              "NCT05552222",
+              "NCT05690984",
+              "NCT06189833",
+              "NCT05308654",
+              "NCT05288062",
+              "NCT07663253",
+              "NCT06918002",
+              "NCT07428369",
+              "NCT06187441",
+              "NCT07095452",
+              "NCT05497804",
+              "NCT05558319",
+              "NCT05665140",
+              "NCT05422027",
+              "NCT05804032",
+              "NCT07018050",
+              "NCT07764861",
+              "NCT06932562",
+              "NCT06997081",
+              "NCT06409702",
+              "NCT07709884",
+              "NCT05623020",
+              "NCT07341867",
+              "NCT05280275",
+              "NCT05145400",
+              "NCT05900882",
+              "NCT03759093",
+              "NCT05820763",
+              "NCT07025005",
+              "NCT06353022",
+              "NCT07600151",
+              "NCT06042725",
+              "NCT07247097",
+              "NCT04941937",
+              "NCT07764978",
+              "NCT05495620",
+              "NCT07210047",
+              "NCT05438043"
+            ],
+            "citation_count": 66,
+            "citations": [
+              {
+                "nct_id": "NCT06182774",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Lenalidomide\"",
+                "title": "Fixed Duration vs Continuous Anti-CD38 Antibody Therapy Among Transplant Ineligible Older Adults With Newly-Diagnosed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06182774"
+              },
+              {
+                "nct_id": "NCT07605416",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Lenalidomide\"",
+                "title": "Testing an Experimental Approach to Treat Patients With Plasma Cell Leukemia, The QUANTUM Trial",
+                "url": "https://clinicaltrials.gov/study/NCT07605416"
+              },
+              {
+                "nct_id": "NCT07297329",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Lenalidomide\"",
+                "title": "A Study to Evaluate the Safety and Efficacy of SCTC21C in Combination With Bortezomib, Lenalidomide and Dexamethasone in Patients With Newly Diagnosed Multiple Myeloma Not Eligible for Transplant",
+                "url": "https://clinicaltrials.gov/study/NCT07297329"
+              }
+            ],
+            "source": "intervention:dexamethasone",
+            "target": "intervention:lenalidomide",
+            "weight": 66
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06182774",
+              "NCT07605416",
+              "NCT06892522",
+              "NCT06413498",
+              "NCT07222761",
+              "NCT06083922",
+              "NCT05455320",
+              "NCT07082270",
+              "NCT07649525",
+              "NCT04756401",
+              "NCT05896228",
+              "NCT07555938",
+              "NCT06505369",
+              "NCT06140966",
+              "NCT06615479",
+              "NCT06169215",
+              "NCT07728188",
+              "NCT05581875",
+              "NCT05434689",
+              "NCT05561387",
+              "NCT06953960",
+              "NCT06348147",
+              "NCT05259839",
+              "NCT06679101",
+              "NCT04975997",
+              "NCT07015021",
+              "NCT05641324",
+              "NCT04700176",
+              "NCT07452198",
+              "NCT07665450",
+              "NCT05695508",
+              "NCT06577025",
+              "NCT05257083",
+              "NCT05552222",
+              "NCT06232707",
+              "NCT06189833",
+              "NCT05308654",
+              "NCT04933539",
+              "NCT06918002",
+              "NCT07428369",
+              "NCT06187441",
+              "NCT06622005",
+              "NCT07095452",
+              "NCT05497804",
+              "NCT06785415",
+              "NCT07742215",
+              "NCT07018050",
+              "NCT04895410",
+              "NCT05527340",
+              "NCT07764861",
+              "NCT06932562",
+              "NCT06409702",
+              "NCT05392946",
+              "NCT05623020",
+              "NCT07341867",
+              "NCT05280275",
+              "NCT06464991",
+              "NCT06353022",
+              "NCT06948084",
+              "NCT07391657",
+              "NCT06042725",
+              "NCT07247097",
+              "NCT07764978",
+              "NCT05438043"
+            ],
+            "citation_count": 64,
+            "citations": [
+              {
+                "nct_id": "NCT06182774",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab\" | \"Dexamethasone\"",
+                "title": "Fixed Duration vs Continuous Anti-CD38 Antibody Therapy Among Transplant Ineligible Older Adults With Newly-Diagnosed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06182774"
+              },
+              {
+                "nct_id": "NCT07605416",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab and Recombinant Human Hyaluronidase\" | \"Dexamethasone\"",
+                "title": "Testing an Experimental Approach to Treat Patients With Plasma Cell Leukemia, The QUANTUM Trial",
+                "url": "https://clinicaltrials.gov/study/NCT07605416"
+              },
+              {
+                "nct_id": "NCT06892522",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab\" | \"Dexamethasone\"",
+                "title": "A Study to Assess Change in Disease Activity and Adverse Events (AE)s in Adult Participants With Multiple Myeloma Receiving T Cell Engaging Bi/Tri-specific Antibodies Intravenously (IV)/Subcutaneously (SC) Alone or in Combinations",
+                "url": "https://clinicaltrials.gov/study/NCT06892522"
+              }
+            ],
+            "source": "intervention:daratumumab",
+            "target": "intervention:dexamethasone",
+            "weight": 64
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05789303",
+              "NCT06742138",
+              "NCT06413498",
+              "NCT07222761",
+              "NCT07227311",
+              "NCT06956170",
+              "NCT06106945",
+              "NCT07637526",
+              "NCT05455320",
+              "NCT05922501",
+              "NCT05519085",
+              "NCT05028348",
+              "NCT05183139",
+              "NCT06163040",
+              "NCT05669989",
+              "NCT07555938",
+              "NCT06615479",
+              "NCT07579234",
+              "NCT07728188",
+              "NCT05581875",
+              "NCT07463807",
+              "NCT05730036",
+              "NCT07569757",
+              "NCT06953960",
+              "NCT05259839",
+              "NCT05714839",
+              "NCT07015021",
+              "NCT04700176",
+              "NCT07452198",
+              "NCT06232707",
+              "NCT04835129",
+              "NCT05288062",
+              "NCT06208150",
+              "NCT05208307",
+              "NCT07150104",
+              "NCT07742215",
+              "NCT05572515",
+              "NCT07748689",
+              "NCT07096778",
+              "NCT05432414",
+              "NCT07018050",
+              "NCT04895410",
+              "NCT07138209",
+              "NCT06924424",
+              "NCT05405166",
+              "NCT06879379",
+              "NCT05298683",
+              "NCT05478993",
+              "NCT06464991",
+              "NCT05050305",
+              "NCT06158841",
+              "NCT06948084",
+              "NCT07391657",
+              "NCT06508983",
+              "NCT04941937",
+              "NCT05911321",
+              "NCT05438043",
+              "NCT07825064",
+              "NCT06152575"
+            ],
+            "citation_count": 59,
+            "citations": [
+              {
+                "nct_id": "NCT05789303",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Pomalidomide\"",
+                "title": "Study of Belantamab Mafodotin With Carfilzomib, Pomalidomide, and Dexamethasone in Relapsed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05789303"
+              },
+              {
+                "nct_id": "NCT06742138",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Pomalidomide\"",
+                "title": "To Evaluate the Efficacy and Safety of QL2109 and DARZALEX FASPRO® in Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06742138"
+              },
+              {
+                "nct_id": "NCT06413498",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Pomalidomide\"",
+                "title": "A Study Comparing Anitocabtagene Autoleucel to Standard of Care Therapy in Participants With Relapsed/ Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06413498"
+              }
+            ],
+            "source": "intervention:dexamethasone",
+            "target": "intervention:pomalidomide",
+            "weight": 59
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07297329",
+              "NCT06413498",
+              "NCT07222761",
+              "NCT07227311",
+              "NCT07285239",
+              "NCT06956170",
+              "NCT06083922",
+              "NCT07637526",
+              "NCT05519085",
+              "NCT05272826",
+              "NCT05147493",
+              "NCT06505369",
+              "NCT06140966",
+              "NCT06169215",
+              "NCT07334535",
+              "NCT07579234",
+              "NCT04912427",
+              "NCT05561387",
+              "NCT06348147",
+              "NCT05123131",
+              "NCT04975997",
+              "NCT07665450",
+              "NCT05695508",
+              "NCT06577025",
+              "NCT05257083",
+              "NCT07614360",
+              "NCT06189833",
+              "NCT06208150",
+              "NCT07663253",
+              "NCT06918002",
+              "NCT07428369",
+              "NCT05572515",
+              "NCT05558319",
+              "NCT07609706",
+              "NCT05665140",
+              "NCT05422027",
+              "NCT05432414",
+              "NCT05804032",
+              "NCT07018050",
+              "NCT07085728",
+              "NCT05392946",
+              "NCT05623020",
+              "NCT07341867",
+              "NCT05900882",
+              "NCT03759093",
+              "NCT05514990",
+              "NCT06464991",
+              "NCT07025005",
+              "NCT07624513",
+              "NCT06353022",
+              "NCT07600151",
+              "NCT06158841",
+              "NCT07391657",
+              "NCT07247097",
+              "NCT07764978",
+              "NCT06142396",
+              "NCT06152575"
+            ],
+            "citation_count": 57,
+            "citations": [
+              {
+                "nct_id": "NCT07297329",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Dexamethasone\"",
+                "title": "A Study to Evaluate the Safety and Efficacy of SCTC21C in Combination With Bortezomib, Lenalidomide and Dexamethasone in Patients With Newly Diagnosed Multiple Myeloma Not Eligible for Transplant",
+                "url": "https://clinicaltrials.gov/study/NCT07297329"
+              },
+              {
+                "nct_id": "NCT06413498",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Dexamethasone\"",
+                "title": "A Study Comparing Anitocabtagene Autoleucel to Standard of Care Therapy in Participants With Relapsed/ Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06413498"
+              },
+              {
+                "nct_id": "NCT07222761",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Dexamethasone\"",
+                "title": "A Study to Compare Linvoseltamab Monotherapy and Linvoseltamab + Carfilzomib Combination Therapy With Standard-of-Care Combination Regimens in Adult Participants With Relapsed/Refractory Multiple Myeloma (RRMM)",
+                "url": "https://clinicaltrials.gov/study/NCT07222761"
+              }
+            ],
+            "source": "intervention:bortezomib",
+            "target": "intervention:dexamethasone",
+            "weight": 57
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06182774",
+              "NCT07605416",
+              "NCT06892522",
+              "NCT05849610",
+              "NCT07649525",
+              "NCT06505369",
+              "NCT06140966",
+              "NCT06169215",
+              "NCT05561387",
+              "NCT06768489",
+              "NCT07830485",
+              "NCT06348147",
+              "NCT05259839",
+              "NCT06679101",
+              "NCT05641324",
+              "NCT07665450",
+              "NCT05695508",
+              "NCT06577025",
+              "NCT05257083",
+              "NCT05552222",
+              "NCT06189833",
+              "NCT05308654",
+              "NCT06697483",
+              "NCT06918002",
+              "NCT07428369",
+              "NCT06187441",
+              "NCT05572229",
+              "NCT07095452",
+              "NCT05497804",
+              "NCT05137054",
+              "NCT07485647",
+              "NCT07740486",
+              "NCT07018050",
+              "NCT07764861",
+              "NCT06932562",
+              "NCT06409702",
+              "NCT06974786",
+              "NCT05623020",
+              "NCT07341867",
+              "NCT05280275",
+              "NCT06931704",
+              "NCT07045909",
+              "NCT06353022",
+              "NCT06042725",
+              "NCT07247097",
+              "NCT07764978",
+              "NCT07671287",
+              "NCT05438043",
+              "NCT05556616"
+            ],
+            "citation_count": 49,
+            "citations": [
+              {
+                "nct_id": "NCT06182774",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab\" | \"Lenalidomide\"",
+                "title": "Fixed Duration vs Continuous Anti-CD38 Antibody Therapy Among Transplant Ineligible Older Adults With Newly-Diagnosed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06182774"
+              },
+              {
+                "nct_id": "NCT07605416",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab and Recombinant Human Hyaluronidase\" | \"Lenalidomide\"",
+                "title": "Testing an Experimental Approach to Treat Patients With Plasma Cell Leukemia, The QUANTUM Trial",
+                "url": "https://clinicaltrials.gov/study/NCT07605416"
+              },
+              {
+                "nct_id": "NCT06892522",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab\" | \"Lenalidomide\"",
+                "title": "A Study to Assess Change in Disease Activity and Adverse Events (AE)s in Adult Participants With Multiple Myeloma Receiving T Cell Engaging Bi/Tri-specific Antibodies Intravenously (IV)/Subcutaneously (SC) Alone or in Combinations",
+                "url": "https://clinicaltrials.gov/study/NCT06892522"
+              }
+            ],
+            "source": "intervention:daratumumab",
+            "target": "intervention:lenalidomide",
+            "weight": 49
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05789303",
+              "NCT07605416",
+              "NCT06892522",
+              "NCT06413498",
+              "NCT07222761",
+              "NCT07227311",
+              "NCT07082270",
+              "NCT05669989",
+              "NCT04756401",
+              "NCT05896228",
+              "NCT07555938",
+              "NCT05199311",
+              "NCT06140966",
+              "NCT06615479",
+              "NCT06356571",
+              "NCT07728188",
+              "NCT07463807",
+              "NCT05434689",
+              "NCT07479979",
+              "NCT05552976",
+              "NCT06232707",
+              "NCT04933539",
+              "NCT06622005",
+              "NCT05497804",
+              "NCT05909826",
+              "NCT05572515",
+              "NCT04895410",
+              "NCT06793475",
+              "NCT06627751",
+              "NCT06409702",
+              "NCT07709884",
+              "NCT06879379",
+              "NCT05704049",
+              "NCT06158841",
+              "NCT06948084",
+              "NCT07391657",
+              "NCT05495620",
+              "NCT05438043",
+              "NCT06152575"
+            ],
+            "citation_count": 39,
+            "citations": [
+              {
+                "nct_id": "NCT05789303",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Carfilzomib\" | \"Dexamethasone\"",
+                "title": "Study of Belantamab Mafodotin With Carfilzomib, Pomalidomide, and Dexamethasone in Relapsed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05789303"
+              },
+              {
+                "nct_id": "NCT07605416",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Carfilzomib\" | \"Dexamethasone\"",
+                "title": "Testing an Experimental Approach to Treat Patients With Plasma Cell Leukemia, The QUANTUM Trial",
+                "url": "https://clinicaltrials.gov/study/NCT07605416"
+              },
+              {
+                "nct_id": "NCT06892522",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Carfilzomib\" | \"Dexamethasone\"",
+                "title": "A Study to Assess Change in Disease Activity and Adverse Events (AE)s in Adult Participants With Multiple Myeloma Receiving T Cell Engaging Bi/Tri-specific Antibodies Intravenously (IV)/Subcutaneously (SC) Alone or in Combinations",
+                "url": "https://clinicaltrials.gov/study/NCT06892522"
+              }
+            ],
+            "source": "intervention:carfilzomib",
+            "target": "intervention:dexamethasone",
+            "weight": 39
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07297329",
+              "NCT07285239",
+              "NCT05849610",
+              "NCT05147493",
+              "NCT06505369",
+              "NCT06140966",
+              "NCT06169215",
+              "NCT07334535",
+              "NCT05561387",
+              "NCT06348147",
+              "NCT05123131",
+              "NCT07665450",
+              "NCT05695508",
+              "NCT06577025",
+              "NCT05257083",
+              "NCT06189833",
+              "NCT07652905",
+              "NCT07663253",
+              "NCT06918002",
+              "NCT07428369",
+              "NCT05137054",
+              "NCT05558319",
+              "NCT05665140",
+              "NCT05422027",
+              "NCT05804032",
+              "NCT07018050",
+              "NCT05623020",
+              "NCT07341867",
+              "NCT05900882",
+              "NCT03759093",
+              "NCT07045909",
+              "NCT07025005",
+              "NCT06353022",
+              "NCT07600151",
+              "NCT07247097",
+              "NCT07764978",
+              "NCT07671287",
+              "NCT05556616"
+            ],
+            "citation_count": 38,
+            "citations": [
+              {
+                "nct_id": "NCT07297329",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Lenalidomide\"",
+                "title": "A Study to Evaluate the Safety and Efficacy of SCTC21C in Combination With Bortezomib, Lenalidomide and Dexamethasone in Patients With Newly Diagnosed Multiple Myeloma Not Eligible for Transplant",
+                "url": "https://clinicaltrials.gov/study/NCT07297329"
+              },
+              {
+                "nct_id": "NCT07285239",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Lenalidomide\"",
+                "title": "Belantamab Mafodotin or Daratumumab With Bortezomib, Lenalidomide and Dexamethasone for Newly Diagnosed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT07285239"
+              },
+              {
+                "nct_id": "NCT05849610",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Lenalidomide\"",
+                "title": "Teclistamab-Daratumumab and Talquestamab-Daratumumab in Newly Diagnosed High-risk Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05849610"
+              }
+            ],
+            "source": "intervention:bortezomib",
+            "target": "intervention:lenalidomide",
+            "weight": 38
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06413498",
+              "NCT07222761",
+              "NCT06083922",
+              "NCT05849610",
+              "NCT07623798",
+              "NCT06505369",
+              "NCT06140966",
+              "NCT05561049",
+              "NCT06169215",
+              "NCT05561387",
+              "NCT06348147",
+              "NCT04975997",
+              "NCT07665450",
+              "NCT05695508",
+              "NCT06577025",
+              "NCT05257083",
+              "NCT06189833",
+              "NCT06918002",
+              "NCT07428369",
+              "NCT05137054",
+              "NCT07018050",
+              "NCT05392946",
+              "NCT05623020",
+              "NCT07341867",
+              "NCT06464991",
+              "NCT07045909",
+              "NCT06353022",
+              "NCT07391657",
+              "NCT07247097",
+              "NCT07764978",
+              "NCT07671287",
+              "NCT05556616"
+            ],
+            "citation_count": 32,
+            "citations": [
+              {
+                "nct_id": "NCT06413498",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Daratumumab\"",
+                "title": "A Study Comparing Anitocabtagene Autoleucel to Standard of Care Therapy in Participants With Relapsed/ Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06413498"
+              },
+              {
+                "nct_id": "NCT07222761",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Daratumumab\"",
+                "title": "A Study to Compare Linvoseltamab Monotherapy and Linvoseltamab + Carfilzomib Combination Therapy With Standard-of-Care Combination Regimens in Adult Participants With Relapsed/Refractory Multiple Myeloma (RRMM)",
+                "url": "https://clinicaltrials.gov/study/NCT07222761"
+              },
+              {
+                "nct_id": "NCT06083922",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Daratumumab\"",
+                "title": "A Study of CyBorD (Cyclophosphamide, Bortezomib, Dexamethasone) Plus Daratumumab in People With Monoclonal Gammopathy of Renal Significance (MGRS)",
+                "url": "https://clinicaltrials.gov/study/NCT06083922"
+              }
+            ],
+            "source": "intervention:bortezomib",
+            "target": "intervention:daratumumab",
+            "weight": 32
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06182774",
+              "NCT05922501",
+              "NCT05669989",
+              "NCT05272826",
+              "NCT05147493",
+              "NCT07334535",
+              "NCT06356571",
+              "NCT04912427",
+              "NCT06762769",
+              "NCT07479979",
+              "NCT05123131",
+              "NCT05690984",
+              "NCT04835129",
+              "NCT07663253",
+              "NCT05558319",
+              "NCT05665140",
+              "NCT05804032",
+              "NCT05405166",
+              "NCT05298683",
+              "NCT05145400",
+              "NCT05704049",
+              "NCT06216158",
+              "NCT07624513",
+              "NCT07600151",
+              "NCT06203912",
+              "NCT07764978",
+              "NCT05911321"
+            ],
+            "citation_count": 27,
+            "citations": [
+              {
+                "nct_id": "NCT06182774",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Isatuximab\"",
+                "title": "Fixed Duration vs Continuous Anti-CD38 Antibody Therapy Among Transplant Ineligible Older Adults With Newly-Diagnosed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06182774"
+              },
+              {
+                "nct_id": "NCT05922501",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Isatuximab\"",
+                "title": "Isatuximab, Bela Maf, Pom, and Dex in Relapsed/Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05922501"
+              },
+              {
+                "nct_id": "NCT05669989",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Isatuximab intravenous (IV)\"",
+                "title": "International Treatment-extension Study in Adult Participants With Multiple Myeloma and Who Have Derived Clinical Benefit From Isatuximab",
+                "url": "https://clinicaltrials.gov/study/NCT05669989"
+              }
+            ],
+            "source": "intervention:dexamethasone",
+            "target": "intervention:isatuximab",
+            "weight": 27
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06413498",
+              "NCT07222761",
+              "NCT05455320",
+              "NCT07555938",
+              "NCT07623798",
+              "NCT06615479",
+              "NCT07728188",
+              "NCT05581875",
+              "NCT06768489",
+              "NCT06953960",
+              "NCT05259839",
+              "NCT07015021",
+              "NCT04700176",
+              "NCT07452198",
+              "NCT06232707",
+              "NCT05675319",
+              "NCT07742215",
+              "NCT05137054",
+              "NCT07018050",
+              "NCT04895410",
+              "NCT05408026",
+              "NCT06464991",
+              "NCT06948084",
+              "NCT07391657",
+              "NCT05438043",
+              "NCT05556616"
+            ],
+            "citation_count": 26,
+            "citations": [
+              {
+                "nct_id": "NCT06413498",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab\" | \"Pomalidomide\"",
+                "title": "A Study Comparing Anitocabtagene Autoleucel to Standard of Care Therapy in Participants With Relapsed/ Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06413498"
+              },
+              {
+                "nct_id": "NCT07222761",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab\" | \"Pomalidomide\"",
+                "title": "A Study to Compare Linvoseltamab Monotherapy and Linvoseltamab + Carfilzomib Combination Therapy With Standard-of-Care Combination Regimens in Adult Participants With Relapsed/Refractory Multiple Myeloma (RRMM)",
+                "url": "https://clinicaltrials.gov/study/NCT07222761"
+              },
+              {
+                "nct_id": "NCT05455320",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab\" | \"Pomalidomide\"",
+                "title": "A Study Comparing Talquetamab in Combination With Daratumumab or in Combination With Daratumumab and Pomalidomide Versus Daratumumab in Combination With Pomalidomide and Dexamethasone in Participants With Multiple Myeloma That Returns After Treatment or is Resistant to Treatment",
+                "url": "https://clinicaltrials.gov/study/NCT05455320"
+              }
+            ],
+            "source": "intervention:daratumumab",
+            "target": "intervention:pomalidomide",
+            "weight": 26
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07605416",
+              "NCT06892522",
+              "NCT06413498",
+              "NCT07222761",
+              "NCT07082270",
+              "NCT04756401",
+              "NCT05896228",
+              "NCT07555938",
+              "NCT06140966",
+              "NCT06615479",
+              "NCT07728188",
+              "NCT05434689",
+              "NCT06232707",
+              "NCT05675319",
+              "NCT04933539",
+              "NCT06622005",
+              "NCT05497804",
+              "NCT05137054",
+              "NCT04895410",
+              "NCT06055075",
+              "NCT06409702",
+              "NCT06948084",
+              "NCT07391657",
+              "NCT05438043",
+              "NCT05556616"
+            ],
+            "citation_count": 25,
+            "citations": [
+              {
+                "nct_id": "NCT07605416",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Carfilzomib\" | \"Daratumumab and Recombinant Human Hyaluronidase\"",
+                "title": "Testing an Experimental Approach to Treat Patients With Plasma Cell Leukemia, The QUANTUM Trial",
+                "url": "https://clinicaltrials.gov/study/NCT07605416"
+              },
+              {
+                "nct_id": "NCT06892522",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Carfilzomib\" | \"Daratumumab\"",
+                "title": "A Study to Assess Change in Disease Activity and Adverse Events (AE)s in Adult Participants With Multiple Myeloma Receiving T Cell Engaging Bi/Tri-specific Antibodies Intravenously (IV)/Subcutaneously (SC) Alone or in Combinations",
+                "url": "https://clinicaltrials.gov/study/NCT06892522"
+              },
+              {
+                "nct_id": "NCT06413498",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Carfilzomib\" | \"Daratumumab\"",
+                "title": "A Study Comparing Anitocabtagene Autoleucel to Standard of Care Therapy in Participants With Relapsed/ Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06413498"
+              }
+            ],
+            "source": "intervention:carfilzomib",
+            "target": "intervention:daratumumab",
+            "weight": 25
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05347485",
+              "NCT06413498",
+              "NCT05092451",
+              "NCT05909059",
+              "NCT05998928",
+              "NCT06119685",
+              "NCT06153251",
+              "NCT07735637",
+              "NCT06615479",
+              "NCT05005299",
+              "NCT07149857",
+              "NCT05442580",
+              "NCT05950113",
+              "NCT05767359",
+              "NCT06577025",
+              "NCT05257083",
+              "NCT06940297",
+              "NCT05032820",
+              "NCT06066359",
+              "NCT07340853",
+              "NCT07045909",
+              "NCT07764978",
+              "NCT06045806",
+              "NCT05805605",
+              "NCT06698744"
+            ],
+            "citation_count": 25,
+            "citations": [
+              {
+                "nct_id": "NCT05347485",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Lymphodepleting Therapy (Cyclophosphamide and Fludarabine)\" | \"Lymphodepleting Therapy (Cyclophosphamide and Fludarabine)\"",
+                "title": "A Study of JNJ-68284528 Out-of-Specification (OOS) for Commercial Release in Participants With Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05347485"
+              },
+              {
+                "nct_id": "NCT06413498",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Cyclophosphamide\" | \"Fludarabine\"",
+                "title": "A Study Comparing Anitocabtagene Autoleucel to Standard of Care Therapy in Participants With Relapsed/ Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06413498"
+              },
+              {
+                "nct_id": "NCT05092451",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Cyclophosphamide\" | \"Fludarabine phosphate\"",
+                "title": "Phase I/II Study of CAR.70- Engineered IL15-transduced Cord Blood-derived NK Cells in Conjunction With Lymphodepleting Chemotherapy for the Management of Relapse/Refractory Hematological Malignances",
+                "url": "https://clinicaltrials.gov/study/NCT05092451"
+              }
+            ],
+            "source": "intervention:cyclophosphamide",
+            "target": "intervention:fludarabine",
+            "weight": 25
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05789303",
+              "NCT06413498",
+              "NCT07222761",
+              "NCT07227311",
+              "NCT05669989",
+              "NCT07555938",
+              "NCT05651932",
+              "NCT06615479",
+              "NCT07728188",
+              "NCT07463807",
+              "NCT06232707",
+              "NCT05675319",
+              "NCT05137054",
+              "NCT05572515",
+              "NCT04850599",
+              "NCT04895410",
+              "NCT06879379",
+              "NCT06158841",
+              "NCT06948084",
+              "NCT07391657",
+              "NCT05438043",
+              "NCT05556616",
+              "NCT06152575"
+            ],
+            "citation_count": 23,
+            "citations": [
+              {
+                "nct_id": "NCT05789303",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Carfilzomib\" | \"Pomalidomide\"",
+                "title": "Study of Belantamab Mafodotin With Carfilzomib, Pomalidomide, and Dexamethasone in Relapsed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05789303"
+              },
+              {
+                "nct_id": "NCT06413498",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Carfilzomib\" | \"Pomalidomide\"",
+                "title": "A Study Comparing Anitocabtagene Autoleucel to Standard of Care Therapy in Participants With Relapsed/ Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06413498"
+              },
+              {
+                "nct_id": "NCT07222761",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Carfilzomib\" | \"Pomalidomide\"",
+                "title": "A Study to Compare Linvoseltamab Monotherapy and Linvoseltamab + Carfilzomib Combination Therapy With Standard-of-Care Combination Regimens in Adult Participants With Relapsed/Refractory Multiple Myeloma (RRMM)",
+                "url": "https://clinicaltrials.gov/study/NCT07222761"
+              }
+            ],
+            "source": "intervention:carfilzomib",
+            "target": "intervention:pomalidomide",
+            "weight": 23
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05289492",
+              "NCT06892522",
+              "NCT05583617",
+              "NCT05896228",
+              "NCT05272826",
+              "NCT05199311",
+              "NCT06762769",
+              "NCT05434689",
+              "NCT05560399",
+              "NCT06121843",
+              "NCT04975997",
+              "NCT06232044",
+              "NCT06785415",
+              "NCT05558319",
+              "NCT05527340",
+              "NCT05392946",
+              "NCT06518551",
+              "NCT06216158",
+              "NCT07624513",
+              "NCT06348108"
+            ],
+            "citation_count": 20,
+            "citations": [
+              {
+                "nct_id": "NCT05289492",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Iberdomide\"",
+                "title": "Study of Novel Regimens in Relapsed or Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05289492"
+              },
+              {
+                "nct_id": "NCT06892522",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Iberdomide\"",
+                "title": "A Study to Assess Change in Disease Activity and Adverse Events (AE)s in Adult Participants With Multiple Myeloma Receiving T Cell Engaging Bi/Tri-specific Antibodies Intravenously (IV)/Subcutaneously (SC) Alone or in Combinations",
+                "url": "https://clinicaltrials.gov/study/NCT06892522"
+              },
+              {
+                "nct_id": "NCT05583617",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Iberdomide\"",
+                "title": "A Study Evaluating the Safety and Efficacy of Multiple Treatments in Participants With Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05583617"
+              }
+            ],
+            "source": "intervention:dexamethasone",
+            "target": "intervention:iberdomide",
+            "weight": 20
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06182774",
+              "NCT05776979",
+              "NCT05669989",
+              "NCT07828522",
+              "NCT05147493",
+              "NCT07334535",
+              "NCT05123131",
+              "NCT05690984",
+              "NCT07652905",
+              "NCT07663253",
+              "NCT05137054",
+              "NCT05558319",
+              "NCT05665140",
+              "NCT05804032",
+              "NCT05344833",
+              "NCT05145400",
+              "NCT07045909",
+              "NCT07600151",
+              "NCT07764978"
+            ],
+            "citation_count": 19,
+            "citations": [
+              {
+                "nct_id": "NCT06182774",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Isatuximab\" | \"Lenalidomide\"",
+                "title": "Fixed Duration vs Continuous Anti-CD38 Antibody Therapy Among Transplant Ineligible Older Adults With Newly-Diagnosed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06182774"
+              },
+              {
+                "nct_id": "NCT05776979",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Isatuximab\" | \"lenalidomide\"",
+                "title": "Post-Transplant Maintenance Therapy With Isatuximab Plus Lenalidomide for High-Risk Multiple Myeloma Patients",
+                "url": "https://clinicaltrials.gov/study/NCT05776979"
+              },
+              {
+                "nct_id": "NCT05669989",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Isatuximab intravenous (IV)\" | \"Lenalidomide\"",
+                "title": "International Treatment-extension Study in Adult Participants With Multiple Myeloma and Who Have Derived Clinical Benefit From Isatuximab",
+                "url": "https://clinicaltrials.gov/study/NCT05669989"
+              }
+            ],
+            "source": "intervention:isatuximab",
+            "target": "intervention:lenalidomide",
+            "weight": 19
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06413498",
+              "NCT07222761",
+              "NCT07227311",
+              "NCT06956170",
+              "NCT07637526",
+              "NCT05519085",
+              "NCT07623798",
+              "NCT07579234",
+              "NCT06208150",
+              "NCT05137054",
+              "NCT05572515",
+              "NCT05432414",
+              "NCT07018050",
+              "NCT06464991",
+              "NCT06158841",
+              "NCT07391657",
+              "NCT05556616",
+              "NCT06152575"
+            ],
+            "citation_count": 18,
+            "citations": [
+              {
+                "nct_id": "NCT06413498",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Pomalidomide\"",
+                "title": "A Study Comparing Anitocabtagene Autoleucel to Standard of Care Therapy in Participants With Relapsed/ Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06413498"
+              },
+              {
+                "nct_id": "NCT07222761",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Pomalidomide\"",
+                "title": "A Study to Compare Linvoseltamab Monotherapy and Linvoseltamab + Carfilzomib Combination Therapy With Standard-of-Care Combination Regimens in Adult Participants With Relapsed/Refractory Multiple Myeloma (RRMM)",
+                "url": "https://clinicaltrials.gov/study/NCT07222761"
+              },
+              {
+                "nct_id": "NCT07227311",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Pomalidomide\"",
+                "title": "A Study to Evaluate the Efficacy and Safety of Belantamab Mafodotin in Combination With Standard of Care in Participants With Relapsed-Refractory Multiple Myeloma (RRMM)",
+                "url": "https://clinicaltrials.gov/study/NCT07227311"
+              }
+            ],
+            "source": "intervention:bortezomib",
+            "target": "intervention:pomalidomide",
+            "weight": 18
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05789303",
+              "NCT07227311",
+              "NCT07285239",
+              "NCT06956170",
+              "NCT07637526",
+              "NCT05922501",
+              "NCT05714839",
+              "NCT06679101",
+              "NCT06232044",
+              "NCT07614360",
+              "NCT07150091",
+              "NCT05208307",
+              "NCT07150104",
+              "NCT05493618",
+              "NCT07748689",
+              "NCT07609706"
+            ],
+            "citation_count": 16,
+            "citations": [
+              {
+                "nct_id": "NCT05789303",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Belantamab mafodotin\" | \"Dexamethasone\"",
+                "title": "Study of Belantamab Mafodotin With Carfilzomib, Pomalidomide, and Dexamethasone in Relapsed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05789303"
+              },
+              {
+                "nct_id": "NCT07227311",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Belantamab mafodotin\" | \"Dexamethasone\"",
+                "title": "A Study to Evaluate the Efficacy and Safety of Belantamab Mafodotin in Combination With Standard of Care in Participants With Relapsed-Refractory Multiple Myeloma (RRMM)",
+                "url": "https://clinicaltrials.gov/study/NCT07227311"
+              },
+              {
+                "nct_id": "NCT07285239",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Arm A: Belantamab Mafodotin\" | \"Dexamethasone\"",
+                "title": "Belantamab Mafodotin or Daratumumab With Bortezomib, Lenalidomide and Dexamethasone for Newly Diagnosed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT07285239"
+              }
+            ],
+            "source": "intervention:belantamab mafodotin",
+            "target": "intervention:dexamethasone",
+            "weight": 16
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05272826",
+              "NCT05147493",
+              "NCT07334535",
+              "NCT04912427",
+              "NCT05123131",
+              "NCT07652905",
+              "NCT07663253",
+              "NCT05137054",
+              "NCT05558319",
+              "NCT05665140",
+              "NCT05804032",
+              "NCT07601100",
+              "NCT07045909",
+              "NCT07624513",
+              "NCT07600151",
+              "NCT07764978"
+            ],
+            "citation_count": 16,
+            "citations": [
+              {
+                "nct_id": "NCT05272826",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Isatuximab\"",
+                "title": "Study of Iberdomide, Bortezomib, Dexamethasone With Isatuximab Added on Demand for ND-NTE MM Patients",
+                "url": "https://clinicaltrials.gov/study/NCT05272826"
+              },
+              {
+                "nct_id": "NCT05147493",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Isatuximab\"",
+                "title": "A Phase 2 Study of Isatuximab in Combination With Bortezomib, Cyclophosphamide and Dexamethasone Followed by Isatuximab and Lenalidomide Maintenance in Newly Diagnosed Patients With Multiple Myeloma and Severe Renal Impairment",
+                "url": "https://clinicaltrials.gov/study/NCT05147493"
+              },
+              {
+                "nct_id": "NCT07334535",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Isatuximab, bortezomib, lenalidomide, dexamethason\" | \"Isatuximab, bortezomib, lenalidomide, dexamethason\"",
+                "title": "Isa-VRD in TIE HRMM",
+                "url": "https://clinicaltrials.gov/study/NCT07334535"
+              }
+            ],
+            "source": "intervention:bortezomib",
+            "target": "intervention:isatuximab",
+            "weight": 16
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07107529",
+              "NCT06855121",
+              "NCT05849610",
+              "NCT07649525",
+              "NCT06100237",
+              "NCT06505369",
+              "NCT06577025",
+              "NCT05552222",
+              "NCT06208150",
+              "NCT05972135",
+              "NCT07740486",
+              "NCT07657312",
+              "NCT06993675",
+              "NCT06353022",
+              "NCT05338775"
+            ],
+            "citation_count": 15,
+            "citations": [
+              {
+                "nct_id": "NCT07107529",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Talquetamab\" | \"Teclistamab\"",
+                "title": "Study for Frail Patients With Newly Diagnosed Multiple Myeloma Treated With Daratumumab With Teclistamab or Talquetamab.",
+                "url": "https://clinicaltrials.gov/study/NCT07107529"
+              },
+              {
+                "nct_id": "NCT06855121",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Talquetamab\" | \"Teclistamab\"",
+                "title": "The Norwegian Immunotherapy in Multiple Myeloma Study",
+                "url": "https://clinicaltrials.gov/study/NCT06855121"
+              },
+              {
+                "nct_id": "NCT05849610",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Talquetamab\" | \"Teclistamab\"",
+                "title": "Teclistamab-Daratumumab and Talquestamab-Daratumumab in Newly Diagnosed High-risk Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05849610"
+              }
+            ],
+            "source": "intervention:talquetamab",
+            "target": "intervention:teclistamab",
+            "weight": 15
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06413498",
+              "NCT06083922",
+              "NCT05147493",
+              "NCT06140966",
+              "NCT06615479",
+              "NCT06577025",
+              "NCT05257083",
+              "NCT05909826",
+              "NCT07085728",
+              "NCT07341867",
+              "NCT03759093",
+              "NCT06203912",
+              "NCT07764978",
+              "NCT06142396"
+            ],
+            "citation_count": 14,
+            "citations": [
+              {
+                "nct_id": "NCT06413498",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Cyclophosphamide\" | \"Dexamethasone\"",
+                "title": "A Study Comparing Anitocabtagene Autoleucel to Standard of Care Therapy in Participants With Relapsed/ Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06413498"
+              },
+              {
+                "nct_id": "NCT06083922",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Cyclophosphamide\" | \"Dexamethasone\"",
+                "title": "A Study of CyBorD (Cyclophosphamide, Bortezomib, Dexamethasone) Plus Daratumumab in People With Monoclonal Gammopathy of Renal Significance (MGRS)",
+                "url": "https://clinicaltrials.gov/study/NCT06083922"
+              },
+              {
+                "nct_id": "NCT05147493",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Cyclophosphamide\" | \"Dexamethasone\"",
+                "title": "A Phase 2 Study of Isatuximab in Combination With Bortezomib, Cyclophosphamide and Dexamethasone Followed by Isatuximab and Lenalidomide Maintenance in Newly Diagnosed Patients With Multiple Myeloma and Severe Renal Impairment",
+                "url": "https://clinicaltrials.gov/study/NCT05147493"
+              }
+            ],
+            "source": "intervention:cyclophosphamide",
+            "target": "intervention:dexamethasone",
+            "weight": 14
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05028348",
+              "NCT04756401",
+              "NCT06169215",
+              "NCT07579234",
+              "NCT07479979",
+              "NCT07569757",
+              "NCT05422027",
+              "NCT07138209",
+              "NCT05900882",
+              "NCT05820763",
+              "NCT06158841",
+              "NCT04941937",
+              "NCT05530421",
+              "NCT05170789"
+            ],
+            "citation_count": 14,
+            "citations": [
+              {
+                "nct_id": "NCT05028348",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone Oral\" | \"Selinexor\"",
+                "title": "A Study of Combination of Selinexor, Pomalidomide, and Dexamethasone (SPd) Versus Elotuzumab, Pomalidomide, and Dexamethasone (EloPd) in Subject With Previously Treated Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05028348"
+              },
+              {
+                "nct_id": "NCT04756401",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Selinexor\"",
+                "title": "Selinexor, Daratumumab, Carfilzomib and Dexamethasone for the Treatment of High-Risk, Recurrent or Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT04756401"
+              },
+              {
+                "nct_id": "NCT06169215",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Selinexor\"",
+                "title": "Comparing the Combination of Selinexor-Daratumumab-Velcade-Dexamethasone (Dara-SVD) With the Usual Treatment (Dara-RVD) for High-Risk Newly Diagnosed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06169215"
+              }
+            ],
+            "source": "intervention:dexamethasone",
+            "target": "intervention:selinexor",
+            "weight": 14
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07107529",
+              "NCT07605416",
+              "NCT05849610",
+              "NCT07649525",
+              "NCT06505369",
+              "NCT07728188",
+              "NCT06577025",
+              "NCT05552222",
+              "NCT05572229",
+              "NCT07740486",
+              "NCT06353022",
+              "NCT06948084",
+              "NCT07671287"
+            ],
+            "citation_count": 13,
+            "citations": [
+              {
+                "nct_id": "NCT07107529",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab\" | \"Teclistamab\"",
+                "title": "Study for Frail Patients With Newly Diagnosed Multiple Myeloma Treated With Daratumumab With Teclistamab or Talquetamab.",
+                "url": "https://clinicaltrials.gov/study/NCT07107529"
+              },
+              {
+                "nct_id": "NCT07605416",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab and Recombinant Human Hyaluronidase\" | \"Teclistamab\"",
+                "title": "Testing an Experimental Approach to Treat Patients With Plasma Cell Leukemia, The QUANTUM Trial",
+                "url": "https://clinicaltrials.gov/study/NCT07605416"
+              },
+              {
+                "nct_id": "NCT05849610",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab\" | \"Teclistamab\"",
+                "title": "Teclistamab-Daratumumab and Talquestamab-Daratumumab in Newly Diagnosed High-risk Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05849610"
+              }
+            ],
+            "source": "intervention:daratumumab",
+            "target": "intervention:teclistamab",
+            "weight": 13
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07605416",
+              "NCT07649525",
+              "NCT06505369",
+              "NCT07728188",
+              "NCT07463807",
+              "NCT05469893",
+              "NCT06577025",
+              "NCT05552222",
+              "NCT06208150",
+              "NCT05972135",
+              "NCT05572515",
+              "NCT06353022",
+              "NCT06948084"
+            ],
+            "citation_count": 13,
+            "citations": [
+              {
+                "nct_id": "NCT07605416",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Teclistamab\"",
+                "title": "Testing an Experimental Approach to Treat Patients With Plasma Cell Leukemia, The QUANTUM Trial",
+                "url": "https://clinicaltrials.gov/study/NCT07605416"
+              },
+              {
+                "nct_id": "NCT07649525",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Teclistamab\"",
+                "title": "Personalising Treatment for Myeloma Patients Based on Initial Response to NHS Treatment and Their Overall Fitness Level",
+                "url": "https://clinicaltrials.gov/study/NCT07649525"
+              },
+              {
+                "nct_id": "NCT06505369",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Teclistamab\"",
+                "title": "Bispecific T-cell Redirectors as Part of First Line Treatment in Transplant Eligible Multiple Myeloma Patients",
+                "url": "https://clinicaltrials.gov/study/NCT06505369"
+              }
+            ],
+            "source": "intervention:dexamethasone",
+            "target": "intervention:teclistamab",
+            "weight": 13
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06413498",
+              "NCT06083922",
+              "NCT05147493",
+              "NCT06140966",
+              "NCT06577025",
+              "NCT05257083",
+              "NCT07085728",
+              "NCT07341867",
+              "NCT03759093",
+              "NCT07045909",
+              "NCT07764978",
+              "NCT06142396"
+            ],
+            "citation_count": 12,
+            "citations": [
+              {
+                "nct_id": "NCT06413498",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Cyclophosphamide\"",
+                "title": "A Study Comparing Anitocabtagene Autoleucel to Standard of Care Therapy in Participants With Relapsed/ Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06413498"
+              },
+              {
+                "nct_id": "NCT06083922",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Cyclophosphamide\"",
+                "title": "A Study of CyBorD (Cyclophosphamide, Bortezomib, Dexamethasone) Plus Daratumumab in People With Monoclonal Gammopathy of Renal Significance (MGRS)",
+                "url": "https://clinicaltrials.gov/study/NCT06083922"
+              },
+              {
+                "nct_id": "NCT05147493",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Cyclophosphamide\"",
+                "title": "A Phase 2 Study of Isatuximab in Combination With Bortezomib, Cyclophosphamide and Dexamethasone Followed by Isatuximab and Lenalidomide Maintenance in Newly Diagnosed Patients With Multiple Myeloma and Severe Renal Impairment",
+                "url": "https://clinicaltrials.gov/study/NCT05147493"
+              }
+            ],
+            "source": "intervention:bortezomib",
+            "target": "intervention:cyclophosphamide",
+            "weight": 12
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05147493",
+              "NCT06140966",
+              "NCT07735637",
+              "NCT06577025",
+              "NCT05257083",
+              "NCT05032820",
+              "NCT07341867",
+              "NCT06324266",
+              "NCT03759093",
+              "NCT07045909",
+              "NCT07764978",
+              "NCT06045806"
+            ],
+            "citation_count": 12,
+            "citations": [
+              {
+                "nct_id": "NCT05147493",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Cyclophosphamide\" | \"Lenalidomide\"",
+                "title": "A Phase 2 Study of Isatuximab in Combination With Bortezomib, Cyclophosphamide and Dexamethasone Followed by Isatuximab and Lenalidomide Maintenance in Newly Diagnosed Patients With Multiple Myeloma and Severe Renal Impairment",
+                "url": "https://clinicaltrials.gov/study/NCT05147493"
+              },
+              {
+                "nct_id": "NCT06140966",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Cyclophosphamide\" | \"Lenalidomide\"",
+                "title": "Study to Evaluate the Safety and Efficacy of Daratumumab and Carfilzomib-based Induction/Consolidation/Maintenance Therapy in Transplant-eligible, Ultra High-risk, Newly Diagnosed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06140966"
+              },
+              {
+                "nct_id": "NCT07735637",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Cyclophosphamide\" | \"Lenalidomide\"",
+                "title": "A Phase III, Multicentre Study to Evaluate Consolidation Treatment With AZD0120 Compared With ASCT, in Participants With Newly Diagnosed Multiple Myeloma Who Are Transplant Eligible (DURGA-6).",
+                "url": "https://clinicaltrials.gov/study/NCT07735637"
+              }
+            ],
+            "source": "intervention:cyclophosphamide",
+            "target": "intervention:lenalidomide",
+            "weight": 12
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07605416",
+              "NCT05849610",
+              "NCT07649525",
+              "NCT05243797",
+              "NCT06505369",
+              "NCT05469893",
+              "NCT06577025",
+              "NCT05552222",
+              "NCT05572229",
+              "NCT07740486",
+              "NCT06353022",
+              "NCT07671287"
+            ],
+            "citation_count": 12,
+            "citations": [
+              {
+                "nct_id": "NCT07605416",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Lenalidomide\" | \"Teclistamab\"",
+                "title": "Testing an Experimental Approach to Treat Patients With Plasma Cell Leukemia, The QUANTUM Trial",
+                "url": "https://clinicaltrials.gov/study/NCT07605416"
+              },
+              {
+                "nct_id": "NCT05849610",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Lenalidomide\" | \"Teclistamab\"",
+                "title": "Teclistamab-Daratumumab and Talquestamab-Daratumumab in Newly Diagnosed High-risk Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05849610"
+              },
+              {
+                "nct_id": "NCT07649525",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Lenalidomide\" | \"Teclistamab\"",
+                "title": "Personalising Treatment for Myeloma Patients Based on Initial Response to NHS Treatment and Their Overall Fitness Level",
+                "url": "https://clinicaltrials.gov/study/NCT07649525"
+              }
+            ],
+            "source": "intervention:lenalidomide",
+            "target": "intervention:teclistamab",
+            "weight": 12
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07720843",
+              "NCT05789303",
+              "NCT07227311",
+              "NCT06956170",
+              "NCT07637526",
+              "NCT05922501",
+              "NCT05714839",
+              "NCT05208307",
+              "NCT07150104",
+              "NCT07748689",
+              "NCT05556798"
+            ],
+            "citation_count": 11,
+            "citations": [
+              {
+                "nct_id": "NCT07720843",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Belantamab mafodotin\" | \"Pomalidomide\"",
+                "title": "TAlquetamab and BeLantamab Mafodotin in Relapsed/Refractory Multiple Myeloma (TaBleMM)",
+                "url": "https://clinicaltrials.gov/study/NCT07720843"
+              },
+              {
+                "nct_id": "NCT05789303",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Belantamab mafodotin\" | \"Pomalidomide\"",
+                "title": "Study of Belantamab Mafodotin With Carfilzomib, Pomalidomide, and Dexamethasone in Relapsed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05789303"
+              },
+              {
+                "nct_id": "NCT07227311",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Belantamab mafodotin\" | \"Pomalidomide\"",
+                "title": "A Study to Evaluate the Efficacy and Safety of Belantamab Mafodotin in Combination With Standard of Care in Participants With Relapsed-Refractory Multiple Myeloma (RRMM)",
+                "url": "https://clinicaltrials.gov/study/NCT07227311"
+              }
+            ],
+            "source": "intervention:belantamab mafodotin",
+            "target": "intervention:pomalidomide",
+            "weight": 11
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07605416",
+              "NCT06892522",
+              "NCT05669989",
+              "NCT06140966",
+              "NCT05497804",
+              "NCT05137054",
+              "NCT06409702",
+              "NCT07709884",
+              "NCT05495620",
+              "NCT05438043",
+              "NCT05556616"
+            ],
+            "citation_count": 11,
+            "citations": [
+              {
+                "nct_id": "NCT07605416",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Carfilzomib\" | \"Lenalidomide\"",
+                "title": "Testing an Experimental Approach to Treat Patients With Plasma Cell Leukemia, The QUANTUM Trial",
+                "url": "https://clinicaltrials.gov/study/NCT07605416"
+              },
+              {
+                "nct_id": "NCT06892522",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Carfilzomib\" | \"Lenalidomide\"",
+                "title": "A Study to Assess Change in Disease Activity and Adverse Events (AE)s in Adult Participants With Multiple Myeloma Receiving T Cell Engaging Bi/Tri-specific Antibodies Intravenously (IV)/Subcutaneously (SC) Alone or in Combinations",
+                "url": "https://clinicaltrials.gov/study/NCT06892522"
+              },
+              {
+                "nct_id": "NCT05669989",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Carfilzomib\" | \"Lenalidomide\"",
+                "title": "International Treatment-extension Study in Adult Participants With Multiple Myeloma and Who Have Derived Clinical Benefit From Isatuximab",
+                "url": "https://clinicaltrials.gov/study/NCT05669989"
+              }
+            ],
+            "source": "intervention:carfilzomib",
+            "target": "intervention:lenalidomide",
+            "weight": 11
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07107529",
+              "NCT05455320",
+              "NCT05849610",
+              "NCT07649525",
+              "NCT06505369",
+              "NCT06827860",
+              "NCT05695508",
+              "NCT06577025",
+              "NCT05552222",
+              "NCT07740486",
+              "NCT06353022"
+            ],
+            "citation_count": 11,
+            "citations": [
+              {
+                "nct_id": "NCT07107529",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab\" | \"Talquetamab\"",
+                "title": "Study for Frail Patients With Newly Diagnosed Multiple Myeloma Treated With Daratumumab With Teclistamab or Talquetamab.",
+                "url": "https://clinicaltrials.gov/study/NCT07107529"
+              },
+              {
+                "nct_id": "NCT05455320",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab\" | \"Talquetamab\"",
+                "title": "A Study Comparing Talquetamab in Combination With Daratumumab or in Combination With Daratumumab and Pomalidomide Versus Daratumumab in Combination With Pomalidomide and Dexamethasone in Participants With Multiple Myeloma That Returns After Treatment or is Resistant to Treatment",
+                "url": "https://clinicaltrials.gov/study/NCT05455320"
+              },
+              {
+                "nct_id": "NCT05849610",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab\" | \"Talquetamab\"",
+                "title": "Teclistamab-Daratumumab and Talquestamab-Daratumumab in Newly Diagnosed High-risk Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05849610"
+              }
+            ],
+            "source": "intervention:daratumumab",
+            "target": "intervention:talquetamab",
+            "weight": 11
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05455320",
+              "NCT07649525",
+              "NCT06505369",
+              "NCT05695508",
+              "NCT06577025",
+              "NCT05552222",
+              "NCT06208150",
+              "NCT05972135",
+              "NCT07032714",
+              "NCT06353022",
+              "NCT06348108"
+            ],
+            "citation_count": 11,
+            "citations": [
+              {
+                "nct_id": "NCT05455320",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Talquetamab\"",
+                "title": "A Study Comparing Talquetamab in Combination With Daratumumab or in Combination With Daratumumab and Pomalidomide Versus Daratumumab in Combination With Pomalidomide and Dexamethasone in Participants With Multiple Myeloma That Returns After Treatment or is Resistant to Treatment",
+                "url": "https://clinicaltrials.gov/study/NCT05455320"
+              },
+              {
+                "nct_id": "NCT07649525",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Talquetamab\"",
+                "title": "Personalising Treatment for Myeloma Patients Based on Initial Response to NHS Treatment and Their Overall Fitness Level",
+                "url": "https://clinicaltrials.gov/study/NCT07649525"
+              },
+              {
+                "nct_id": "NCT06505369",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Talquetamab\"",
+                "title": "Bispecific T-cell Redirectors as Part of First Line Treatment in Transplant Eligible Multiple Myeloma Patients",
+                "url": "https://clinicaltrials.gov/study/NCT06505369"
+              }
+            ],
+            "source": "intervention:dexamethasone",
+            "target": "intervention:talquetamab",
+            "weight": 11
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05183139",
+              "NCT06163040",
+              "NCT05669989",
+              "NCT06768489",
+              "NCT05259839",
+              "NCT05288062",
+              "NCT05137054",
+              "NCT07018050",
+              "NCT04941937",
+              "NCT05438043",
+              "NCT05556616"
+            ],
+            "citation_count": 11,
+            "citations": [
+              {
+                "nct_id": "NCT05183139",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Lenalidomide\" | \"Pomalidomide\"",
+                "title": "A Multicenter In-class Transition Study of Ixazomib Combined With Pomalidomide and Dexamethasone or With Lenalidomide and Dexamethasone in Adults With Relapsed/Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05183139"
+              },
+              {
+                "nct_id": "NCT06163040",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Elotuzumab in combination with lenalidomide and dexamethasone\" | \"Elotuzumab in combination with pomalidomide and dexamethasone\"",
+                "title": "A Study to Evaluate the Safety of Empliciti® (Elotuzumab) When Treating Patients With Multiple Myeloma in Taiwan",
+                "url": "https://clinicaltrials.gov/study/NCT06163040"
+              },
+              {
+                "nct_id": "NCT05669989",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Lenalidomide\" | \"Pomalidomide\"",
+                "title": "International Treatment-extension Study in Adult Participants With Multiple Myeloma and Who Have Derived Clinical Benefit From Isatuximab",
+                "url": "https://clinicaltrials.gov/study/NCT05669989"
+              }
+            ],
+            "source": "intervention:lenalidomide",
+            "target": "intervention:pomalidomide",
+            "weight": 11
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06413498",
+              "NCT07222761",
+              "NCT07227311",
+              "NCT06140966",
+              "NCT05137054",
+              "NCT05572515",
+              "NCT06158841",
+              "NCT07391657",
+              "NCT05556616",
+              "NCT06152575"
+            ],
+            "citation_count": 10,
+            "citations": [
+              {
+                "nct_id": "NCT06413498",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Carfilzomib\"",
+                "title": "A Study Comparing Anitocabtagene Autoleucel to Standard of Care Therapy in Participants With Relapsed/ Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06413498"
+              },
+              {
+                "nct_id": "NCT07222761",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Carfilzomib\"",
+                "title": "A Study to Compare Linvoseltamab Monotherapy and Linvoseltamab + Carfilzomib Combination Therapy With Standard-of-Care Combination Regimens in Adult Participants With Relapsed/Refractory Multiple Myeloma (RRMM)",
+                "url": "https://clinicaltrials.gov/study/NCT07222761"
+              },
+              {
+                "nct_id": "NCT07227311",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Carfilzomib\"",
+                "title": "A Study to Evaluate the Efficacy and Safety of Belantamab Mafodotin in Combination With Standard of Care in Participants With Relapsed-Refractory Multiple Myeloma (RRMM)",
+                "url": "https://clinicaltrials.gov/study/NCT07227311"
+              }
+            ],
+            "source": "intervention:bortezomib",
+            "target": "intervention:carfilzomib",
+            "weight": 10
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06413498",
+              "NCT06083922",
+              "NCT06119685",
+              "NCT06140966",
+              "NCT06615479",
+              "NCT06577025",
+              "NCT05257083",
+              "NCT07341867",
+              "NCT07045909",
+              "NCT07764978"
+            ],
+            "citation_count": 10,
+            "citations": [
+              {
+                "nct_id": "NCT06413498",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Cyclophosphamide\" | \"Daratumumab\"",
+                "title": "A Study Comparing Anitocabtagene Autoleucel to Standard of Care Therapy in Participants With Relapsed/ Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06413498"
+              },
+              {
+                "nct_id": "NCT06083922",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Cyclophosphamide\" | \"Daratumumab\"",
+                "title": "A Study of CyBorD (Cyclophosphamide, Bortezomib, Dexamethasone) Plus Daratumumab in People With Monoclonal Gammopathy of Renal Significance (MGRS)",
+                "url": "https://clinicaltrials.gov/study/NCT06083922"
+              },
+              {
+                "nct_id": "NCT06119685",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Cyclophosphamide\" | \"Daratumumab\"",
+                "title": "IDP-023 as a Single Agent and in Combination With Antibody Therapies in Patients With Advanced Hematologic Cancers",
+                "url": "https://clinicaltrials.gov/study/NCT06119685"
+              }
+            ],
+            "source": "intervention:cyclophosphamide",
+            "target": "intervention:daratumumab",
+            "weight": 10
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05922501",
+              "NCT05669989",
+              "NCT04835129",
+              "NCT05675319",
+              "NCT05137054",
+              "NCT04850599",
+              "NCT05405166",
+              "NCT05298683",
+              "NCT05911321"
+            ],
+            "citation_count": 9,
+            "citations": [
+              {
+                "nct_id": "NCT05922501",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Isatuximab\" | \"Pomalidomide\"",
+                "title": "Isatuximab, Bela Maf, Pom, and Dex in Relapsed/Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05922501"
+              },
+              {
+                "nct_id": "NCT05669989",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Isatuximab intravenous (IV)\" | \"Pomalidomide\"",
+                "title": "International Treatment-extension Study in Adult Participants With Multiple Myeloma and Who Have Derived Clinical Benefit From Isatuximab",
+                "url": "https://clinicaltrials.gov/study/NCT05669989"
+              },
+              {
+                "nct_id": "NCT04835129",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Isatuximab (for run-in portion)\" | \"Pomalidomide\"",
+                "title": "Isatuximab, Pomalidomide, Elotuzumab and Dexamethasone in Relapsed and/or Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT04835129"
+              }
+            ],
+            "source": "intervention:isatuximab",
+            "target": "intervention:pomalidomide",
+            "weight": 9
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06461988",
+              "NCT05849610",
+              "NCT07649525",
+              "NCT06505369",
+              "NCT05695508",
+              "NCT06577025",
+              "NCT05552222",
+              "NCT07740486",
+              "NCT06353022"
+            ],
+            "citation_count": 9,
+            "citations": [
+              {
+                "nct_id": "NCT06461988",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Talquetamab and Lenalidomide\" | \"Talquetamab\"",
+                "title": "Talquetamab & Lenalidomide as Post Stem Cell Transplant Maintenance in Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06461988"
+              },
+              {
+                "nct_id": "NCT05849610",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Lenalidomide\" | \"Talquetamab\"",
+                "title": "Teclistamab-Daratumumab and Talquestamab-Daratumumab in Newly Diagnosed High-risk Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05849610"
+              },
+              {
+                "nct_id": "NCT07649525",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Lenalidomide\" | \"Talquetamab\"",
+                "title": "Personalising Treatment for Myeloma Patients Based on Initial Response to NHS Treatment and Their Overall Fitness Level",
+                "url": "https://clinicaltrials.gov/study/NCT07649525"
+              }
+            ],
+            "source": "intervention:lenalidomide",
+            "target": "intervention:talquetamab",
+            "weight": 9
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06892522",
+              "NCT06107738",
+              "NCT05896228",
+              "NCT05434689",
+              "NCT04975997",
+              "NCT06785415",
+              "NCT05527340",
+              "NCT05392946"
+            ],
+            "citation_count": 8,
+            "citations": [
+              {
+                "nct_id": "NCT06892522",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab\" | \"Iberdomide\"",
+                "title": "A Study to Assess Change in Disease Activity and Adverse Events (AE)s in Adult Participants With Multiple Myeloma Receiving T Cell Engaging Bi/Tri-specific Antibodies Intravenously (IV)/Subcutaneously (SC) Alone or in Combinations",
+                "url": "https://clinicaltrials.gov/study/NCT06892522"
+              },
+              {
+                "nct_id": "NCT06107738",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab/rHuPH20 Co-formulation\" | \"Iberdomide\"",
+                "title": "Iberdomide and Daratumumab as Maintenance Therapy After an Autologous Stem Cell Transplant for Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06107738"
+              },
+              {
+                "nct_id": "NCT05896228",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab\" | \"Iberdomide\"",
+                "title": "Iberdomide, Daratumumab, Carfilzomib, and Dexamethasone (Iber-KDd) in Patients With Relapsed/Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05896228"
+              }
+            ],
+            "source": "intervention:daratumumab",
+            "target": "intervention:iberdomide",
+            "weight": 8
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06106945",
+              "NCT06988488",
+              "NCT06121843",
+              "NCT06918002",
+              "NCT06997081",
+              "NCT05623020",
+              "NCT06645678",
+              "NCT06152575"
+            ],
+            "citation_count": 8,
+            "citations": [
+              {
+                "nct_id": "NCT06106945",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Elranatamab\"",
+                "title": "AZD0305 as Monotherapy or in Combination With Anticancer Agents in Participants With Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06106945"
+              },
+              {
+                "nct_id": "NCT06988488",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Elranatamab\"",
+                "title": "A Study to Determine the Recommended Dose and Schedule, and Evaluate the Safety and Preliminary Efficacy of Mezigdomide in Combination With Elranatamab in Participants With Relapsed and/or Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06988488"
+              },
+              {
+                "nct_id": "NCT06121843",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Elranatamab\"",
+                "title": "A Study to Evaluate the Safety, Effectiveness and Tolerable Dose of Arlocabtagene Autoleucel (BMS-986393) in Novel Combinations in Participants With Relapsed and/or Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06121843"
+              }
+            ],
+            "source": "intervention:dexamethasone",
+            "target": "intervention:elranatamab",
+            "weight": 8
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05028348",
+              "NCT07623798",
+              "NCT07579234",
+              "NCT07569757",
+              "NCT05675319",
+              "NCT07138209",
+              "NCT06158841",
+              "NCT04941937"
+            ],
+            "citation_count": 8,
+            "citations": [
+              {
+                "nct_id": "NCT05028348",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Pomalidomide\" | \"Selinexor\"",
+                "title": "A Study of Combination of Selinexor, Pomalidomide, and Dexamethasone (SPd) Versus Elotuzumab, Pomalidomide, and Dexamethasone (EloPd) in Subject With Previously Treated Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05028348"
+              },
+              {
+                "nct_id": "NCT07623798",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Pomalidomide Capsules\" | \"Selinexor Tablets\"",
+                "title": "A Study in Participants With Relapsed or Refractory Multiple Myeloma for IBI3003",
+                "url": "https://clinicaltrials.gov/study/NCT07623798"
+              },
+              {
+                "nct_id": "NCT07579234",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Pomalidomide + Bortezomib + Dexamethasone (PVd) or Selinexor + Bortezomib + Dexamethasone (SVd)\" | \"Pomalidomide + Bortezomib + Dexamethasone (PVd) or Selinexor + Bortezomib + Dexamethasone (SVd)\"",
+                "title": "A Multicenter, Randomized, Open-label, Parallel-group, Controlled, Superiority Phase III Clinical Study Comparing the Efficacy and Safety of F182112 Versus Standard of Care in Patients With Relapsed or Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT07579234"
+              }
+            ],
+            "source": "intervention:pomalidomide",
+            "target": "intervention:selinexor",
+            "weight": 8
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05849610",
+              "NCT06505369",
+              "NCT06577025",
+              "NCT06208150",
+              "NCT05572515",
+              "NCT06353022",
+              "NCT07671287"
+            ],
+            "citation_count": 7,
+            "citations": [
+              {
+                "nct_id": "NCT05849610",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Teclistamab\"",
+                "title": "Teclistamab-Daratumumab and Talquestamab-Daratumumab in Newly Diagnosed High-risk Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05849610"
+              },
+              {
+                "nct_id": "NCT06505369",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Teclistamab\"",
+                "title": "Bispecific T-cell Redirectors as Part of First Line Treatment in Transplant Eligible Multiple Myeloma Patients",
+                "url": "https://clinicaltrials.gov/study/NCT06505369"
+              },
+              {
+                "nct_id": "NCT06577025",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Teclistamab\"",
+                "title": "A Study of Different Sequences of Cilta-cel, Talquetamab in Combination With Daratumumab and Teclistamab in Combination With Daratumumab Following Induction With Daratumumab, Bortezomib, Lenalidomide and Dexamethasone in Participants With Standard-risk Newly Diagnosed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06577025"
+              }
+            ],
+            "source": "intervention:bortezomib",
+            "target": "intervention:teclistamab",
+            "weight": 7
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05669989",
+              "NCT06356571",
+              "NCT07479979",
+              "NCT05675319",
+              "NCT05137054",
+              "NCT04850599",
+              "NCT05704049"
+            ],
+            "citation_count": 7,
+            "citations": [
+              {
+                "nct_id": "NCT05669989",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Carfilzomib\" | \"Isatuximab intravenous (IV)\"",
+                "title": "International Treatment-extension Study in Adult Participants With Multiple Myeloma and Who Have Derived Clinical Benefit From Isatuximab",
+                "url": "https://clinicaltrials.gov/study/NCT05669989"
+              },
+              {
+                "nct_id": "NCT06356571",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Carfilzomib\" | \"Isatuximab SC-OBDS\"",
+                "title": "A Study to Investigate Subcutaneous Isatuximab in Combination With Weekly Carfilzomib and Dexamethasone in Adult Participants With Relapsed and/or Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06356571"
+              },
+              {
+                "nct_id": "NCT07479979",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Carfilzomib\" | \"Isatuximab\"",
+                "title": "Study of Selinexor With Carfilzomib, Isatuximab and Dexamethasone for Patients With Relapsed and/or Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT07479979"
+              }
+            ],
+            "source": "intervention:carfilzomib",
+            "target": "intervention:isatuximab",
+            "weight": 7
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06413498",
+              "NCT06119685",
+              "NCT06615479",
+              "NCT06577025",
+              "NCT05257083",
+              "NCT07045909",
+              "NCT07764978"
+            ],
+            "citation_count": 7,
+            "citations": [
+              {
+                "nct_id": "NCT06413498",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab\" | \"Fludarabine\"",
+                "title": "A Study Comparing Anitocabtagene Autoleucel to Standard of Care Therapy in Participants With Relapsed/ Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06413498"
+              },
+              {
+                "nct_id": "NCT06119685",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab\" | \"Fludarabine\"",
+                "title": "IDP-023 as a Single Agent and in Combination With Antibody Therapies in Patients With Advanced Hematologic Cancers",
+                "url": "https://clinicaltrials.gov/study/NCT06119685"
+              },
+              {
+                "nct_id": "NCT06615479",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Daratumumab\" | \"Fludarabine\"",
+                "title": "A Study to Compare the Efficacy and Safety of BMS-986393 Versus Standard Regimens in Adult Participants With Relapsed or Refractory and Lenalidomide-exposed Multiple Myeloma (QUINTESSENTIAL-2)",
+                "url": "https://clinicaltrials.gov/study/NCT06615479"
+              }
+            ],
+            "source": "intervention:daratumumab",
+            "target": "intervention:fludarabine",
+            "weight": 7
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06918002",
+              "NCT06997081",
+              "NCT06207799",
+              "NCT06974786",
+              "NCT05623020",
+              "NCT06931704",
+              "NCT05317416"
+            ],
+            "citation_count": 7,
+            "citations": [
+              {
+                "nct_id": "NCT06918002",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Elranatamab\" | \"Lenalidomide (Revlimid®)\"",
+                "title": "Elranatamab/Lenalidomide Consolidation and/or Elranatamab Maintenance Versus Standard of Care After D-VRd Induction in Transplant-eligible NDMM Patients",
+                "url": "https://clinicaltrials.gov/study/NCT06918002"
+              },
+              {
+                "nct_id": "NCT06997081",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Elranatamab\" | \"Lenalidomide\"",
+                "title": "ERd Combination Treatment in Newly Diagnosed Multiple Myeloma (ADVANCE 2.0)",
+                "url": "https://clinicaltrials.gov/study/NCT06997081"
+              },
+              {
+                "nct_id": "NCT06207799",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Elranatamab\" | \"Lenalidomide\"",
+                "title": "Pre-transplant Purging and Post-transplant MRD-guided Maintenance Therapy With Elranatamab in Patients With High-risk Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06207799"
+              }
+            ],
+            "source": "intervention:elranatamab",
+            "target": "intervention:lenalidomide",
+            "weight": 7
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07735637",
+              "NCT06577025",
+              "NCT05257083",
+              "NCT05032820",
+              "NCT07045909",
+              "NCT07764978",
+              "NCT06045806"
+            ],
+            "citation_count": 7,
+            "citations": [
+              {
+                "nct_id": "NCT07735637",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Fludarabine\" | \"Lenalidomide\"",
+                "title": "A Phase III, Multicentre Study to Evaluate Consolidation Treatment With AZD0120 Compared With ASCT, in Participants With Newly Diagnosed Multiple Myeloma Who Are Transplant Eligible (DURGA-6).",
+                "url": "https://clinicaltrials.gov/study/NCT07735637"
+              },
+              {
+                "nct_id": "NCT06577025",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Fludarabine\" | \"Lenalidomide\"",
+                "title": "A Study of Different Sequences of Cilta-cel, Talquetamab in Combination With Daratumumab and Teclistamab in Combination With Daratumumab Following Induction With Daratumumab, Bortezomib, Lenalidomide and Dexamethasone in Participants With Standard-risk Newly Diagnosed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06577025"
+              },
+              {
+                "nct_id": "NCT05257083",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Fludarabine\" | \"Lenalidomide\"",
+                "title": "A Study of Daratumumab, Bortezomib, Lenalidomide and Dexamethasone (DVRd) Followed by Ciltacabtagene Autoleucel Versus Daratumumab, Bortezomib, Lenalidomide and Dexamethasone (DVRd) Followed by Autologous Stem Cell Transplant (ASCT) in Participants With Newly Diagnosed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05257083"
+              }
+            ],
+            "source": "intervention:fludarabine",
+            "target": "intervention:lenalidomide",
+            "weight": 7
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07227311",
+              "NCT07285239",
+              "NCT06956170",
+              "NCT07637526",
+              "NCT07614360",
+              "NCT07609706"
+            ],
+            "citation_count": 6,
+            "citations": [
+              {
+                "nct_id": "NCT07227311",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Belantamab mafodotin\" | \"Bortezomib\"",
+                "title": "A Study to Evaluate the Efficacy and Safety of Belantamab Mafodotin in Combination With Standard of Care in Participants With Relapsed-Refractory Multiple Myeloma (RRMM)",
+                "url": "https://clinicaltrials.gov/study/NCT07227311"
+              },
+              {
+                "nct_id": "NCT07285239",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Arm A: Belantamab Mafodotin\" | \"Bortezomib\"",
+                "title": "Belantamab Mafodotin or Daratumumab With Bortezomib, Lenalidomide and Dexamethasone for Newly Diagnosed Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT07285239"
+              },
+              {
+                "nct_id": "NCT06956170",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Belantamab mafodotin\" | \"Bortezomib\"",
+                "title": "All Japanese Population: Belantamab Mafodotin Plus Pomalidomide and Dexamethasone (Pd) Versus Bortezomib Plus Pd in Relapsed/Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT06956170"
+              }
+            ],
+            "source": "intervention:belantamab mafodotin",
+            "target": "intervention:bortezomib",
+            "weight": 6
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05272826",
+              "NCT04975997",
+              "NCT05558319",
+              "NCT05392946",
+              "NCT07601100",
+              "NCT07624513"
+            ],
+            "citation_count": 6,
+            "citations": [
+              {
+                "nct_id": "NCT05272826",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Iberdomide\"",
+                "title": "Study of Iberdomide, Bortezomib, Dexamethasone With Isatuximab Added on Demand for ND-NTE MM Patients",
+                "url": "https://clinicaltrials.gov/study/NCT05272826"
+              },
+              {
+                "nct_id": "NCT04975997",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Iberdomide\"",
+                "title": "Open-label Study Comparing Iberdomide, Daratumumab and Dexamethasone (IberDd) Versus Daratumumab, Bortezomib, and Dexamethasone (DVd) in Participants With Relapsed or Refractory Multiple Myeloma (RRMM)",
+                "url": "https://clinicaltrials.gov/study/NCT04975997"
+              },
+              {
+                "nct_id": "NCT05558319",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Bortezomib\" | \"Iberdomide\"",
+                "title": "NDMM Patients Candidates for ASCT Comparing Extended VRD Plus vs. Isa-VRD vs. Isa-V-Iberdomide",
+                "url": "https://clinicaltrials.gov/study/NCT05558319"
+              }
+            ],
+            "source": "intervention:bortezomib",
+            "target": "intervention:iberdomide",
+            "weight": 6
+          }
+        ]
+      }
+    },
+    "meta": {
+      "interpretation": "Built a intervention–intervention network from multiple myeloma trials starting 2022 or later.",
+      "queries": [
+        {
+          "filters": {
+            "condition": "multiple myeloma",
+            "phases": [],
+            "statuses": [],
+            "start_year_min": 2022
+          },
+          "api_params": {
+            "query.cond": "multiple myeloma",
+            "filter.advanced": "AREA[StartDate]RANGE[2022-01-01,MAX]"
+          },
+          "total_matching": 1021,
+          "records_analyzed": 1021,
+          "truncated": false
+        }
+      ],
+      "render": {
+        "units": {
+          "node.size": "trials",
+          "edge.weight": "trials"
+        },
+        "pruning": {
+          "top_n": 15,
+          "min_edge_weight": 6,
+          "nodes_dropped": 593,
+          "edges_dropped": 1140
+        }
+      },
+      "visualization_rationale": {
+        "chosen": "network_graph",
+        "source": "llm",
+        "reason": "A network graph effectively visualizes the relationships and co-occurrence patterns between drugs in combination studies for multiple myeloma trials."
+      },
+      "assumptions": [
+        "Two interventions are linked when one trial lists both; edge weight is the number of such trials.",
+        "Only drug, biological and combination-product interventions are nodes; placebo and standard-of-care comparators are left out because they would link to everything.",
+        "Listing two drugs in one trial does not necessarily mean they were given together."
+      ],
+      "notes": [],
+      "plan": {
+        "supported": true,
+        "analysis": "network",
+        "metric": "trial_count",
+        "filters": {
+          "condition": "multiple myeloma",
+          "phases": [],
+          "statuses": [],
+          "start_year_min": 2022
+        },
+        "compare": [],
+        "network": {
+          "source": "intervention",
+          "target": "intervention"
+        },
+        "top_n": 15,
+        "chart_type_suggestion": "network_graph",
+        "chart_rationale": "A network graph effectively visualizes the relationships and co-occurrence patterns between drugs in combination studies for multiple myeloma trials."
+      },
+      "source": "ClinicalTrials.gov API v2",
+      "data_as_of": "2026-09-25T09:00:04",
+      "generated_at": "2026-09-27T00:30:31.112592Z"
+    }
+  }
+}

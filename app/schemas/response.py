@@ -110,8 +110,11 @@ class NetworkEncoding(BaseModel):
 
 
 class _TabularViz(BaseModel):
-    title: str
-    data: list[DataRow]
+    """Shared validation for charts whose `data` is a list of rows.
+
+    Each subclass declares `type`, `title`, `encoding`, `data` in that order, so
+    serialized JSON reads the way the spec presents it.
+    """
 
     @model_validator(mode="after")
     def _encoded_fields_exist(self) -> "_TabularViz":
@@ -127,29 +130,39 @@ class _TabularViz(BaseModel):
 
 class BarChart(_TabularViz):
     type: Literal[VizType.BAR_CHART] = VizType.BAR_CHART
+    title: str
     encoding: XYEncoding
+    data: list[DataRow]
 
 
 class GroupedBarChart(_TabularViz):
     type: Literal[VizType.GROUPED_BAR_CHART] = VizType.GROUPED_BAR_CHART
+    title: str
     encoding: SeriesEncoding
+    data: list[DataRow]
 
 
 class TimeSeries(_TabularViz):
     type: Literal[VizType.TIME_SERIES] = VizType.TIME_SERIES
+    title: str
     encoding: OptionalSeriesEncoding
+    data: list[DataRow]
 
 
 class Histogram(_TabularViz):
     type: Literal[VizType.HISTOGRAM] = VizType.HISTOGRAM
+    title: str
     encoding: HistogramEncoding
+    data: list[DataRow]
 
 
 class MetricViz(_TabularViz):
     """A single number: the question needs no chart (OA §1, "identify if a visualization is needed")."""
 
     type: Literal[VizType.METRIC] = VizType.METRIC
+    title: str
     encoding: MetricEncoding
+    data: list[DataRow]
 
 
 class Node(Evidence):

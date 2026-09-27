@@ -1,0 +1,2017 @@
+{
+  "request": {
+    "query": "Show a network of sponsors and drugs for KRAS-mutant non-small cell lung cancer trials."
+  },
+  "http_status": 200,
+  "response": {
+    "schema_version": "1.0",
+    "status": "ok",
+    "visualization": {
+      "type": "network_graph",
+      "title": "Lead sponsor–intervention network: KRAS-mutant non-small cell lung cancer trials",
+      "encoding": {
+        "node": {
+          "id": "id",
+          "label": "label",
+          "size": "size",
+          "color": "type"
+        },
+        "edge": {
+          "source": "source",
+          "target": "target",
+          "weight": "weight"
+        }
+      },
+      "data": {
+        "nodes": [
+          {
+            "supporting_nct_ids": [
+              "NCT03948763",
+              "NCT06345729",
+              "NCT07190248",
+              "NCT06343402",
+              "NCT06890598",
+              "NCT06607185",
+              "NCT04956640",
+              "NCT03299088",
+              "NCT06119581",
+              "NCT06917079",
+              "NCT07639242",
+              "NCT06835569"
+            ],
+            "citation_count": 12,
+            "citations": [
+              {
+                "nct_id": "NCT03948763",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Pembrolizumab",
+                "title": "A Study of mRNA-5671/V941 as Monotherapy and in Combination With Pembrolizumab (V941-001)",
+                "url": "https://clinicaltrials.gov/study/NCT03948763"
+              },
+              {
+                "nct_id": "NCT06345729",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Pembrolizumab",
+                "title": "A Study of Calderasib (MK-1084) Plus Pembrolizumab (MK-3475) in Participants With KRAS G12C Mutant Non-small Cell Lung Cancer (NSCLC) With Programmed Cell Death Ligand 1 (PD-L1) Tumor Proportion Score (TPS) ≥50% (MK-1084-004/KANDLELIT-004)",
+                "url": "https://clinicaltrials.gov/study/NCT06345729"
+              },
+              {
+                "nct_id": "NCT07190248",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Pembrolizumab (+) Berahyaluronidase alfa",
+                "title": "A Clinical Study of Calderasib (MK-1084) and Other Treatments for Participants With Non-Small Cell Lung Cancer (MK-1084-007/KANDLELIT-007)",
+                "url": "https://clinicaltrials.gov/study/NCT07190248"
+              }
+            ],
+            "id": "intervention:pembrolizumab",
+            "label": "Pembrolizumab",
+            "type": "intervention",
+            "size": 12
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07822542",
+              "NCT01912625",
+              "NCT07190248",
+              "NCT06607185",
+              "NCT04956640",
+              "NCT06119581",
+              "NCT03777124",
+              "NCT06917079",
+              "NCT06835569"
+            ],
+            "citation_count": 9,
+            "citations": [
+              {
+                "nct_id": "NCT07822542",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Carboplatin",
+                "title": "A Study Evaluating HS-10370 Plus Platinum-based Doublet Chemotherapy With or Without Adebrelimab vs. Tislelizumab Plus Chemotherapy as First-Line Therapy in Patients With Advanced KRAS G12C-Mutant Non-small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT07822542"
+              },
+              {
+                "nct_id": "NCT01912625",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Carboplatin",
+                "title": "Trametinib, Combination Chemotherapy, and Radiation Therapy in Treating Patients With Stage III Non-small Cell Lung Cancer That Cannot Be Removed by Surgery",
+                "url": "https://clinicaltrials.gov/study/NCT01912625"
+              },
+              {
+                "nct_id": "NCT07190248",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Carboplatin",
+                "title": "A Clinical Study of Calderasib (MK-1084) and Other Treatments for Participants With Non-Small Cell Lung Cancer (MK-1084-007/KANDLELIT-007)",
+                "url": "https://clinicaltrials.gov/study/NCT07190248"
+              }
+            ],
+            "id": "intervention:carboplatin",
+            "label": "Carboplatin",
+            "type": "intervention",
+            "size": 9
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06024174",
+              "NCT06607185",
+              "NCT05358249",
+              "NCT04956640",
+              "NCT07349537",
+              "NCT06586515",
+              "NCT05002270",
+              "NCT06917079",
+              "NCT06835569"
+            ],
+            "citation_count": 9,
+            "citations": [
+              {
+                "nct_id": "NCT06024174",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Cetuximab",
+                "title": "A Study of BMS-986466 With Adagrasib With or Without Cetuximab in Participants With Kirsten Rat Sarcoma Virus Glycine 12 to Cysteine (KRAS G12C)-Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06024174"
+              },
+              {
+                "nct_id": "NCT06607185",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Cetuximab",
+                "title": "A Study of the Pan-KRAS Inhibitor LY4066434 in Participants With KRAS Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06607185"
+              },
+              {
+                "nct_id": "NCT05358249",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "cetuximab",
+                "title": "Platform Study of JDQ443 in Combinations in Patients With Advanced Solid Tumors Harboring the KRAS G12C Mutation",
+                "url": "https://clinicaltrials.gov/study/NCT05358249"
+              }
+            ],
+            "id": "intervention:cetuximab",
+            "label": "Cetuximab",
+            "type": "intervention",
+            "size": 9
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT04892017",
+              "NCT05074810",
+              "NCT06582771",
+              "NCT05451056",
+              "NCT06333678",
+              "NCT05374538",
+              "NCT05815186",
+              "NCT05815173",
+              "NCT06068153"
+            ],
+            "citation_count": 9,
+            "citations": [
+              {
+                "nct_id": "NCT04892017",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Sotorasib",
+                "title": "Study of Inlexisertib (DCC-3116) in Participants With RAS/MAPK Pathway Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04892017"
+              },
+              {
+                "nct_id": "NCT05074810",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "avutometinib and sotorasib",
+                "title": "Phase 1/2 Study of Avutometinib (VS-6766) + Sotorasib With or Without Defactinib in KRAS G12C NSCLC Patients",
+                "url": "https://clinicaltrials.gov/study/NCT05074810"
+              },
+              {
+                "nct_id": "NCT06582771",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Sotorasib",
+                "title": "A Study of Sotorasib in People With Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06582771"
+              }
+            ],
+            "id": "intervention:sotorasib",
+            "label": "Sotorasib",
+            "type": "intervention",
+            "size": 9
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT04892017",
+              "NCT02974725",
+              "NCT01912625",
+              "NCT02230553",
+              "NCT06456138",
+              "NCT03704688",
+              "NCT05358249",
+              "NCT03299088",
+              "NCT04967079"
+            ],
+            "citation_count": 9,
+            "citations": [
+              {
+                "nct_id": "NCT04892017",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Trametinib",
+                "title": "Study of Inlexisertib (DCC-3116) in Participants With RAS/MAPK Pathway Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04892017"
+              },
+              {
+                "nct_id": "NCT02974725",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Trametinib",
+                "title": "A Phase Ib Study of LXH254-centric Combinations in NSCLC or Melanoma",
+                "url": "https://clinicaltrials.gov/study/NCT02974725"
+              },
+              {
+                "nct_id": "NCT01912625",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Trametinib",
+                "title": "Trametinib, Combination Chemotherapy, and Radiation Therapy in Treating Patients With Stage III Non-small Cell Lung Cancer That Cannot Be Removed by Surgery",
+                "url": "https://clinicaltrials.gov/study/NCT01912625"
+              }
+            ],
+            "id": "intervention:trametinib",
+            "label": "Trametinib",
+            "type": "intervention",
+            "size": 9
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07822542",
+              "NCT07190248",
+              "NCT06607185",
+              "NCT04956640",
+              "NCT06119581",
+              "NCT03777124",
+              "NCT06917079",
+              "NCT06835569"
+            ],
+            "citation_count": 8,
+            "citations": [
+              {
+                "nct_id": "NCT07822542",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Pemetrexed",
+                "title": "A Study Evaluating HS-10370 Plus Platinum-based Doublet Chemotherapy With or Without Adebrelimab vs. Tislelizumab Plus Chemotherapy as First-Line Therapy in Patients With Advanced KRAS G12C-Mutant Non-small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT07822542"
+              },
+              {
+                "nct_id": "NCT07190248",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Pemetrexed",
+                "title": "A Clinical Study of Calderasib (MK-1084) and Other Treatments for Participants With Non-Small Cell Lung Cancer (MK-1084-007/KANDLELIT-007)",
+                "url": "https://clinicaltrials.gov/study/NCT07190248"
+              },
+              {
+                "nct_id": "NCT06607185",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Pemetrexed",
+                "title": "A Study of the Pan-KRAS Inhibitor LY4066434 in Participants With KRAS Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06607185"
+              }
+            ],
+            "id": "intervention:pemetrexed",
+            "label": "Pemetrexed",
+            "type": "intervention",
+            "size": 8
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07822542",
+              "NCT07190248",
+              "NCT06607185",
+              "NCT04956640",
+              "NCT06119581",
+              "NCT06917079",
+              "NCT06835569"
+            ],
+            "citation_count": 7,
+            "citations": [
+              {
+                "nct_id": "NCT07822542",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Cisplatin",
+                "title": "A Study Evaluating HS-10370 Plus Platinum-based Doublet Chemotherapy With or Without Adebrelimab vs. Tislelizumab Plus Chemotherapy as First-Line Therapy in Patients With Advanced KRAS G12C-Mutant Non-small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT07822542"
+              },
+              {
+                "nct_id": "NCT07190248",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Cisplatin",
+                "title": "A Clinical Study of Calderasib (MK-1084) and Other Treatments for Participants With Non-Small Cell Lung Cancer (MK-1084-007/KANDLELIT-007)",
+                "url": "https://clinicaltrials.gov/study/NCT07190248"
+              },
+              {
+                "nct_id": "NCT06607185",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Cisplatin",
+                "title": "A Study of the Pan-KRAS Inhibitor LY4066434 in Participants With KRAS Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06607185"
+              }
+            ],
+            "id": "intervention:cisplatin",
+            "label": "Cisplatin",
+            "type": "intervention",
+            "size": 7
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05132075",
+              "NCT01362296",
+              "NCT03990077",
+              "NCT03095612",
+              "NCT02450656",
+              "NCT02039336",
+              "NCT07242274"
+            ],
+            "citation_count": 7,
+            "citations": [
+              {
+                "nct_id": "NCT05132075",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "docetaxel",
+                "title": "Study of JDQ443 in Comparison With Docetaxel in Participants With Locally Advanced or Metastatic KRAS G12C Mutant Non-small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT05132075"
+              },
+              {
+                "nct_id": "NCT01362296",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "docetaxel",
+                "title": "An Open-label Study of GSK1120212 Compared With Docetaxel in Stage IV KRAS-mutant Non-small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT01362296"
+              },
+              {
+                "nct_id": "NCT03990077",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Docetaxel",
+                "title": "Study of HL-085 Plus Docetaxel in Patients With KRAS Mutant NSCLC",
+                "url": "https://clinicaltrials.gov/study/NCT03990077"
+              }
+            ],
+            "id": "intervention:docetaxel",
+            "label": "Docetaxel",
+            "type": "intervention",
+            "size": 7
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06890598",
+              "NCT06607185",
+              "NCT04956640",
+              "NCT06119581",
+              "NCT06586515"
+            ],
+            "citation_count": 5,
+            "citations": [
+              {
+                "nct_id": "NCT06890598",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Eli Lilly and Company",
+                "title": "Study of Olomorasib (LY3537982) in Combination With Standard of Care in Participants With Resected or Unresectable KRAS G12C-mutant Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06890598"
+              },
+              {
+                "nct_id": "NCT06607185",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Eli Lilly and Company",
+                "title": "A Study of the Pan-KRAS Inhibitor LY4066434 in Participants With KRAS Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06607185"
+              },
+              {
+                "nct_id": "NCT04956640",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Eli Lilly and Company",
+                "title": "Study of LY3537982 in Cancer Patients With a Specific Genetic Mutation (KRAS G12C)",
+                "url": "https://clinicaltrials.gov/study/NCT04956640"
+              }
+            ],
+            "id": "sponsor:eli lilly and company",
+            "label": "Eli Lilly and Company",
+            "type": "sponsor",
+            "size": 5
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT03704688",
+              "NCT06582771",
+              "NCT06333678",
+              "NCT03681483",
+              "NCT01833143"
+            ],
+            "citation_count": 5,
+            "citations": [
+              {
+                "nct_id": "NCT03704688",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Memorial Sloan Kettering Cancer Center",
+                "title": "Trial of Trametinib and Ponatinib in Patients With KRAS Mutant Advanced Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT03704688"
+              },
+              {
+                "nct_id": "NCT06582771",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Memorial Sloan Kettering Cancer Center",
+                "title": "A Study of Sotorasib in People With Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06582771"
+              },
+              {
+                "nct_id": "NCT06333678",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Memorial Sloan Kettering Cancer Center",
+                "title": "A Study Comparing Sotorasib With Durvalumab in People With Non-Small Cell Lung Cancer (NSCLC)",
+                "url": "https://clinicaltrials.gov/study/NCT06333678"
+              }
+            ],
+            "id": "sponsor:memorial sloan kettering cancer center",
+            "label": "Memorial Sloan Kettering Cancer Center",
+            "type": "sponsor",
+            "size": 5
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT03948763",
+              "NCT06345729",
+              "NCT07190248",
+              "NCT07554339",
+              "NCT07431827"
+            ],
+            "citation_count": 5,
+            "citations": [
+              {
+                "nct_id": "NCT03948763",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Merck Sharp & Dohme LLC",
+                "title": "A Study of mRNA-5671/V941 as Monotherapy and in Combination With Pembrolizumab (V941-001)",
+                "url": "https://clinicaltrials.gov/study/NCT03948763"
+              },
+              {
+                "nct_id": "NCT06345729",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Merck Sharp & Dohme LLC",
+                "title": "A Study of Calderasib (MK-1084) Plus Pembrolizumab (MK-3475) in Participants With KRAS G12C Mutant Non-small Cell Lung Cancer (NSCLC) With Programmed Cell Death Ligand 1 (PD-L1) Tumor Proportion Score (TPS) ≥50% (MK-1084-004/KANDLELIT-004)",
+                "url": "https://clinicaltrials.gov/study/NCT06345729"
+              },
+              {
+                "nct_id": "NCT07190248",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Merck Sharp & Dohme LLC",
+                "title": "A Clinical Study of Calderasib (MK-1084) and Other Treatments for Participants With Non-Small Cell Lung Cancer (MK-1084-007/KANDLELIT-007)",
+                "url": "https://clinicaltrials.gov/study/NCT07190248"
+              }
+            ],
+            "id": "sponsor:merck sharp & dohme llc",
+            "label": "Merck Sharp & Dohme LLC",
+            "type": "sponsor",
+            "size": 5
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT04892017",
+              "NCT04965818",
+              "NCT04735068",
+              "NCT03170206"
+            ],
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT04892017",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Binimetinib",
+                "title": "Study of Inlexisertib (DCC-3116) in Participants With RAS/MAPK Pathway Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04892017"
+              },
+              {
+                "nct_id": "NCT04965818",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Futibatinib and Binimetinib",
+                "title": "Phase 1b/2 Study of Futibatinib in Combination With Binimetinib in Patients With Advanced KRAS Mutant Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04965818"
+              },
+              {
+                "nct_id": "NCT04735068",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Binimetinib Pill",
+                "title": "Binimetinib and Hydroxychloroquine in Patients With Advanced KRAS Mutant Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04735068"
+              }
+            ],
+            "id": "intervention:binimetinib",
+            "label": "Binimetinib",
+            "type": "intervention",
+            "size": 4
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06345729",
+              "NCT07190248",
+              "NCT07554339",
+              "NCT07431827"
+            ],
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT06345729",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Calderasib",
+                "title": "A Study of Calderasib (MK-1084) Plus Pembrolizumab (MK-3475) in Participants With KRAS G12C Mutant Non-small Cell Lung Cancer (NSCLC) With Programmed Cell Death Ligand 1 (PD-L1) Tumor Proportion Score (TPS) ≥50% (MK-1084-004/KANDLELIT-004)",
+                "url": "https://clinicaltrials.gov/study/NCT06345729"
+              },
+              {
+                "nct_id": "NCT07190248",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Calderasib",
+                "title": "A Clinical Study of Calderasib (MK-1084) and Other Treatments for Participants With Non-Small Cell Lung Cancer (MK-1084-007/KANDLELIT-007)",
+                "url": "https://clinicaltrials.gov/study/NCT07190248"
+              },
+              {
+                "nct_id": "NCT07554339",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Calderasib",
+                "title": "A Clinical Trial of Calderasib (MK-1084) and Durvalumab in People With Non-Small Cell Lung Cancer (MK-1084-015/KANDLELIT-015)",
+                "url": "https://clinicaltrials.gov/study/NCT07554339"
+              }
+            ],
+            "id": "intervention:calderasib",
+            "label": "Calderasib",
+            "type": "intervention",
+            "size": 4
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07554339",
+              "NCT06890598",
+              "NCT06333678",
+              "NCT03004105"
+            ],
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT07554339",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Durvalumab",
+                "title": "A Clinical Trial of Calderasib (MK-1084) and Durvalumab in People With Non-Small Cell Lung Cancer (MK-1084-015/KANDLELIT-015)",
+                "url": "https://clinicaltrials.gov/study/NCT07554339"
+              },
+              {
+                "nct_id": "NCT06890598",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Durvalumab",
+                "title": "Study of Olomorasib (LY3537982) in Combination With Standard of Care in Participants With Resected or Unresectable KRAS G12C-mutant Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06890598"
+              },
+              {
+                "nct_id": "NCT06333678",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Durvalumab",
+                "title": "A Study Comparing Sotorasib With Durvalumab in People With Non-Small Cell Lung Cancer (NSCLC)",
+                "url": "https://clinicaltrials.gov/study/NCT06333678"
+              }
+            ],
+            "id": "intervention:durvalumab",
+            "label": "Durvalumab",
+            "type": "intervention",
+            "size": 4
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05132075",
+              "NCT02974725",
+              "NCT04699188",
+              "NCT05358249"
+            ],
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT05132075",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Novartis Pharmaceuticals",
+                "title": "Study of JDQ443 in Comparison With Docetaxel in Participants With Locally Advanced or Metastatic KRAS G12C Mutant Non-small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT05132075"
+              },
+              {
+                "nct_id": "NCT02974725",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Novartis Pharmaceuticals",
+                "title": "A Phase Ib Study of LXH254-centric Combinations in NSCLC or Melanoma",
+                "url": "https://clinicaltrials.gov/study/NCT02974725"
+              },
+              {
+                "nct_id": "NCT04699188",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Novartis Pharmaceuticals",
+                "title": "Study of JDQ443 in Patients With Advanced Solid Tumors Harboring the KRAS G12C Mutation",
+                "url": "https://clinicaltrials.gov/study/NCT04699188"
+              }
+            ],
+            "id": "sponsor:novartis pharmaceuticals",
+            "label": "Novartis Pharmaceuticals",
+            "type": "sponsor",
+            "size": 4
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05462717",
+              "NCT06040541",
+              "NCT06128551",
+              "NCT07349537"
+            ],
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT05462717",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Revolution Medicines, Inc.",
+                "title": "Dose Escalation and Dose Expansion Study of RMC-6291 Monotherapy in Subjects With Advanced KRASG12C Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT05462717"
+              },
+              {
+                "nct_id": "NCT06040541",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Revolution Medicines, Inc.",
+                "title": "Study of RMC-9805 in Participants With KRAS G12D-Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06040541"
+              },
+              {
+                "nct_id": "NCT06128551",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Revolution Medicines, Inc.",
+                "title": "Study of Elironrasib and Daraxonrasib as Monotherapies and Combination Therapy in Participants With Advanced KRAS G12C Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06128551"
+              }
+            ],
+            "id": "sponsor:revolution medicines, inc.",
+            "label": "Revolution Medicines, Inc.",
+            "type": "sponsor",
+            "size": 4
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT02230553",
+              "NCT02450656",
+              "NCT04916236",
+              "NCT02039336"
+            ],
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT02230553",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "The Netherlands Cancer Institute",
+                "title": "Lapatinib Plus Trametinib in KRAS Mutant NSCLC",
+                "url": "https://clinicaltrials.gov/study/NCT02230553"
+              },
+              {
+                "nct_id": "NCT02450656",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "The Netherlands Cancer Institute",
+                "title": "Afatinib and Selumetinib in Advanced KRAS Mutant and PIK3CA Wildtype Non-small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT02450656"
+              },
+              {
+                "nct_id": "NCT04916236",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "The Netherlands Cancer Institute",
+                "title": "Combination Therapy of RMC-4630 and LY3214996 in Metastatic KRAS Mutant Cancers",
+                "url": "https://clinicaltrials.gov/study/NCT04916236"
+              }
+            ],
+            "id": "sponsor:the netherlands cancer institute",
+            "label": "The Netherlands Cancer Institute",
+            "type": "sponsor",
+            "size": 4
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05074810",
+              "NCT01951690",
+              "NCT04620330",
+              "NCT05375994"
+            ],
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT05074810",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Verastem, Inc.",
+                "title": "Phase 1/2 Study of Avutometinib (VS-6766) + Sotorasib With or Without Defactinib in KRAS G12C NSCLC Patients",
+                "url": "https://clinicaltrials.gov/study/NCT05074810"
+              },
+              {
+                "nct_id": "NCT01951690",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Verastem, Inc.",
+                "title": "Phase II Study of VS-6063 in Patients With KRAS Mutant Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT01951690"
+              },
+              {
+                "nct_id": "NCT04620330",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Verastem, Inc.",
+                "title": "A Study of Avutometinib (VS-6766) + Defactinib in Recurrent KRAS G12V, Other KRAS and BRAF Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04620330"
+              }
+            ],
+            "id": "sponsor:verastem, inc.",
+            "label": "Verastem, Inc.",
+            "type": "sponsor",
+            "size": 4
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05673187",
+              "NCT06024174",
+              "NCT05375994"
+            ],
+            "citation_count": 3,
+            "citations": [
+              {
+                "nct_id": "NCT05673187",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Adagrasib",
+                "title": "Adagrasib in Patients With KRASG12C-mutant NSCLC Who Are Elderly or Have Poor Performance Status",
+                "url": "https://clinicaltrials.gov/study/NCT05673187"
+              },
+              {
+                "nct_id": "NCT06024174",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Adagrasib",
+                "title": "A Study of BMS-986466 With Adagrasib With or Without Cetuximab in Participants With Kirsten Rat Sarcoma Virus Glycine 12 to Cysteine (KRAS G12C)-Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06024174"
+              },
+              {
+                "nct_id": "NCT05375994",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "avutometinib (VS-6766) and adagrasib",
+                "title": "Study of Avutometinib (VS-6766) + Adagrasib in KRAS G12C NSCLC Patients",
+                "url": "https://clinicaltrials.gov/study/NCT05375994"
+              }
+            ],
+            "id": "intervention:adagrasib",
+            "label": "Adagrasib",
+            "type": "intervention",
+            "size": 3
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07294261",
+              "NCT06456138",
+              "NCT04967079"
+            ],
+            "citation_count": 3,
+            "citations": [
+              {
+                "nct_id": "NCT07294261",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Garsorasib, Benmelstobart, Anlotinib",
+                "title": "Garsorasib In KRAS G12C Mutant Locally Advanced and Metastatic NSCLC",
+                "url": "https://clinicaltrials.gov/study/NCT07294261"
+              },
+              {
+                "nct_id": "NCT06456138",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Anlotinib",
+                "title": "Trametinib Plus Anlotinib Combined With Tislelizumab in KRAS-mutant NSCLC",
+                "url": "https://clinicaltrials.gov/study/NCT06456138"
+              },
+              {
+                "nct_id": "NCT04967079",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Anlotinib",
+                "title": "Trametinib Plus Anlotinib in Non-G12C KRAS-Mutant NSCLC Patients",
+                "url": "https://clinicaltrials.gov/study/NCT04967079"
+              }
+            ],
+            "id": "intervention:anlotinib",
+            "label": "Anlotinib",
+            "type": "intervention",
+            "size": 3
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06343402",
+              "NCT06917079",
+              "NCT06625775"
+            ],
+            "citation_count": 3,
+            "citations": [
+              {
+                "nct_id": "NCT06343402",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "BBO-10203",
+                "title": "Open-label Study of BBO-8520 in Adult Subjects With KRASG12C Non-small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06343402"
+              },
+              {
+                "nct_id": "NCT06917079",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "BBO-10203",
+                "title": "BBO-11818 in Adult Subjects With KRAS Mutant Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06917079"
+              },
+              {
+                "nct_id": "NCT06625775",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "BBO-10203",
+                "title": "Open-Label Study of BBO-10203 in Subjects With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06625775"
+              }
+            ],
+            "id": "intervention:bbo-10203",
+            "label": "BBO-10203",
+            "type": "intervention",
+            "size": 3
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05074810",
+              "NCT01951690",
+              "NCT04620330"
+            ],
+            "citation_count": 3,
+            "citations": [
+              {
+                "nct_id": "NCT05074810",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "avutometinib and sotorasib and defactinib",
+                "title": "Phase 1/2 Study of Avutometinib (VS-6766) + Sotorasib With or Without Defactinib in KRAS G12C NSCLC Patients",
+                "url": "https://clinicaltrials.gov/study/NCT05074810"
+              },
+              {
+                "nct_id": "NCT01951690",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "defactinib (VS-6063)",
+                "title": "Phase II Study of VS-6063 in Patients With KRAS Mutant Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT01951690"
+              },
+              {
+                "nct_id": "NCT04620330",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "avutometinib (VS-6766) and Defactinib",
+                "title": "A Study of Avutometinib (VS-6766) + Defactinib in Recurrent KRAS G12V, Other KRAS and BRAF Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04620330"
+              }
+            ],
+            "id": "intervention:defactinib",
+            "label": "Defactinib",
+            "type": "intervention",
+            "size": 3
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06343402",
+              "NCT06917079",
+              "NCT06625775"
+            ],
+            "citation_count": 3,
+            "citations": [
+              {
+                "nct_id": "NCT06343402",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "TheRas, Inc., d/b/a BBOT (BridgeBio Oncology Therapeutics)",
+                "title": "Open-label Study of BBO-8520 in Adult Subjects With KRASG12C Non-small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06343402"
+              },
+              {
+                "nct_id": "NCT06917079",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "TheRas, Inc., d/b/a BBOT (BridgeBio Oncology Therapeutics)",
+                "title": "BBO-11818 in Adult Subjects With KRAS Mutant Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06917079"
+              },
+              {
+                "nct_id": "NCT06625775",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "TheRas, Inc., d/b/a BBOT (BridgeBio Oncology Therapeutics)",
+                "title": "Open-Label Study of BBO-10203 in Subjects With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06625775"
+              }
+            ],
+            "id": "sponsor:theras, inc., d/b/a bbot (bridgebio oncology therapeutics)",
+            "label": "TheRas, Inc., d/b/a BBOT (BridgeBio Oncology Therapeutics)",
+            "type": "sponsor",
+            "size": 3
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT02022982",
+              "NCT03170206"
+            ],
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT02022982",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Dana-Farber Cancer Institute",
+                "title": "PALBOCICLIB + PD-0325901 for NSCLC & Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT02022982"
+              },
+              {
+                "nct_id": "NCT03170206",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Dana-Farber Cancer Institute",
+                "title": "Study of Palbociclib in Combination With Binimetinib for Patients With Advanced KRAS Mutant Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT03170206"
+              }
+            ],
+            "id": "sponsor:dana-farber cancer institute",
+            "label": "Dana-Farber Cancer Institute",
+            "type": "sponsor",
+            "size": 2
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05673187",
+              "NCT06068153"
+            ],
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT05673187",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "ETOP IBCSG Partners Foundation",
+                "title": "Adagrasib in Patients With KRASG12C-mutant NSCLC Who Are Elderly or Have Poor Performance Status",
+                "url": "https://clinicaltrials.gov/study/NCT05673187"
+              },
+              {
+                "nct_id": "NCT06068153",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "ETOP IBCSG Partners Foundation",
+                "title": "AMG510 (sotorasib) Plus Lenvatinib As Second-line Treatment in Patients with KRASG12C Mutant, Metastatic NSCLC",
+                "url": "https://clinicaltrials.gov/study/NCT06068153"
+              }
+            ],
+            "id": "sponsor:etop ibcsg partners foundation",
+            "label": "ETOP IBCSG Partners Foundation",
+            "type": "sponsor",
+            "size": 2
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT01912625",
+              "NCT01229150"
+            ],
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT01912625",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "National Cancer Institute (NCI)",
+                "title": "Trametinib, Combination Chemotherapy, and Radiation Therapy in Treating Patients With Stage III Non-small Cell Lung Cancer That Cannot Be Removed by Surgery",
+                "url": "https://clinicaltrials.gov/study/NCT01912625"
+              },
+              {
+                "nct_id": "NCT01229150",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "National Cancer Institute (NCI)",
+                "title": "Randomized Phase II Study of AZD6244 (Mitogen-activated Protein Kinase Inhibitor) MEK-Inhibitor With Erlotinib in KRAS Wild Type Advanced Non-Small Cell Lung Cancer (NSCLC) and a Randomized Phase II Study of AZD6244 With Erlotinib in Mutant KRAS Adva...",
+                "url": "https://clinicaltrials.gov/study/NCT01229150"
+              }
+            ],
+            "id": "sponsor:national cancer institute (nci)",
+            "label": "National Cancer Institute (NCI)",
+            "type": "sponsor",
+            "size": 2
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05815186",
+              "NCT05815173"
+            ],
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT05815186",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "NYU Langone Health",
+                "title": "Ladarixin With Sotorasib in Advanced NSCLC - Phase II",
+                "url": "https://clinicaltrials.gov/study/NCT05815186"
+              },
+              {
+                "nct_id": "NCT05815173",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "NYU Langone Health",
+                "title": "Ladarixin With Sotorasib in Advanced NSCLC",
+                "url": "https://clinicaltrials.gov/study/NCT05815173"
+              }
+            ],
+            "id": "sponsor:nyu langone health",
+            "label": "NYU Langone Health",
+            "type": "sponsor",
+            "size": 2
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06456138",
+              "NCT04967079"
+            ],
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT06456138",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Shanghai Chest Hospital",
+                "title": "Trametinib Plus Anlotinib Combined With Tislelizumab in KRAS-mutant NSCLC",
+                "url": "https://clinicaltrials.gov/study/NCT06456138"
+              },
+              {
+                "nct_id": "NCT04967079",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Shanghai Chest Hospital",
+                "title": "Trametinib Plus Anlotinib in Non-G12C KRAS-Mutant NSCLC Patients",
+                "url": "https://clinicaltrials.gov/study/NCT04967079"
+              }
+            ],
+            "id": "sponsor:shanghai chest hospital",
+            "label": "Shanghai Chest Hospital",
+            "type": "sponsor",
+            "size": 2
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT04735068"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT04735068",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Abramson Cancer Center at Penn Medicine",
+                "title": "Binimetinib and Hydroxychloroquine in Patients With Advanced KRAS Mutant Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04735068"
+              }
+            ],
+            "id": "sponsor:abramson cancer center at penn medicine",
+            "label": "Abramson Cancer Center at Penn Medicine",
+            "type": "sponsor",
+            "size": 1
+          }
+        ],
+        "edges": [
+          {
+            "supporting_nct_ids": [
+              "NCT06890598",
+              "NCT06607185",
+              "NCT04956640",
+              "NCT06119581"
+            ],
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT06890598",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Eli Lilly and Company\" | \"Pembrolizumab\"",
+                "title": "Study of Olomorasib (LY3537982) in Combination With Standard of Care in Participants With Resected or Unresectable KRAS G12C-mutant Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06890598"
+              },
+              {
+                "nct_id": "NCT06607185",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Eli Lilly and Company\" | \"Pembrolizumab\"",
+                "title": "A Study of the Pan-KRAS Inhibitor LY4066434 in Participants With KRAS Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06607185"
+              },
+              {
+                "nct_id": "NCT04956640",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Eli Lilly and Company\" | \"Pembrolizumab\"",
+                "title": "Study of LY3537982 in Cancer Patients With a Specific Genetic Mutation (KRAS G12C)",
+                "url": "https://clinicaltrials.gov/study/NCT04956640"
+              }
+            ],
+            "source": "sponsor:eli lilly and company",
+            "target": "intervention:pembrolizumab",
+            "weight": 4
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06345729",
+              "NCT07190248",
+              "NCT07554339",
+              "NCT07431827"
+            ],
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT06345729",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Merck Sharp & Dohme LLC\" | \"Calderasib\"",
+                "title": "A Study of Calderasib (MK-1084) Plus Pembrolizumab (MK-3475) in Participants With KRAS G12C Mutant Non-small Cell Lung Cancer (NSCLC) With Programmed Cell Death Ligand 1 (PD-L1) Tumor Proportion Score (TPS) ≥50% (MK-1084-004/KANDLELIT-004)",
+                "url": "https://clinicaltrials.gov/study/NCT06345729"
+              },
+              {
+                "nct_id": "NCT07190248",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Merck Sharp & Dohme LLC\" | \"Calderasib\"",
+                "title": "A Clinical Study of Calderasib (MK-1084) and Other Treatments for Participants With Non-Small Cell Lung Cancer (MK-1084-007/KANDLELIT-007)",
+                "url": "https://clinicaltrials.gov/study/NCT07190248"
+              },
+              {
+                "nct_id": "NCT07554339",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Merck Sharp & Dohme LLC\" | \"Calderasib\"",
+                "title": "A Clinical Trial of Calderasib (MK-1084) and Durvalumab in People With Non-Small Cell Lung Cancer (MK-1084-015/KANDLELIT-015)",
+                "url": "https://clinicaltrials.gov/study/NCT07554339"
+              }
+            ],
+            "source": "sponsor:merck sharp & dohme llc",
+            "target": "intervention:calderasib",
+            "weight": 4
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06607185",
+              "NCT04956640",
+              "NCT06119581"
+            ],
+            "citation_count": 3,
+            "citations": [
+              {
+                "nct_id": "NCT06607185",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Eli Lilly and Company\" | \"Carboplatin\"",
+                "title": "A Study of the Pan-KRAS Inhibitor LY4066434 in Participants With KRAS Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06607185"
+              },
+              {
+                "nct_id": "NCT04956640",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Eli Lilly and Company\" | \"Carboplatin\"",
+                "title": "Study of LY3537982 in Cancer Patients With a Specific Genetic Mutation (KRAS G12C)",
+                "url": "https://clinicaltrials.gov/study/NCT04956640"
+              },
+              {
+                "nct_id": "NCT06119581",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Eli Lilly and Company\" | \"Carboplatin\"",
+                "title": "A Study of First-Line Olomorasib (LY3537982) and Pembrolizumab With or Without Chemotherapy in Patients With Advanced KRAS G12C-Mutant Non-small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06119581"
+              }
+            ],
+            "source": "sponsor:eli lilly and company",
+            "target": "intervention:carboplatin",
+            "weight": 3
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06607185",
+              "NCT04956640",
+              "NCT06586515"
+            ],
+            "citation_count": 3,
+            "citations": [
+              {
+                "nct_id": "NCT06607185",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Eli Lilly and Company\" | \"Cetuximab\"",
+                "title": "A Study of the Pan-KRAS Inhibitor LY4066434 in Participants With KRAS Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06607185"
+              },
+              {
+                "nct_id": "NCT04956640",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Eli Lilly and Company\" | \"Cetuximab\"",
+                "title": "Study of LY3537982 in Cancer Patients With a Specific Genetic Mutation (KRAS G12C)",
+                "url": "https://clinicaltrials.gov/study/NCT04956640"
+              },
+              {
+                "nct_id": "NCT06586515",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Eli Lilly and Company\" | \"Cetuximab\"",
+                "title": "MOONRAY-01, A Study of LY3962673 in Participants With KRAS G12D-Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06586515"
+              }
+            ],
+            "source": "sponsor:eli lilly and company",
+            "target": "intervention:cetuximab",
+            "weight": 3
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06607185",
+              "NCT04956640",
+              "NCT06119581"
+            ],
+            "citation_count": 3,
+            "citations": [
+              {
+                "nct_id": "NCT06607185",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Eli Lilly and Company\" | \"Cisplatin\"",
+                "title": "A Study of the Pan-KRAS Inhibitor LY4066434 in Participants With KRAS Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06607185"
+              },
+              {
+                "nct_id": "NCT04956640",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Eli Lilly and Company\" | \"Cisplatin\"",
+                "title": "Study of LY3537982 in Cancer Patients With a Specific Genetic Mutation (KRAS G12C)",
+                "url": "https://clinicaltrials.gov/study/NCT04956640"
+              },
+              {
+                "nct_id": "NCT06119581",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Eli Lilly and Company\" | \"Cisplatin\"",
+                "title": "A Study of First-Line Olomorasib (LY3537982) and Pembrolizumab With or Without Chemotherapy in Patients With Advanced KRAS G12C-Mutant Non-small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06119581"
+              }
+            ],
+            "source": "sponsor:eli lilly and company",
+            "target": "intervention:cisplatin",
+            "weight": 3
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06607185",
+              "NCT04956640",
+              "NCT06119581"
+            ],
+            "citation_count": 3,
+            "citations": [
+              {
+                "nct_id": "NCT06607185",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Eli Lilly and Company\" | \"Pemetrexed\"",
+                "title": "A Study of the Pan-KRAS Inhibitor LY4066434 in Participants With KRAS Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06607185"
+              },
+              {
+                "nct_id": "NCT04956640",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Eli Lilly and Company\" | \"Pemetrexed\"",
+                "title": "Study of LY3537982 in Cancer Patients With a Specific Genetic Mutation (KRAS G12C)",
+                "url": "https://clinicaltrials.gov/study/NCT04956640"
+              },
+              {
+                "nct_id": "NCT06119581",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Eli Lilly and Company\" | \"Pemetrexed\"",
+                "title": "A Study of First-Line Olomorasib (LY3537982) and Pembrolizumab With or Without Chemotherapy in Patients With Advanced KRAS G12C-Mutant Non-small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06119581"
+              }
+            ],
+            "source": "sponsor:eli lilly and company",
+            "target": "intervention:pemetrexed",
+            "weight": 3
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT03948763",
+              "NCT06345729",
+              "NCT07190248"
+            ],
+            "citation_count": 3,
+            "citations": [
+              {
+                "nct_id": "NCT03948763",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Merck Sharp & Dohme LLC\" | \"Pembrolizumab\"",
+                "title": "A Study of mRNA-5671/V941 as Monotherapy and in Combination With Pembrolizumab (V941-001)",
+                "url": "https://clinicaltrials.gov/study/NCT03948763"
+              },
+              {
+                "nct_id": "NCT06345729",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Merck Sharp & Dohme LLC\" | \"Pembrolizumab\"",
+                "title": "A Study of Calderasib (MK-1084) Plus Pembrolizumab (MK-3475) in Participants With KRAS G12C Mutant Non-small Cell Lung Cancer (NSCLC) With Programmed Cell Death Ligand 1 (PD-L1) Tumor Proportion Score (TPS) ≥50% (MK-1084-004/KANDLELIT-004)",
+                "url": "https://clinicaltrials.gov/study/NCT06345729"
+              },
+              {
+                "nct_id": "NCT07190248",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Merck Sharp & Dohme LLC\" | \"Pembrolizumab (+) Berahyaluronidase alfa\"",
+                "title": "A Clinical Study of Calderasib (MK-1084) and Other Treatments for Participants With Non-Small Cell Lung Cancer (MK-1084-007/KANDLELIT-007)",
+                "url": "https://clinicaltrials.gov/study/NCT07190248"
+              }
+            ],
+            "source": "sponsor:merck sharp & dohme llc",
+            "target": "intervention:pembrolizumab",
+            "weight": 3
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06343402",
+              "NCT06917079",
+              "NCT06625775"
+            ],
+            "citation_count": 3,
+            "citations": [
+              {
+                "nct_id": "NCT06343402",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"TheRas, Inc., d/b/a BBOT (BridgeBio Oncology Therapeutics)\" | \"BBO-10203\"",
+                "title": "Open-label Study of BBO-8520 in Adult Subjects With KRASG12C Non-small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06343402"
+              },
+              {
+                "nct_id": "NCT06917079",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"TheRas, Inc., d/b/a BBOT (BridgeBio Oncology Therapeutics)\" | \"BBO-10203\"",
+                "title": "BBO-11818 in Adult Subjects With KRAS Mutant Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06917079"
+              },
+              {
+                "nct_id": "NCT06625775",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"TheRas, Inc., d/b/a BBOT (BridgeBio Oncology Therapeutics)\" | \"BBO-10203\"",
+                "title": "Open-Label Study of BBO-10203 in Subjects With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06625775"
+              }
+            ],
+            "source": "sponsor:theras, inc., d/b/a bbot (bridgebio oncology therapeutics)",
+            "target": "intervention:bbo-10203",
+            "weight": 3
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05074810",
+              "NCT01951690",
+              "NCT04620330"
+            ],
+            "citation_count": 3,
+            "citations": [
+              {
+                "nct_id": "NCT05074810",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Verastem, Inc.\" | \"avutometinib and sotorasib and defactinib\"",
+                "title": "Phase 1/2 Study of Avutometinib (VS-6766) + Sotorasib With or Without Defactinib in KRAS G12C NSCLC Patients",
+                "url": "https://clinicaltrials.gov/study/NCT05074810"
+              },
+              {
+                "nct_id": "NCT01951690",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Verastem, Inc.\" | \"defactinib (VS-6063)\"",
+                "title": "Phase II Study of VS-6063 in Patients With KRAS Mutant Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT01951690"
+              },
+              {
+                "nct_id": "NCT04620330",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Verastem, Inc.\" | \"avutometinib (VS-6766) and Defactinib\"",
+                "title": "A Study of Avutometinib (VS-6766) + Defactinib in Recurrent KRAS G12V, Other KRAS and BRAF Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04620330"
+              }
+            ],
+            "source": "sponsor:verastem, inc.",
+            "target": "intervention:defactinib",
+            "weight": 3
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06582771",
+              "NCT06333678"
+            ],
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT06582771",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Memorial Sloan Kettering Cancer Center\" | \"Sotorasib\"",
+                "title": "A Study of Sotorasib in People With Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06582771"
+              },
+              {
+                "nct_id": "NCT06333678",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Memorial Sloan Kettering Cancer Center\" | \"Sotorasib\"",
+                "title": "A Study Comparing Sotorasib With Durvalumab in People With Non-Small Cell Lung Cancer (NSCLC)",
+                "url": "https://clinicaltrials.gov/study/NCT06333678"
+              }
+            ],
+            "source": "sponsor:memorial sloan kettering cancer center",
+            "target": "intervention:sotorasib",
+            "weight": 2
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT02974725",
+              "NCT05358249"
+            ],
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT02974725",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Novartis Pharmaceuticals\" | \"Trametinib\"",
+                "title": "A Phase Ib Study of LXH254-centric Combinations in NSCLC or Melanoma",
+                "url": "https://clinicaltrials.gov/study/NCT02974725"
+              },
+              {
+                "nct_id": "NCT05358249",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Novartis Pharmaceuticals\" | \"trametinib\"",
+                "title": "Platform Study of JDQ443 in Combinations in Patients With Advanced Solid Tumors Harboring the KRAS G12C Mutation",
+                "url": "https://clinicaltrials.gov/study/NCT05358249"
+              }
+            ],
+            "source": "sponsor:novartis pharmaceuticals",
+            "target": "intervention:trametinib",
+            "weight": 2
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05815186",
+              "NCT05815173"
+            ],
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT05815186",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"NYU Langone Health\" | \"Sotorasib\"",
+                "title": "Ladarixin With Sotorasib in Advanced NSCLC - Phase II",
+                "url": "https://clinicaltrials.gov/study/NCT05815186"
+              },
+              {
+                "nct_id": "NCT05815173",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"NYU Langone Health\" | \"Sotorasib\"",
+                "title": "Ladarixin With Sotorasib in Advanced NSCLC",
+                "url": "https://clinicaltrials.gov/study/NCT05815173"
+              }
+            ],
+            "source": "sponsor:nyu langone health",
+            "target": "intervention:sotorasib",
+            "weight": 2
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06456138",
+              "NCT04967079"
+            ],
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT06456138",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Shanghai Chest Hospital\" | \"Anlotinib\"",
+                "title": "Trametinib Plus Anlotinib Combined With Tislelizumab in KRAS-mutant NSCLC",
+                "url": "https://clinicaltrials.gov/study/NCT06456138"
+              },
+              {
+                "nct_id": "NCT04967079",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Shanghai Chest Hospital\" | \"Anlotinib\"",
+                "title": "Trametinib Plus Anlotinib in Non-G12C KRAS-Mutant NSCLC Patients",
+                "url": "https://clinicaltrials.gov/study/NCT04967079"
+              }
+            ],
+            "source": "sponsor:shanghai chest hospital",
+            "target": "intervention:anlotinib",
+            "weight": 2
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06456138",
+              "NCT04967079"
+            ],
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT06456138",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Shanghai Chest Hospital\" | \"Trametinib\"",
+                "title": "Trametinib Plus Anlotinib Combined With Tislelizumab in KRAS-mutant NSCLC",
+                "url": "https://clinicaltrials.gov/study/NCT06456138"
+              },
+              {
+                "nct_id": "NCT04967079",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Shanghai Chest Hospital\" | \"Trametinib\"",
+                "title": "Trametinib Plus Anlotinib in Non-G12C KRAS-Mutant NSCLC Patients",
+                "url": "https://clinicaltrials.gov/study/NCT04967079"
+              }
+            ],
+            "source": "sponsor:shanghai chest hospital",
+            "target": "intervention:trametinib",
+            "weight": 2
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT02450656",
+              "NCT02039336"
+            ],
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT02450656",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"The Netherlands Cancer Institute\" | \"Docetaxel\"",
+                "title": "Afatinib and Selumetinib in Advanced KRAS Mutant and PIK3CA Wildtype Non-small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT02450656"
+              },
+              {
+                "nct_id": "NCT02039336",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"The Netherlands Cancer Institute\" | \"Docetaxel\"",
+                "title": "Dacomitinib Plus PD-0325901 in Advanced KRAS Mutant NSCLC",
+                "url": "https://clinicaltrials.gov/study/NCT02039336"
+              }
+            ],
+            "source": "sponsor:the netherlands cancer institute",
+            "target": "intervention:docetaxel",
+            "weight": 2
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06343402",
+              "NCT06917079"
+            ],
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT06343402",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"TheRas, Inc., d/b/a BBOT (BridgeBio Oncology Therapeutics)\" | \"Pembrolizumab\"",
+                "title": "Open-label Study of BBO-8520 in Adult Subjects With KRASG12C Non-small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06343402"
+              },
+              {
+                "nct_id": "NCT06917079",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"TheRas, Inc., d/b/a BBOT (BridgeBio Oncology Therapeutics)\" | \"Pembrolizumab\"",
+                "title": "BBO-11818 in Adult Subjects With KRAS Mutant Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06917079"
+              }
+            ],
+            "source": "sponsor:theras, inc., d/b/a bbot (bridgebio oncology therapeutics)",
+            "target": "intervention:pembrolizumab",
+            "weight": 2
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT04735068"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT04735068",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Abramson Cancer Center at Penn Medicine\" | \"Binimetinib Pill\"",
+                "title": "Binimetinib and Hydroxychloroquine in Patients With Advanced KRAS Mutant Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04735068"
+              }
+            ],
+            "source": "sponsor:abramson cancer center at penn medicine",
+            "target": "intervention:binimetinib",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT03170206"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT03170206",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dana-Farber Cancer Institute\" | \"Binimetinib\"",
+                "title": "Study of Palbociclib in Combination With Binimetinib for Patients With Advanced KRAS Mutant Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT03170206"
+              }
+            ],
+            "source": "sponsor:dana-farber cancer institute",
+            "target": "intervention:binimetinib",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06890598"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT06890598",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Eli Lilly and Company\" | \"Durvalumab\"",
+                "title": "Study of Olomorasib (LY3537982) in Combination With Standard of Care in Participants With Resected or Unresectable KRAS G12C-mutant Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06890598"
+              }
+            ],
+            "source": "sponsor:eli lilly and company",
+            "target": "intervention:durvalumab",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05673187"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT05673187",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"ETOP IBCSG Partners Foundation\" | \"Adagrasib\"",
+                "title": "Adagrasib in Patients With KRASG12C-mutant NSCLC Who Are Elderly or Have Poor Performance Status",
+                "url": "https://clinicaltrials.gov/study/NCT05673187"
+              }
+            ],
+            "source": "sponsor:etop ibcsg partners foundation",
+            "target": "intervention:adagrasib",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06068153"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT06068153",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"ETOP IBCSG Partners Foundation\" | \"Sotorasib\"",
+                "title": "AMG510 (sotorasib) Plus Lenvatinib As Second-line Treatment in Patients with KRASG12C Mutant, Metastatic NSCLC",
+                "url": "https://clinicaltrials.gov/study/NCT06068153"
+              }
+            ],
+            "source": "sponsor:etop ibcsg partners foundation",
+            "target": "intervention:sotorasib",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06333678"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT06333678",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Memorial Sloan Kettering Cancer Center\" | \"Durvalumab\"",
+                "title": "A Study Comparing Sotorasib With Durvalumab in People With Non-Small Cell Lung Cancer (NSCLC)",
+                "url": "https://clinicaltrials.gov/study/NCT06333678"
+              }
+            ],
+            "source": "sponsor:memorial sloan kettering cancer center",
+            "target": "intervention:durvalumab",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT03704688"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT03704688",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Memorial Sloan Kettering Cancer Center\" | \"Trametinib 0.5 mg\"",
+                "title": "Trial of Trametinib and Ponatinib in Patients With KRAS Mutant Advanced Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT03704688"
+              }
+            ],
+            "source": "sponsor:memorial sloan kettering cancer center",
+            "target": "intervention:trametinib",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07190248"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT07190248",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Merck Sharp & Dohme LLC\" | \"Carboplatin\"",
+                "title": "A Clinical Study of Calderasib (MK-1084) and Other Treatments for Participants With Non-Small Cell Lung Cancer (MK-1084-007/KANDLELIT-007)",
+                "url": "https://clinicaltrials.gov/study/NCT07190248"
+              }
+            ],
+            "source": "sponsor:merck sharp & dohme llc",
+            "target": "intervention:carboplatin",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07190248"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT07190248",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Merck Sharp & Dohme LLC\" | \"Cisplatin\"",
+                "title": "A Clinical Study of Calderasib (MK-1084) and Other Treatments for Participants With Non-Small Cell Lung Cancer (MK-1084-007/KANDLELIT-007)",
+                "url": "https://clinicaltrials.gov/study/NCT07190248"
+              }
+            ],
+            "source": "sponsor:merck sharp & dohme llc",
+            "target": "intervention:cisplatin",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07554339"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT07554339",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Merck Sharp & Dohme LLC\" | \"Durvalumab\"",
+                "title": "A Clinical Trial of Calderasib (MK-1084) and Durvalumab in People With Non-Small Cell Lung Cancer (MK-1084-015/KANDLELIT-015)",
+                "url": "https://clinicaltrials.gov/study/NCT07554339"
+              }
+            ],
+            "source": "sponsor:merck sharp & dohme llc",
+            "target": "intervention:durvalumab",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07190248"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT07190248",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Merck Sharp & Dohme LLC\" | \"Pemetrexed\"",
+                "title": "A Clinical Study of Calderasib (MK-1084) and Other Treatments for Participants With Non-Small Cell Lung Cancer (MK-1084-007/KANDLELIT-007)",
+                "url": "https://clinicaltrials.gov/study/NCT07190248"
+              }
+            ],
+            "source": "sponsor:merck sharp & dohme llc",
+            "target": "intervention:pemetrexed",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT01912625"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT01912625",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"National Cancer Institute (NCI)\" | \"Carboplatin\"",
+                "title": "Trametinib, Combination Chemotherapy, and Radiation Therapy in Treating Patients With Stage III Non-small Cell Lung Cancer That Cannot Be Removed by Surgery",
+                "url": "https://clinicaltrials.gov/study/NCT01912625"
+              }
+            ],
+            "source": "sponsor:national cancer institute (nci)",
+            "target": "intervention:carboplatin",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT01912625"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT01912625",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"National Cancer Institute (NCI)\" | \"Trametinib\"",
+                "title": "Trametinib, Combination Chemotherapy, and Radiation Therapy in Treating Patients With Stage III Non-small Cell Lung Cancer That Cannot Be Removed by Surgery",
+                "url": "https://clinicaltrials.gov/study/NCT01912625"
+              }
+            ],
+            "source": "sponsor:national cancer institute (nci)",
+            "target": "intervention:trametinib",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05358249"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT05358249",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Novartis Pharmaceuticals\" | \"cetuximab\"",
+                "title": "Platform Study of JDQ443 in Combinations in Patients With Advanced Solid Tumors Harboring the KRAS G12C Mutation",
+                "url": "https://clinicaltrials.gov/study/NCT05358249"
+              }
+            ],
+            "source": "sponsor:novartis pharmaceuticals",
+            "target": "intervention:cetuximab",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05132075"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT05132075",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Novartis Pharmaceuticals\" | \"docetaxel\"",
+                "title": "Study of JDQ443 in Comparison With Docetaxel in Participants With Locally Advanced or Metastatic KRAS G12C Mutant Non-small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT05132075"
+              }
+            ],
+            "source": "sponsor:novartis pharmaceuticals",
+            "target": "intervention:docetaxel",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07349537"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT07349537",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Revolution Medicines, Inc.\" | \"cetuximab\"",
+                "title": "Study of RMC-5127 in Patients With Advanced KRAS G12V-Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07349537"
+              }
+            ],
+            "source": "sponsor:revolution medicines, inc.",
+            "target": "intervention:cetuximab",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT02230553"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT02230553",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"The Netherlands Cancer Institute\" | \"trametinib\"",
+                "title": "Lapatinib Plus Trametinib in KRAS Mutant NSCLC",
+                "url": "https://clinicaltrials.gov/study/NCT02230553"
+              }
+            ],
+            "source": "sponsor:the netherlands cancer institute",
+            "target": "intervention:trametinib",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06917079"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT06917079",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"TheRas, Inc., d/b/a BBOT (BridgeBio Oncology Therapeutics)\" | \"Platinum chemotherapy (cisplatin or carboplatin)\"",
+                "title": "BBO-11818 in Adult Subjects With KRAS Mutant Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06917079"
+              }
+            ],
+            "source": "sponsor:theras, inc., d/b/a bbot (bridgebio oncology therapeutics)",
+            "target": "intervention:carboplatin",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06917079"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT06917079",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"TheRas, Inc., d/b/a BBOT (BridgeBio Oncology Therapeutics)\" | \"Cetuximab\"",
+                "title": "BBO-11818 in Adult Subjects With KRAS Mutant Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06917079"
+              }
+            ],
+            "source": "sponsor:theras, inc., d/b/a bbot (bridgebio oncology therapeutics)",
+            "target": "intervention:cetuximab",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06917079"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT06917079",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"TheRas, Inc., d/b/a BBOT (BridgeBio Oncology Therapeutics)\" | \"Platinum chemotherapy (cisplatin or carboplatin)\"",
+                "title": "BBO-11818 in Adult Subjects With KRAS Mutant Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06917079"
+              }
+            ],
+            "source": "sponsor:theras, inc., d/b/a bbot (bridgebio oncology therapeutics)",
+            "target": "intervention:cisplatin",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06917079"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT06917079",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"TheRas, Inc., d/b/a BBOT (BridgeBio Oncology Therapeutics)\" | \"Pemetrexed\"",
+                "title": "BBO-11818 in Adult Subjects With KRAS Mutant Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06917079"
+              }
+            ],
+            "source": "sponsor:theras, inc., d/b/a bbot (bridgebio oncology therapeutics)",
+            "target": "intervention:pemetrexed",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05375994"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT05375994",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Verastem, Inc.\" | \"avutometinib (VS-6766) and adagrasib\"",
+                "title": "Study of Avutometinib (VS-6766) + Adagrasib in KRAS G12C NSCLC Patients",
+                "url": "https://clinicaltrials.gov/study/NCT05375994"
+              }
+            ],
+            "source": "sponsor:verastem, inc.",
+            "target": "intervention:adagrasib",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05074810"
+            ],
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT05074810",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Verastem, Inc.\" | \"avutometinib and sotorasib\"",
+                "title": "Phase 1/2 Study of Avutometinib (VS-6766) + Sotorasib With or Without Defactinib in KRAS G12C NSCLC Patients",
+                "url": "https://clinicaltrials.gov/study/NCT05074810"
+              }
+            ],
+            "source": "sponsor:verastem, inc.",
+            "target": "intervention:sotorasib",
+            "weight": 1
+          }
+        ]
+      }
+    },
+    "meta": {
+      "interpretation": "Built a lead sponsor–intervention network from KRAS-mutant non-small cell lung cancer trials.",
+      "queries": [
+        {
+          "filters": {
+            "condition": "KRAS-mutant non-small cell lung cancer",
+            "phases": [],
+            "statuses": []
+          },
+          "api_params": {
+            "query.cond": "KRAS-mutant non-small cell lung cancer"
+          },
+          "total_matching": 79,
+          "records_analyzed": 79,
+          "truncated": false
+        }
+      ],
+      "render": {
+        "units": {
+          "node.size": "trials",
+          "edge.weight": "trials"
+        },
+        "pruning": {
+          "top_n": 15,
+          "min_edge_weight": 1,
+          "nodes_dropped": 130,
+          "edges_dropped": 134
+        }
+      },
+      "visualization_rationale": {
+        "chosen": "network_graph",
+        "source": "llm",
+        "reason": "A network graph effectively visualizes relationships between sponsors and drugs in KRAS-mutant non-small cell lung cancer trials."
+      },
+      "assumptions": [
+        "A lead sponsor is linked to a intervention when they appear in the same trial; edge weight is the number of such trials.",
+        "Only drug, biological and combination-product interventions are nodes; placebo and standard-of-care comparators are left out because they would link to everything.",
+        "Sponsor means the lead sponsor; collaborators are not counted."
+      ],
+      "notes": [],
+      "plan": {
+        "supported": true,
+        "analysis": "network",
+        "metric": "trial_count",
+        "filters": {
+          "condition": "KRAS-mutant non-small cell lung cancer",
+          "phases": [],
+          "statuses": []
+        },
+        "compare": [],
+        "network": {
+          "source": "sponsor",
+          "target": "intervention"
+        },
+        "top_n": 15,
+        "chart_type_suggestion": "network_graph",
+        "chart_rationale": "A network graph effectively visualizes relationships between sponsors and drugs in KRAS-mutant non-small cell lung cancer trials."
+      },
+      "source": "ClinicalTrials.gov API v2",
+      "data_as_of": "2026-09-25T09:00:04",
+      "generated_at": "2026-09-27T00:30:27.836231Z"
+    }
+  }
+}
