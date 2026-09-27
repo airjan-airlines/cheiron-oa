@@ -39,6 +39,7 @@
             "NCT05249881",
             "NCT06338553"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 8,
           "citations": [
             {
@@ -77,6 +78,7 @@
             "NCT06934642",
             "NCT07812636"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 6,
           "citations": [
             {
@@ -223,6 +225,7 @@
             "NCT05671653",
             "NCT04187300"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 114,
           "citations": [
             {
@@ -288,6 +291,7 @@
             "NCT07299084",
             "NCT04081337"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 33,
           "citations": [
             {
@@ -332,6 +336,7 @@
             "NCT07171723",
             "NCT05751720"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 12,
           "citations": [
             {
@@ -370,6 +375,7 @@
             "NCT07245771",
             "NCT05751720"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 6,
           "citations": [
             {
@@ -525,6 +531,7 @@
             "NCT00696657",
             "NCT07249554"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 123,
           "citations": [
             {
@@ -624,6 +631,7 @@
             "NCT06143956",
             "NCT06373146"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 67,
           "citations": [
             {
@@ -671,6 +679,7 @@
             "NCT05205928",
             "NCT05646199"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 15,
           "citations": [
             {
@@ -707,6 +716,7 @@
             "NCT07734792",
             "NCT07284511"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 4,
           "citations": [
             {
@@ -903,6 +913,7 @@
             "NCT05444153",
             "NCT03693430"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 164,
           "citations": [
             {
@@ -985,6 +996,7 @@
             "NCT07829198",
             "NCT07165028"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 50,
           "citations": [
             {
@@ -1129,6 +1141,7 @@
             "NCT07073053",
             "NCT04892199"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 112,
           "citations": [
             {
@@ -1208,6 +1221,7 @@
             "NCT07257484",
             "NCT07218445"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 47,
           "citations": [
             {
@@ -1312,6 +1326,7 @@
             "NCT07319975",
             "NCT07391267"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 72,
           "citations": [
             {
@@ -1371,6 +1386,7 @@
             "NCT07319975",
             "NCT07303556"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 27,
           "citations": [
             {
@@ -1543,6 +1559,7 @@
             "NCT06154486",
             "NCT06069622"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 140,
           "citations": [
             {
@@ -1625,6 +1642,7 @@
             "NCT06761703",
             "NCT07041983"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 50,
           "citations": [
             {
@@ -1689,6 +1707,7 @@
         }
       ],
       "coverage": {
+        "aggregation_mode": "all_records",
         "groupby_semantics": "partition",
         "bucket_sum": 1050,
         "unclassified_count": 0,
@@ -1748,7 +1767,7 @@
       },
       "source": "ClinicalTrials.gov API v2",
       "data_as_of": "2026-09-25T09:00:04",
-      "generated_at": "2026-09-27T00:31:54.036357Z"
+      "generated_at": "2026-09-27T03:11:01.257191Z"
     }
   }
 }

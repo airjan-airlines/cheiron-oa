@@ -203,6 +203,7 @@
               "NCT06645678",
               "NCT06152575"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 176,
             "citations": [
               {
@@ -337,6 +338,7 @@
               "NCT05556616",
               "NCT06209606"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 102,
             "citations": [
               {
@@ -468,6 +470,7 @@
               "NCT07221032",
               "NCT05590377"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 99,
             "citations": [
               {
@@ -574,6 +577,7 @@
               "NCT07757412",
               "NCT06152575"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 74,
             "citations": [
               {
@@ -674,6 +678,7 @@
               "NCT05556616",
               "NCT06152575"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 68,
             "citations": [
               {
@@ -754,6 +759,7 @@
               "NCT05556616",
               "NCT06152575"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 48,
             "citations": [
               {
@@ -830,6 +836,7 @@
               "NCT05805605",
               "NCT06698744"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 44,
             "citations": [
               {
@@ -904,6 +911,7 @@
               "NCT07764978",
               "NCT05911321"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 42,
             "citations": [
               {
@@ -973,6 +981,7 @@
               "NCT06465316",
               "NCT05338775"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 37,
             "citations": [
               {
@@ -1001,71 +1010,6 @@
             "label": "Teclistamab",
             "type": "intervention",
             "size": 37
-          },
-          {
-            "supporting_nct_ids": [
-              "NCT06799026",
-              "NCT06855121",
-              "NCT06015542",
-              "NCT06106945",
-              "NCT07320326",
-              "NCT06183489",
-              "NCT05675449",
-              "NCT06581848",
-              "NCT06988488",
-              "NCT07637578",
-              "NCT06215118",
-              "NCT05927571",
-              "NCT07280013",
-              "NCT06832865",
-              "NCT06121843",
-              "NCT06592222",
-              "NCT07382739",
-              "NCT06918002",
-              "NCT06504524",
-              "NCT05932290",
-              "NCT05565391",
-              "NCT06997081",
-              "NCT06207799",
-              "NCT06974786",
-              "NCT05623020",
-              "NCT06931704",
-              "NCT05317416",
-              "NCT06138275",
-              "NCT06947083",
-              "NCT06057402",
-              "NCT06711705",
-              "NCT06645678",
-              "NCT06152575"
-            ],
-            "citation_count": 33,
-            "citations": [
-              {
-                "nct_id": "NCT06799026",
-                "field": "protocolSection.armsInterventionsModule.interventions[].name",
-                "excerpt": "Elranatamab",
-                "title": "A Phase 1 Study of Vaccination With Dendritic Cell (DC)/Multiple Myeloma (MM) Fusions in Combination With Elranatamab in Relapsed or Refractory Multiple Myeloma",
-                "url": "https://clinicaltrials.gov/study/NCT06799026"
-              },
-              {
-                "nct_id": "NCT06855121",
-                "field": "protocolSection.armsInterventionsModule.interventions[].name",
-                "excerpt": "Elranatamab",
-                "title": "The Norwegian Immunotherapy in Multiple Myeloma Study",
-                "url": "https://clinicaltrials.gov/study/NCT06855121"
-              },
-              {
-                "nct_id": "NCT06015542",
-                "field": "protocolSection.armsInterventionsModule.interventions[].name",
-                "excerpt": "Elranatamab",
-                "title": "Self-administration of Subcutaneous Elranatamab in the Patients' Homes.",
-                "url": "https://clinicaltrials.gov/study/NCT06015542"
-              }
-            ],
-            "id": "intervention:elranatamab",
-            "label": "Elranatamab",
-            "type": "intervention",
-            "size": 33
           },
           {
             "supporting_nct_ids": [
@@ -1102,6 +1046,7 @@
               "NCT05091372",
               "NCT05556798"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 32,
             "citations": [
               {
@@ -1164,6 +1109,7 @@
               "NCT06465316",
               "NCT07727668"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 30,
             "citations": [
               {
@@ -1225,6 +1171,7 @@
               "NCT06348108",
               "NCT05338775"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 29,
             "citations": [
               {
@@ -1283,6 +1230,7 @@
               "NCT05805605",
               "NCT06698744"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 26,
             "citations": [
               {
@@ -1338,6 +1286,7 @@
               "NCT05530421",
               "NCT05170789"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 23,
             "citations": [
               {
@@ -1366,6 +1315,55 @@
             "label": "Selinexor",
             "type": "intervention",
             "size": 23
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05028348",
+              "NCT06163040",
+              "NCT07555938",
+              "NCT05981209",
+              "NCT05730036",
+              "NCT05560399",
+              "NCT05002816",
+              "NCT06232707",
+              "NCT04835129",
+              "NCT05675319",
+              "NCT06208150",
+              "NCT06785415",
+              "NCT06518551",
+              "NCT06158841",
+              "NCT05170789",
+              "NCT06152575"
+            ],
+            "supporting_nct_ids_complete": true,
+            "citation_count": 16,
+            "citations": [
+              {
+                "nct_id": "NCT05028348",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Elotuzumab",
+                "title": "A Study of Combination of Selinexor, Pomalidomide, and Dexamethasone (SPd) Versus Elotuzumab, Pomalidomide, and Dexamethasone (EloPd) in Subject With Previously Treated Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05028348"
+              },
+              {
+                "nct_id": "NCT06163040",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Elotuzumab in combination with pomalidomide and dexamethasone",
+                "title": "A Study to Evaluate the Safety of Empliciti® (Elotuzumab) When Treating Patients With Multiple Myeloma in Taiwan",
+                "url": "https://clinicaltrials.gov/study/NCT06163040"
+              },
+              {
+                "nct_id": "NCT07555938",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "Elotuzumab",
+                "title": "Cevostamab in Combination With Pomalidomide and Dexamethasone Versus Standard of Care in Participants With Previously Treated Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT07555938"
+              }
+            ],
+            "id": "intervention:elotuzumab",
+            "label": "Elotuzumab",
+            "type": "intervention",
+            "size": 16
           }
         ],
         "edges": [
@@ -1438,6 +1436,7 @@
               "NCT07210047",
               "NCT05438043"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 66,
             "citations": [
               {
@@ -1533,6 +1532,7 @@
               "NCT07764978",
               "NCT05438043"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 64,
             "citations": [
               {
@@ -1623,6 +1623,7 @@
               "NCT07825064",
               "NCT06152575"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 59,
             "citations": [
               {
@@ -1711,6 +1712,7 @@
               "NCT06142396",
               "NCT06152575"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 57,
             "citations": [
               {
@@ -1791,6 +1793,7 @@
               "NCT05438043",
               "NCT05556616"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 49,
             "citations": [
               {
@@ -1861,6 +1864,7 @@
               "NCT05438043",
               "NCT06152575"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 39,
             "citations": [
               {
@@ -1930,6 +1934,7 @@
               "NCT07671287",
               "NCT05556616"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 38,
             "citations": [
               {
@@ -1993,6 +1998,7 @@
               "NCT07671287",
               "NCT05556616"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 32,
             "citations": [
               {
@@ -2051,6 +2057,7 @@
               "NCT07764978",
               "NCT05911321"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 27,
             "citations": [
               {
@@ -2108,6 +2115,7 @@
               "NCT05438043",
               "NCT05556616"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 26,
             "citations": [
               {
@@ -2164,6 +2172,7 @@
               "NCT05438043",
               "NCT05556616"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 25,
             "citations": [
               {
@@ -2220,6 +2229,7 @@
               "NCT05805605",
               "NCT06698744"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 25,
             "citations": [
               {
@@ -2274,6 +2284,7 @@
               "NCT05556616",
               "NCT06152575"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 23,
             "citations": [
               {
@@ -2325,6 +2336,7 @@
               "NCT07624513",
               "NCT06348108"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 20,
             "citations": [
               {
@@ -2375,6 +2387,7 @@
               "NCT07600151",
               "NCT07764978"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 19,
             "citations": [
               {
@@ -2424,6 +2437,7 @@
               "NCT05556616",
               "NCT06152575"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 18,
             "citations": [
               {
@@ -2471,6 +2485,7 @@
               "NCT07748689",
               "NCT07609706"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 16,
             "citations": [
               {
@@ -2518,6 +2533,7 @@
               "NCT07600151",
               "NCT07764978"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 16,
             "citations": [
               {
@@ -2564,6 +2580,7 @@
               "NCT06353022",
               "NCT05338775"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 15,
             "citations": [
               {
@@ -2609,6 +2626,7 @@
               "NCT07764978",
               "NCT06142396"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 14,
             "citations": [
               {
@@ -2640,6 +2658,52 @@
           {
             "supporting_nct_ids": [
               "NCT05028348",
+              "NCT06163040",
+              "NCT07555938",
+              "NCT05981209",
+              "NCT05730036",
+              "NCT05560399",
+              "NCT06232707",
+              "NCT04835129",
+              "NCT06208150",
+              "NCT06785415",
+              "NCT06518551",
+              "NCT06158841",
+              "NCT05170789",
+              "NCT06152575"
+            ],
+            "supporting_nct_ids_complete": true,
+            "citation_count": 14,
+            "citations": [
+              {
+                "nct_id": "NCT05028348",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone Oral\" | \"Elotuzumab\"",
+                "title": "A Study of Combination of Selinexor, Pomalidomide, and Dexamethasone (SPd) Versus Elotuzumab, Pomalidomide, and Dexamethasone (EloPd) in Subject With Previously Treated Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05028348"
+              },
+              {
+                "nct_id": "NCT06163040",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Elotuzumab in combination with pomalidomide and dexamethasone\" | \"Elotuzumab in combination with pomalidomide and dexamethasone\"",
+                "title": "A Study to Evaluate the Safety of Empliciti® (Elotuzumab) When Treating Patients With Multiple Myeloma in Taiwan",
+                "url": "https://clinicaltrials.gov/study/NCT06163040"
+              },
+              {
+                "nct_id": "NCT07555938",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Dexamethasone\" | \"Elotuzumab\"",
+                "title": "Cevostamab in Combination With Pomalidomide and Dexamethasone Versus Standard of Care in Participants With Previously Treated Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT07555938"
+              }
+            ],
+            "source": "intervention:dexamethasone",
+            "target": "intervention:elotuzumab",
+            "weight": 14
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT05028348",
               "NCT04756401",
               "NCT06169215",
               "NCT07579234",
@@ -2654,6 +2718,7 @@
               "NCT05530421",
               "NCT05170789"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 14,
             "citations": [
               {
@@ -2698,6 +2763,7 @@
               "NCT06948084",
               "NCT07671287"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 13,
             "citations": [
               {
@@ -2742,6 +2808,7 @@
               "NCT06353022",
               "NCT06948084"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 13,
             "citations": [
               {
@@ -2785,6 +2852,7 @@
               "NCT07764978",
               "NCT06142396"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 12,
             "citations": [
               {
@@ -2828,6 +2896,7 @@
               "NCT07764978",
               "NCT06045806"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 12,
             "citations": [
               {
@@ -2871,6 +2940,7 @@
               "NCT06353022",
               "NCT07671287"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 12,
             "citations": [
               {
@@ -2913,6 +2983,7 @@
               "NCT07748689",
               "NCT05556798"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 11,
             "citations": [
               {
@@ -2955,6 +3026,7 @@
               "NCT05438043",
               "NCT05556616"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 11,
             "citations": [
               {
@@ -2997,6 +3069,7 @@
               "NCT07740486",
               "NCT06353022"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 11,
             "citations": [
               {
@@ -3039,6 +3112,7 @@
               "NCT06353022",
               "NCT06348108"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 11,
             "citations": [
               {
@@ -3081,6 +3155,7 @@
               "NCT05438043",
               "NCT05556616"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 11,
             "citations": [
               {
@@ -3122,6 +3197,7 @@
               "NCT05556616",
               "NCT06152575"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 10,
             "citations": [
               {
@@ -3163,6 +3239,7 @@
               "NCT07045909",
               "NCT07764978"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 10,
             "citations": [
               {
@@ -3193,6 +3270,48 @@
           },
           {
             "supporting_nct_ids": [
+              "NCT05028348",
+              "NCT06163040",
+              "NCT07555938",
+              "NCT05730036",
+              "NCT06232707",
+              "NCT04835129",
+              "NCT05675319",
+              "NCT06208150",
+              "NCT06158841",
+              "NCT06152575"
+            ],
+            "supporting_nct_ids_complete": true,
+            "citation_count": 10,
+            "citations": [
+              {
+                "nct_id": "NCT05028348",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Elotuzumab\" | \"Pomalidomide\"",
+                "title": "A Study of Combination of Selinexor, Pomalidomide, and Dexamethasone (SPd) Versus Elotuzumab, Pomalidomide, and Dexamethasone (EloPd) in Subject With Previously Treated Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05028348"
+              },
+              {
+                "nct_id": "NCT06163040",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Elotuzumab in combination with pomalidomide and dexamethasone\" | \"Elotuzumab in combination with pomalidomide and dexamethasone\"",
+                "title": "A Study to Evaluate the Safety of Empliciti® (Elotuzumab) When Treating Patients With Multiple Myeloma in Taiwan",
+                "url": "https://clinicaltrials.gov/study/NCT06163040"
+              },
+              {
+                "nct_id": "NCT07555938",
+                "field": "protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Elotuzumab\" | \"Pomalidomide\"",
+                "title": "Cevostamab in Combination With Pomalidomide and Dexamethasone Versus Standard of Care in Participants With Previously Treated Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT07555938"
+              }
+            ],
+            "source": "intervention:elotuzumab",
+            "target": "intervention:pomalidomide",
+            "weight": 10
+          },
+          {
+            "supporting_nct_ids": [
               "NCT05922501",
               "NCT05669989",
               "NCT04835129",
@@ -3203,6 +3322,7 @@
               "NCT05298683",
               "NCT05911321"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 9,
             "citations": [
               {
@@ -3243,6 +3363,7 @@
               "NCT07740486",
               "NCT06353022"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 9,
             "citations": [
               {
@@ -3282,6 +3403,7 @@
               "NCT05527340",
               "NCT05392946"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 8,
             "citations": [
               {
@@ -3312,45 +3434,6 @@
           },
           {
             "supporting_nct_ids": [
-              "NCT06106945",
-              "NCT06988488",
-              "NCT06121843",
-              "NCT06918002",
-              "NCT06997081",
-              "NCT05623020",
-              "NCT06645678",
-              "NCT06152575"
-            ],
-            "citation_count": 8,
-            "citations": [
-              {
-                "nct_id": "NCT06106945",
-                "field": "protocolSection.armsInterventionsModule.interventions[].name",
-                "excerpt": "\"Dexamethasone\" | \"Elranatamab\"",
-                "title": "AZD0305 as Monotherapy or in Combination With Anticancer Agents in Participants With Multiple Myeloma",
-                "url": "https://clinicaltrials.gov/study/NCT06106945"
-              },
-              {
-                "nct_id": "NCT06988488",
-                "field": "protocolSection.armsInterventionsModule.interventions[].name",
-                "excerpt": "\"Dexamethasone\" | \"Elranatamab\"",
-                "title": "A Study to Determine the Recommended Dose and Schedule, and Evaluate the Safety and Preliminary Efficacy of Mezigdomide in Combination With Elranatamab in Participants With Relapsed and/or Refractory Multiple Myeloma",
-                "url": "https://clinicaltrials.gov/study/NCT06988488"
-              },
-              {
-                "nct_id": "NCT06121843",
-                "field": "protocolSection.armsInterventionsModule.interventions[].name",
-                "excerpt": "\"Dexamethasone\" | \"Elranatamab\"",
-                "title": "A Study to Evaluate the Safety, Effectiveness and Tolerable Dose of Arlocabtagene Autoleucel (BMS-986393) in Novel Combinations in Participants With Relapsed and/or Refractory Multiple Myeloma",
-                "url": "https://clinicaltrials.gov/study/NCT06121843"
-              }
-            ],
-            "source": "intervention:dexamethasone",
-            "target": "intervention:elranatamab",
-            "weight": 8
-          },
-          {
-            "supporting_nct_ids": [
               "NCT05028348",
               "NCT07623798",
               "NCT07579234",
@@ -3360,6 +3443,7 @@
               "NCT06158841",
               "NCT04941937"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 8,
             "citations": [
               {
@@ -3398,6 +3482,7 @@
               "NCT06353022",
               "NCT07671287"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 7,
             "citations": [
               {
@@ -3436,6 +3521,7 @@
               "NCT04850599",
               "NCT05704049"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 7,
             "citations": [
               {
@@ -3474,6 +3560,7 @@
               "NCT07045909",
               "NCT07764978"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 7,
             "citations": [
               {
@@ -3504,44 +3591,6 @@
           },
           {
             "supporting_nct_ids": [
-              "NCT06918002",
-              "NCT06997081",
-              "NCT06207799",
-              "NCT06974786",
-              "NCT05623020",
-              "NCT06931704",
-              "NCT05317416"
-            ],
-            "citation_count": 7,
-            "citations": [
-              {
-                "nct_id": "NCT06918002",
-                "field": "protocolSection.armsInterventionsModule.interventions[].name",
-                "excerpt": "\"Elranatamab\" | \"Lenalidomide (Revlimid®)\"",
-                "title": "Elranatamab/Lenalidomide Consolidation and/or Elranatamab Maintenance Versus Standard of Care After D-VRd Induction in Transplant-eligible NDMM Patients",
-                "url": "https://clinicaltrials.gov/study/NCT06918002"
-              },
-              {
-                "nct_id": "NCT06997081",
-                "field": "protocolSection.armsInterventionsModule.interventions[].name",
-                "excerpt": "\"Elranatamab\" | \"Lenalidomide\"",
-                "title": "ERd Combination Treatment in Newly Diagnosed Multiple Myeloma (ADVANCE 2.0)",
-                "url": "https://clinicaltrials.gov/study/NCT06997081"
-              },
-              {
-                "nct_id": "NCT06207799",
-                "field": "protocolSection.armsInterventionsModule.interventions[].name",
-                "excerpt": "\"Elranatamab\" | \"Lenalidomide\"",
-                "title": "Pre-transplant Purging and Post-transplant MRD-guided Maintenance Therapy With Elranatamab in Patients With High-risk Multiple Myeloma",
-                "url": "https://clinicaltrials.gov/study/NCT06207799"
-              }
-            ],
-            "source": "intervention:elranatamab",
-            "target": "intervention:lenalidomide",
-            "weight": 7
-          },
-          {
-            "supporting_nct_ids": [
               "NCT07735637",
               "NCT06577025",
               "NCT05257083",
@@ -3550,6 +3599,7 @@
               "NCT07764978",
               "NCT06045806"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 7,
             "citations": [
               {
@@ -3587,6 +3637,7 @@
               "NCT07614360",
               "NCT07609706"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 6,
             "citations": [
               {
@@ -3624,6 +3675,7 @@
               "NCT07601100",
               "NCT07624513"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 6,
             "citations": [
               {
@@ -3674,6 +3726,12 @@
           "truncated": false
         }
       ],
+      "coverage": {
+        "aggregation_mode": "all_records",
+        "unclassified_count": 0,
+        "excluded": [],
+        "buckets_not_shown": 0
+      },
       "render": {
         "units": {
           "node.size": "trials",
@@ -3682,14 +3740,14 @@
         "pruning": {
           "top_n": 15,
           "min_edge_weight": 6,
-          "nodes_dropped": 593,
-          "edges_dropped": 1140
+          "nodes_dropped": 587,
+          "edges_dropped": 1065
         }
       },
       "visualization_rationale": {
         "chosen": "network_graph",
         "source": "llm",
-        "reason": "A network graph effectively visualizes the relationships and co-occurrence patterns between drugs in combination studies for multiple myeloma trials."
+        "reason": "A network graph is suitable to visualize the relationships and co-occurrence patterns between drugs in combination studies for multiple myeloma trials."
       },
       "assumptions": [
         "Two interventions are linked when one trial lists both; edge weight is the number of such trials.",
@@ -3714,11 +3772,11 @@
         },
         "top_n": 15,
         "chart_type_suggestion": "network_graph",
-        "chart_rationale": "A network graph effectively visualizes the relationships and co-occurrence patterns between drugs in combination studies for multiple myeloma trials."
+        "chart_rationale": "A network graph is suitable to visualize the relationships and co-occurrence patterns between drugs in combination studies for multiple myeloma trials."
       },
       "source": "ClinicalTrials.gov API v2",
       "data_as_of": "2026-09-25T09:00:04",
-      "generated_at": "2026-09-27T00:31:58.580315Z"
+      "generated_at": "2026-09-27T03:11:06.138014Z"
     }
   }
 }

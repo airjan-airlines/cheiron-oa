@@ -28,8 +28,8 @@
     "04_network_kras_nsclc.json": {
       "status": "ok",
       "type": "network_graph",
-      "citations_checked": 144,
-      "citations_verified": 144,
+      "citations_checked": 152,
+      "citations_verified": 152,
       "partition_reconciles_with_api_total": null,
       "problems": []
     },
@@ -70,6 +70,6 @@
       "checked": "no visualization"
     }
   },
-  "cited_trials_fetched": 267,
+  "cited_trials_fetched": 260,
   "total_problems": 0
 }

@@ -13,10 +13,10 @@ traced to specific trial records.
 - 6 visualization types (bar, grouped bar, time series, histogram, network graph, single metric)
   from 7 question classes, all through one plan → validate → fetch → execute pipeline.
 - Deep citations on every bar, bin, node and edge: every contributing NCT ID, plus exact excerpts
-  quoting the field value that put each trial there. A live audit re-fetched all 267 cited trials and
-  confirmed all 490 excerpts in the example outputs ([`examples/verification.json`](examples/verification.json)).
+  quoting the field value that put each trial there. A live audit re-fetched all 260 cited trials and
+  confirmed all 498 excerpts in the example outputs ([`examples/verification.json`](examples/verification.json)).
 - Questions in any language (one example is Korean); structured fields always override the LLM.
-- 99 offline tests, including one proving no trial data ever reaches the LLM.
+- 125 offline tests, including one proving no trial data ever reaches the LLM.
 
 Design notes, written before any code: [`docs/implementation-plan.md`](docs/implementation-plan.md).
 The commit history records the build step by step.
@@ -50,7 +50,7 @@ curl -s -X POST localhost:8000/v1/visualize \
 Tests run offline (no API key, no network), against recorded registry responses and a scripted LLM:
 
 ```bash
-pytest            # 99 unit, contract and pipeline tests
+pytest            # 125 unit, contract and pipeline tests
 pytest -m live    # opt-in: calls the real ClinicalTrials.gov API
 ```
 
@@ -478,7 +478,7 @@ then had it reviewed against the assignment for gaps. Implementation followed th
 time, one commit per step, with each commit message recording why as well as what.
 
 **How correctness was validated.**
-- **Offline tests (99).** They run on registry responses recorded with the service's own client, plus
+- **Offline tests (125).** They run on registry responses recorded with the service's own client, plus
   a scripted LLM. They cover:
   - schema contracts
   - query building
@@ -491,7 +491,7 @@ time, one commit per step, with each commit message recording why as well as wha
   - LLM data isolation
 - **Live checks.**
   - All nine example questions were run end to end through the API with the real model.
-  - `scripts/verify_examples.py` re-fetched all 267 cited trials and confirmed all 490 excerpts, and
+  - `scripts/verify_examples.py` re-fetched all 260 cited trials and confirmed all 498 excerpts, and
     checked that partition charts reconcile with the API's totals.
   - A unit test confirms the auditor rejects wrong excerpts, so its "0 problems" result means
     something.

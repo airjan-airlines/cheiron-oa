@@ -951,6 +951,7 @@
             "NCT06998407",
             "NCT06121453"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 924,
           "citations": [
             {
@@ -1630,6 +1631,7 @@
             "NCT06994507",
             "NCT06722599"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 648,
           "citations": [
             {
@@ -1863,6 +1865,7 @@
             "NCT07295457",
             "NCT04170634"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 202,
           "citations": [
             {
@@ -2094,6 +2097,7 @@
             "NCT06259929",
             "NCT07821593"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 200,
           "citations": [
             {
@@ -2280,6 +2284,7 @@
             "NCT06625775",
             "NCT05732831"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 155,
           "citations": [
             {
@@ -2449,6 +2454,7 @@
             "NCT05217966",
             "NCT07297667"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 138,
           "citations": [
             {
@@ -2608,6 +2614,7 @@
             "NCT06625775",
             "NCT05893966"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 128,
           "citations": [
             {
@@ -2762,6 +2769,7 @@
             "NCT05462457",
             "NCT04878666"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 123,
           "citations": [
             {
@@ -2895,6 +2903,7 @@
             "NCT05817175",
             "NCT06970275"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 102,
           "citations": [
             {
@@ -3027,6 +3036,7 @@
             "NCT06625775",
             "NCT07358377"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 101,
           "citations": [
             {
@@ -3078,6 +3088,7 @@
         }
       ],
       "coverage": {
+        "aggregation_mode": "all_records",
         "groupby_semantics": "overlapping",
         "bucket_sum": 2721,
         "unclassified_count": 0,
@@ -3122,7 +3133,7 @@
       },
       "source": "ClinicalTrials.gov API v2",
       "data_as_of": "2026-09-25T09:00:04",
-      "generated_at": "2026-09-27T00:31:51.866007Z"
+      "generated_at": "2026-09-27T03:10:58.249776Z"
     }
   }
 }

@@ -33,6 +33,7 @@
             "NCT00109252",
             "NCT02533375"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 2,
           "citations": [
             {
@@ -92,6 +93,7 @@
             "NCT02387801",
             "NCT01952015"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 34,
           "citations": [
             {
@@ -145,6 +147,7 @@
             "NCT01519089",
             "NCT00674063"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 21,
           "citations": [
             {
@@ -281,6 +284,7 @@
             "NCT00692172",
             "NCT01871402"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 104,
           "citations": [
             {
@@ -420,6 +424,7 @@
             "NCT05335356",
             "NCT03777436"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 107,
           "citations": [
             {
@@ -549,6 +554,7 @@
             "NCT05377944",
             "NCT03482011"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 97,
           "citations": [
             {
@@ -609,6 +615,7 @@
             "NCT00691002",
             "NCT01474512"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 28,
           "citations": [
             {
@@ -642,6 +649,7 @@
           "supporting_nct_ids": [
             "NCT02409667"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 1,
           "citations": [
             {
@@ -683,6 +691,7 @@
         }
       ],
       "coverage": {
+        "aggregation_mode": "all_records",
         "groupby_semantics": "partition",
         "bucket_sum": 394,
         "unclassified_count": 2,
@@ -734,7 +743,7 @@
       },
       "source": "ClinicalTrials.gov API v2",
       "data_as_of": "2026-09-25T09:00:04",
-      "generated_at": "2026-09-27T00:32:00.159228Z"
+      "generated_at": "2026-09-27T03:11:07.572481Z"
     }
   }
 }

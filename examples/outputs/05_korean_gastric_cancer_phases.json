@@ -35,6 +35,7 @@
             "NCT05005403",
             "NCT07358806"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 9,
           "citations": [
             {
@@ -84,6 +85,7 @@
             "NCT06085755",
             "NCT06921837"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 18,
           "citations": [
             {
@@ -127,6 +129,7 @@
             "NCT06819566",
             "NCT05702229"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 12,
           "citations": [
             {
@@ -159,6 +162,7 @@
           "supporting_nct_ids": [
             "NCT07221149"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 1,
           "citations": [
             {
@@ -189,6 +193,7 @@
             "NCT06731478",
             "NCT05226169"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 13,
           "citations": [
             {
@@ -234,6 +239,7 @@
             "NCT06395935",
             "NCT07405931"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 14,
           "citations": [
             {
@@ -272,6 +278,7 @@
             "NCT07035587",
             "NCT06075199"
           ],
+          "supporting_nct_ids_complete": true,
           "citation_count": 7,
           "citations": [
             {
@@ -325,6 +332,7 @@
         }
       ],
       "coverage": {
+        "aggregation_mode": "all_records",
         "groupby_semantics": "partition",
         "bucket_sum": 74,
         "unclassified_count": 0,
@@ -369,7 +377,7 @@
       },
       "source": "ClinicalTrials.gov API v2",
       "data_as_of": "2026-09-25T09:00:04",
-      "generated_at": "2026-09-27T00:31:56.708910Z"
+      "generated_at": "2026-09-27T03:11:04.111435Z"
     }
   }
 }

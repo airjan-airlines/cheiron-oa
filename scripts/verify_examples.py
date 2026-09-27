@@ -86,8 +86,9 @@ async def main() -> None:
         problems: list[str] = []
         n_citations = 0
         for d in items:
-            if d["citation_count"] != len(d["supporting_nct_ids"]):
-                problems.append(f"citation_count != len(supporting_nct_ids) in {d}")
+            ids, complete = d["supporting_nct_ids"], d.get("supporting_nct_ids_complete", True)
+            if (complete and d["citation_count"] != len(ids)) or (not complete and d["citation_count"] < len(ids)):
+                problems.append(f"citation_count inconsistent with supporting_nct_ids (complete={complete}) in {d}")
             for c in d["citations"]:
                 n_citations += 1
                 record = records.get(c["nct_id"])

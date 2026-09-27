@@ -39,6 +39,7 @@
               "NCT07639242",
               "NCT06835569"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 12,
             "citations": [
               {
@@ -80,6 +81,7 @@
               "NCT06917079",
               "NCT06835569"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 9,
             "citations": [
               {
@@ -121,6 +123,7 @@
               "NCT06917079",
               "NCT06835569"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 9,
             "citations": [
               {
@@ -162,6 +165,7 @@
               "NCT05815173",
               "NCT06068153"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 9,
             "citations": [
               {
@@ -203,6 +207,7 @@
               "NCT03299088",
               "NCT04967079"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 9,
             "citations": [
               {
@@ -243,6 +248,7 @@
               "NCT06917079",
               "NCT06835569"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 8,
             "citations": [
               {
@@ -282,6 +288,7 @@
               "NCT06917079",
               "NCT06835569"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 7,
             "citations": [
               {
@@ -321,6 +328,7 @@
               "NCT02039336",
               "NCT07242274"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 7,
             "citations": [
               {
@@ -358,6 +366,7 @@
               "NCT06119581",
               "NCT06586515"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 5,
             "citations": [
               {
@@ -395,6 +404,7 @@
               "NCT03681483",
               "NCT01833143"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 5,
             "citations": [
               {
@@ -432,6 +442,7 @@
               "NCT07554339",
               "NCT07431827"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 5,
             "citations": [
               {
@@ -468,6 +479,7 @@
               "NCT04735068",
               "NCT03170206"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 4,
             "citations": [
               {
@@ -504,6 +516,7 @@
               "NCT07554339",
               "NCT07431827"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 4,
             "citations": [
               {
@@ -540,6 +553,7 @@
               "NCT06333678",
               "NCT03004105"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 4,
             "citations": [
               {
@@ -576,6 +590,7 @@
               "NCT04699188",
               "NCT05358249"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 4,
             "citations": [
               {
@@ -612,6 +627,7 @@
               "NCT06128551",
               "NCT07349537"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 4,
             "citations": [
               {
@@ -648,6 +664,7 @@
               "NCT04916236",
               "NCT02039336"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 4,
             "citations": [
               {
@@ -684,6 +701,7 @@
               "NCT04620330",
               "NCT05375994"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 4,
             "citations": [
               {
@@ -719,6 +737,7 @@
               "NCT06024174",
               "NCT05375994"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 3,
             "citations": [
               {
@@ -754,6 +773,7 @@
               "NCT06456138",
               "NCT04967079"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 3,
             "citations": [
               {
@@ -789,6 +809,7 @@
               "NCT06917079",
               "NCT06625775"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 3,
             "citations": [
               {
@@ -824,6 +845,7 @@
               "NCT01951690",
               "NCT04620330"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 3,
             "citations": [
               {
@@ -859,6 +881,7 @@
               "NCT06917079",
               "NCT06625775"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 3,
             "citations": [
               {
@@ -893,6 +916,7 @@
               "NCT02022982",
               "NCT03170206"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 2,
             "citations": [
               {
@@ -917,36 +941,10 @@
           },
           {
             "supporting_nct_ids": [
-              "NCT05673187",
-              "NCT06068153"
-            ],
-            "citation_count": 2,
-            "citations": [
-              {
-                "nct_id": "NCT05673187",
-                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
-                "excerpt": "ETOP IBCSG Partners Foundation",
-                "title": "Adagrasib in Patients With KRASG12C-mutant NSCLC Who Are Elderly or Have Poor Performance Status",
-                "url": "https://clinicaltrials.gov/study/NCT05673187"
-              },
-              {
-                "nct_id": "NCT06068153",
-                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
-                "excerpt": "ETOP IBCSG Partners Foundation",
-                "title": "AMG510 (sotorasib) Plus Lenvatinib As Second-line Treatment in Patients with KRASG12C Mutant, Metastatic NSCLC",
-                "url": "https://clinicaltrials.gov/study/NCT06068153"
-              }
-            ],
-            "id": "sponsor:etop ibcsg partners foundation",
-            "label": "ETOP IBCSG Partners Foundation",
-            "type": "sponsor",
-            "size": 2
-          },
-          {
-            "supporting_nct_ids": [
               "NCT01912625",
               "NCT01229150"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 2,
             "citations": [
               {
@@ -974,6 +972,7 @@
               "NCT05815186",
               "NCT05815173"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 2,
             "citations": [
               {
@@ -1001,6 +1000,7 @@
               "NCT06456138",
               "NCT04967079"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 2,
             "citations": [
               {
@@ -1025,20 +1025,61 @@
           },
           {
             "supporting_nct_ids": [
-              "NCT04735068"
+              "NCT06835569"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
-                "nct_id": "NCT04735068",
+                "nct_id": "NCT06835569",
                 "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
-                "excerpt": "Abramson Cancer Center at Penn Medicine",
-                "title": "Binimetinib and Hydroxychloroquine in Patients With Advanced KRAS Mutant Non-Small Cell Lung Cancer",
-                "url": "https://clinicaltrials.gov/study/NCT04735068"
+                "excerpt": "Alterome Therapeutics, Inc.",
+                "title": "A Study to Learn About Study Medicine ALTA3263 in Adults With Advanced Solid Tumors With KRAS Mutations",
+                "url": "https://clinicaltrials.gov/study/NCT06835569"
               }
             ],
-            "id": "sponsor:abramson cancer center at penn medicine",
-            "label": "Abramson Cancer Center at Penn Medicine",
+            "id": "sponsor:alterome therapeutics, inc.",
+            "label": "Alterome Therapeutics, Inc.",
+            "type": "sponsor",
+            "size": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT04892017"
+            ],
+            "supporting_nct_ids_complete": true,
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT04892017",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Deciphera Pharmaceuticals, LLC",
+                "title": "Study of Inlexisertib (DCC-3116) in Participants With RAS/MAPK Pathway Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04892017"
+              }
+            ],
+            "id": "sponsor:deciphera pharmaceuticals, llc",
+            "label": "Deciphera Pharmaceuticals, LLC",
+            "type": "sponsor",
+            "size": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07822542"
+            ],
+            "supporting_nct_ids_complete": true,
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT07822542",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+                "excerpt": "Jiangsu Hansoh Pharmaceutical Co., Ltd.",
+                "title": "A Study Evaluating HS-10370 Plus Platinum-based Doublet Chemotherapy With or Without Adebrelimab vs. Tislelizumab Plus Chemotherapy as First-Line Therapy in Patients With Advanced KRAS G12C-Mutant Non-small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT07822542"
+              }
+            ],
+            "id": "sponsor:jiangsu hansoh pharmaceutical co., ltd.",
+            "label": "Jiangsu Hansoh Pharmaceutical Co., Ltd.",
             "type": "sponsor",
             "size": 1
           }
@@ -1051,6 +1092,7 @@
               "NCT04956640",
               "NCT06119581"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 4,
             "citations": [
               {
@@ -1086,6 +1128,7 @@
               "NCT07554339",
               "NCT07431827"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 4,
             "citations": [
               {
@@ -1120,6 +1163,7 @@
               "NCT04956640",
               "NCT06119581"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 3,
             "citations": [
               {
@@ -1154,6 +1198,7 @@
               "NCT04956640",
               "NCT06586515"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 3,
             "citations": [
               {
@@ -1188,6 +1233,7 @@
               "NCT04956640",
               "NCT06119581"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 3,
             "citations": [
               {
@@ -1222,6 +1268,7 @@
               "NCT04956640",
               "NCT06119581"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 3,
             "citations": [
               {
@@ -1256,6 +1303,7 @@
               "NCT06345729",
               "NCT07190248"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 3,
             "citations": [
               {
@@ -1290,6 +1338,7 @@
               "NCT06917079",
               "NCT06625775"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 3,
             "citations": [
               {
@@ -1324,6 +1373,7 @@
               "NCT01951690",
               "NCT04620330"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 3,
             "citations": [
               {
@@ -1357,6 +1407,7 @@
               "NCT06582771",
               "NCT06333678"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 2,
             "citations": [
               {
@@ -1383,6 +1434,7 @@
               "NCT02974725",
               "NCT05358249"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 2,
             "citations": [
               {
@@ -1409,6 +1461,7 @@
               "NCT05815186",
               "NCT05815173"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 2,
             "citations": [
               {
@@ -1435,6 +1488,7 @@
               "NCT06456138",
               "NCT04967079"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 2,
             "citations": [
               {
@@ -1461,6 +1515,7 @@
               "NCT06456138",
               "NCT04967079"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 2,
             "citations": [
               {
@@ -1487,6 +1542,7 @@
               "NCT02450656",
               "NCT02039336"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 2,
             "citations": [
               {
@@ -1513,6 +1569,7 @@
               "NCT06343402",
               "NCT06917079"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 2,
             "citations": [
               {
@@ -1536,26 +1593,104 @@
           },
           {
             "supporting_nct_ids": [
-              "NCT04735068"
+              "NCT06835569"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
-                "nct_id": "NCT04735068",
+                "nct_id": "NCT06835569",
                 "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
-                "excerpt": "\"Abramson Cancer Center at Penn Medicine\" | \"Binimetinib Pill\"",
-                "title": "Binimetinib and Hydroxychloroquine in Patients With Advanced KRAS Mutant Non-Small Cell Lung Cancer",
-                "url": "https://clinicaltrials.gov/study/NCT04735068"
+                "excerpt": "\"Alterome Therapeutics, Inc.\" | \"Pemetrexed + Cisplatin /Carboplatin\"",
+                "title": "A Study to Learn About Study Medicine ALTA3263 in Adults With Advanced Solid Tumors With KRAS Mutations",
+                "url": "https://clinicaltrials.gov/study/NCT06835569"
               }
             ],
-            "source": "sponsor:abramson cancer center at penn medicine",
-            "target": "intervention:binimetinib",
+            "source": "sponsor:alterome therapeutics, inc.",
+            "target": "intervention:carboplatin",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06835569"
+            ],
+            "supporting_nct_ids_complete": true,
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT06835569",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Alterome Therapeutics, Inc.\" | \"cetuximab\"",
+                "title": "A Study to Learn About Study Medicine ALTA3263 in Adults With Advanced Solid Tumors With KRAS Mutations",
+                "url": "https://clinicaltrials.gov/study/NCT06835569"
+              }
+            ],
+            "source": "sponsor:alterome therapeutics, inc.",
+            "target": "intervention:cetuximab",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06835569"
+            ],
+            "supporting_nct_ids_complete": true,
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT06835569",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Alterome Therapeutics, Inc.\" | \"Pemetrexed + Cisplatin /Carboplatin\"",
+                "title": "A Study to Learn About Study Medicine ALTA3263 in Adults With Advanced Solid Tumors With KRAS Mutations",
+                "url": "https://clinicaltrials.gov/study/NCT06835569"
+              }
+            ],
+            "source": "sponsor:alterome therapeutics, inc.",
+            "target": "intervention:cisplatin",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06835569"
+            ],
+            "supporting_nct_ids_complete": true,
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT06835569",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Alterome Therapeutics, Inc.\" | \"Pembrolizumab\"",
+                "title": "A Study to Learn About Study Medicine ALTA3263 in Adults With Advanced Solid Tumors With KRAS Mutations",
+                "url": "https://clinicaltrials.gov/study/NCT06835569"
+              }
+            ],
+            "source": "sponsor:alterome therapeutics, inc.",
+            "target": "intervention:pembrolizumab",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT06835569"
+            ],
+            "supporting_nct_ids_complete": true,
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT06835569",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Alterome Therapeutics, Inc.\" | \"Pemetrexed + Cisplatin /Carboplatin\"",
+                "title": "A Study to Learn About Study Medicine ALTA3263 in Adults With Advanced Solid Tumors With KRAS Mutations",
+                "url": "https://clinicaltrials.gov/study/NCT06835569"
+              }
+            ],
+            "source": "sponsor:alterome therapeutics, inc.",
+            "target": "intervention:pemetrexed",
             "weight": 1
           },
           {
             "supporting_nct_ids": [
               "NCT03170206"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
@@ -1572,8 +1707,66 @@
           },
           {
             "supporting_nct_ids": [
+              "NCT04892017"
+            ],
+            "supporting_nct_ids_complete": true,
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT04892017",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Deciphera Pharmaceuticals, LLC\" | \"Binimetinib\"",
+                "title": "Study of Inlexisertib (DCC-3116) in Participants With RAS/MAPK Pathway Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04892017"
+              }
+            ],
+            "source": "sponsor:deciphera pharmaceuticals, llc",
+            "target": "intervention:binimetinib",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT04892017"
+            ],
+            "supporting_nct_ids_complete": true,
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT04892017",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Deciphera Pharmaceuticals, LLC\" | \"Sotorasib\"",
+                "title": "Study of Inlexisertib (DCC-3116) in Participants With RAS/MAPK Pathway Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04892017"
+              }
+            ],
+            "source": "sponsor:deciphera pharmaceuticals, llc",
+            "target": "intervention:sotorasib",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT04892017"
+            ],
+            "supporting_nct_ids_complete": true,
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT04892017",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Deciphera Pharmaceuticals, LLC\" | \"Trametinib\"",
+                "title": "Study of Inlexisertib (DCC-3116) in Participants With RAS/MAPK Pathway Mutant Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04892017"
+              }
+            ],
+            "source": "sponsor:deciphera pharmaceuticals, llc",
+            "target": "intervention:trametinib",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
               "NCT06890598"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
@@ -1590,44 +1783,66 @@
           },
           {
             "supporting_nct_ids": [
-              "NCT05673187"
+              "NCT07822542"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
-                "nct_id": "NCT05673187",
+                "nct_id": "NCT07822542",
                 "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
-                "excerpt": "\"ETOP IBCSG Partners Foundation\" | \"Adagrasib\"",
-                "title": "Adagrasib in Patients With KRASG12C-mutant NSCLC Who Are Elderly or Have Poor Performance Status",
-                "url": "https://clinicaltrials.gov/study/NCT05673187"
+                "excerpt": "\"Jiangsu Hansoh Pharmaceutical Co., Ltd.\" | \"Carboplatin\"",
+                "title": "A Study Evaluating HS-10370 Plus Platinum-based Doublet Chemotherapy With or Without Adebrelimab vs. Tislelizumab Plus Chemotherapy as First-Line Therapy in Patients With Advanced KRAS G12C-Mutant Non-small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT07822542"
               }
             ],
-            "source": "sponsor:etop ibcsg partners foundation",
-            "target": "intervention:adagrasib",
+            "source": "sponsor:jiangsu hansoh pharmaceutical co., ltd.",
+            "target": "intervention:carboplatin",
             "weight": 1
           },
           {
             "supporting_nct_ids": [
-              "NCT06068153"
+              "NCT07822542"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
-                "nct_id": "NCT06068153",
+                "nct_id": "NCT07822542",
                 "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
-                "excerpt": "\"ETOP IBCSG Partners Foundation\" | \"Sotorasib\"",
-                "title": "AMG510 (sotorasib) Plus Lenvatinib As Second-line Treatment in Patients with KRASG12C Mutant, Metastatic NSCLC",
-                "url": "https://clinicaltrials.gov/study/NCT06068153"
+                "excerpt": "\"Jiangsu Hansoh Pharmaceutical Co., Ltd.\" | \"Cisplatin\"",
+                "title": "A Study Evaluating HS-10370 Plus Platinum-based Doublet Chemotherapy With or Without Adebrelimab vs. Tislelizumab Plus Chemotherapy as First-Line Therapy in Patients With Advanced KRAS G12C-Mutant Non-small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT07822542"
               }
             ],
-            "source": "sponsor:etop ibcsg partners foundation",
-            "target": "intervention:sotorasib",
+            "source": "sponsor:jiangsu hansoh pharmaceutical co., ltd.",
+            "target": "intervention:cisplatin",
+            "weight": 1
+          },
+          {
+            "supporting_nct_ids": [
+              "NCT07822542"
+            ],
+            "supporting_nct_ids_complete": true,
+            "citation_count": 1,
+            "citations": [
+              {
+                "nct_id": "NCT07822542",
+                "field": "protocolSection.sponsorCollaboratorsModule.leadSponsor.name + protocolSection.armsInterventionsModule.interventions[].name",
+                "excerpt": "\"Jiangsu Hansoh Pharmaceutical Co., Ltd.\" | \"Pemetrexed\"",
+                "title": "A Study Evaluating HS-10370 Plus Platinum-based Doublet Chemotherapy With or Without Adebrelimab vs. Tislelizumab Plus Chemotherapy as First-Line Therapy in Patients With Advanced KRAS G12C-Mutant Non-small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT07822542"
+              }
+            ],
+            "source": "sponsor:jiangsu hansoh pharmaceutical co., ltd.",
+            "target": "intervention:pemetrexed",
             "weight": 1
           },
           {
             "supporting_nct_ids": [
               "NCT06333678"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
@@ -1646,6 +1861,7 @@
             "supporting_nct_ids": [
               "NCT03704688"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
@@ -1664,6 +1880,7 @@
             "supporting_nct_ids": [
               "NCT07190248"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
@@ -1682,6 +1899,7 @@
             "supporting_nct_ids": [
               "NCT07190248"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
@@ -1700,6 +1918,7 @@
             "supporting_nct_ids": [
               "NCT07554339"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
@@ -1718,6 +1937,7 @@
             "supporting_nct_ids": [
               "NCT07190248"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
@@ -1736,6 +1956,7 @@
             "supporting_nct_ids": [
               "NCT01912625"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
@@ -1754,6 +1975,7 @@
             "supporting_nct_ids": [
               "NCT01912625"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
@@ -1772,6 +1994,7 @@
             "supporting_nct_ids": [
               "NCT05358249"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
@@ -1790,6 +2013,7 @@
             "supporting_nct_ids": [
               "NCT05132075"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
@@ -1808,6 +2032,7 @@
             "supporting_nct_ids": [
               "NCT07349537"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
@@ -1826,6 +2051,7 @@
             "supporting_nct_ids": [
               "NCT02230553"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
@@ -1844,6 +2070,7 @@
             "supporting_nct_ids": [
               "NCT06917079"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
@@ -1862,6 +2089,7 @@
             "supporting_nct_ids": [
               "NCT06917079"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
@@ -1880,6 +2108,7 @@
             "supporting_nct_ids": [
               "NCT06917079"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
@@ -1898,6 +2127,7 @@
             "supporting_nct_ids": [
               "NCT06917079"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
@@ -1916,6 +2146,7 @@
             "supporting_nct_ids": [
               "NCT05375994"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
@@ -1934,6 +2165,7 @@
             "supporting_nct_ids": [
               "NCT05074810"
             ],
+            "supporting_nct_ids_complete": true,
             "citation_count": 1,
             "citations": [
               {
@@ -1968,6 +2200,12 @@
           "truncated": false
         }
       ],
+      "coverage": {
+        "aggregation_mode": "all_records",
+        "unclassified_count": 0,
+        "excluded": [],
+        "buckets_not_shown": 0
+      },
       "render": {
         "units": {
           "node.size": "trials",
@@ -1976,8 +2214,8 @@
         "pruning": {
           "top_n": 15,
           "min_edge_weight": 1,
-          "nodes_dropped": 130,
-          "edges_dropped": 134
+          "nodes_dropped": 129,
+          "edges_dropped": 126
         }
       },
       "visualization_rationale": {
@@ -2011,7 +2249,7 @@
       },
       "source": "ClinicalTrials.gov API v2",
       "data_as_of": "2026-09-25T09:00:04",
-      "generated_at": "2026-09-27T00:31:55.374257Z"
+      "generated_at": "2026-09-27T03:11:02.774661Z"
     }
   }
 }
