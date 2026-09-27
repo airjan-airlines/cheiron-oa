@@ -223,17 +223,20 @@ Every datum (bar, time bucket, histogram bin, node, edge) carries its evidence:
 
 ## 4. Example runs
 
-These are actual outputs from live runs (OpenAI `gpt-4.1-mini` planner, registry data as of
-2026-09-25). Each file in [`examples/outputs/`](examples/outputs/) holds the request and the exact
-JSON the API returned. All of them analyzed every matching trial (`aggregation_mode: "all_records"`).
+**The complete, unedited input/output pairs are in [`examples/outputs/`](examples/outputs/)**, one
+file per example, linked in the table below. Each file holds the exact request, the HTTP status and
+the full JSON the API returned. They come from live runs (OpenAI `gpt-4.1-mini` planner, registry
+data as of 2026-09-25). All of them analyzed every matching trial (`aggregation_mode:
+"all_records"`). The files are 14–107 KB because every datum lists all of its supporting trial IDs,
+so this section shows abridged versions below.
 
-| # | Request | Type | Result (abridged) |
-|---|---|---|---|
-| 1 | "How has the number of trials for this drug changed per year since 2015?" + `drug_name: "Pembrolizumab"` | `time_series` | 2,894 trials; 120 in 2015 → peak of 298 in 2022 → 211 so far in 2026 |
-| 2 | "Which countries have the most recruiting trials for breast cancer?" + `top_n: 10` | `bar_chart` | 2,452 trials; United States 924, China 648, France 202 … (overlapping: a multi-country trial counts in each country) |
-| 3 | "Compare phases for trials involving Semaglutide vs Tirzepatide." | `grouped_bar_chart` | 760 vs 290 trials; Phase 3: 164 vs 50 |
-| 4 | "Show a network of sponsors and drugs for KRAS-mutant non-small cell lung cancer trials." | `network_graph` | 79 trials; strongest links Eli Lilly ↔ Pembrolizumab and Merck ↔ Calderasib (4 trials each) |
-| 5 | "한국에서 모집 중인 위암 임상시험은 단계별로 어떻게 분포되어 있나요?" (Korean: "How are recruiting gastric cancer trials in Korea distributed across phases?") | `bar_chart` | 74 trials; Phase 1/Phase 2 18, Not Applicable 14, Phase 3 13 … |
+| # | Request | Type | Result (abridged) | Full output |
+|---|---|---|---|---|
+| 1 | "How has the number of trials for this drug changed per year since 2015?" + `drug_name: "Pembrolizumab"` | `time_series` | 2,894 trials; 120 in 2015 → peak of 298 in 2022 → 211 so far in 2026 | [`01_time_trend_pembrolizumab.json`](examples/outputs/01_time_trend_pembrolizumab.json) |
+| 2 | "Which countries have the most recruiting trials for breast cancer?" + `top_n: 10` | `bar_chart` | 2,452 trials; United States 924, China 648, France 202 … (overlapping: a multi-country trial counts in each country) | [`02_geographic_breast_cancer.json`](examples/outputs/02_geographic_breast_cancer.json) |
+| 3 | "Compare phases for trials involving Semaglutide vs Tirzepatide." | `grouped_bar_chart` | 760 vs 290 trials; Phase 3: 164 vs 50 | [`03_comparison_semaglutide_tirzepatide.json`](examples/outputs/03_comparison_semaglutide_tirzepatide.json) |
+| 4 | "Show a network of sponsors and drugs for KRAS-mutant non-small cell lung cancer trials." | `network_graph` | 79 trials; strongest links Eli Lilly ↔ Pembrolizumab and Merck ↔ Calderasib (4 trials each) | [`04_network_kras_nsclc.json`](examples/outputs/04_network_kras_nsclc.json) |
+| 5 | "한국에서 모집 중인 위암 임상시험은 단계별로 어떻게 분포되어 있나요?" (Korean: "How are recruiting gastric cancer trials in Korea distributed across phases?") | `bar_chart` | 74 trials; Phase 1/Phase 2 18, Not Applicable 14, Phase 3 13 … | [`05_korean_gastric_cancer_phases.json`](examples/outputs/05_korean_gastric_cancer_phases.json) |
 
 Extra runs covering the remaining types and an out-of-scope question:
 - a [drug co-occurrence network](examples/outputs/06_extra_drug_cooccurrence_myeloma.json)
