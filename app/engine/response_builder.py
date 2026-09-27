@@ -3,6 +3,7 @@
 from datetime import UTC, datetime
 
 from app.engine.types import ExecutionResult, FetchedQuery
+from app.schemas.enums import Analysis
 from app.schemas.plan import QueryPlan
 from app.schemas.response import AppliedQuery, ErrorInfo, Meta, VisualizeResponse
 
@@ -50,7 +51,8 @@ def ok(
             render=result.render,
             visualization_rationale=result.rationale,
             assumptions=result.assumptions,
-            notes=notes + truncation_notes(queries) + result.notes,
+            # A count reads the API's exact total and fetches records only to cite, so it is never "truncated".
+            notes=notes + ([] if plan.analysis == Analysis.COUNT else truncation_notes(queries)) + result.notes,
             plan=plan,
             data_as_of=data_as_of,
             generated_at=datetime.now(UTC),
