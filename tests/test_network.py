@@ -46,3 +46,17 @@ def test_pruning_is_reported_and_edges_only_reference_kept_nodes():
     assert all(e.source in ids and e.target in ids for e in net.data.edges)
     assert net.pruning.nodes_dropped > 0 and net.pruning.edges_dropped > 0
     assert net.pruning.min_edge_weight == min(e.weight for e in net.data.edges)
+
+
+def test_nodes_are_ranked_by_connections_not_raw_trial_count():
+    # Reviewer case: an academic center with many behavioral trials outranked Eli Lilly on raw trial count.
+    behavioral = {"type": "BEHAVIORAL", "name": "Diet counseling"}
+    rows = [
+        extract(trial(i, sponsorCollaboratorsModule={"leadSponsor": {"name": "Big Academic Center"}}, armsInterventionsModule={"interventions": [behavioral]}))
+        for i in range(1, 8)
+    ]
+    rows.append(extract(_drug_trial(8, "Big Academic Center", "Metformin")))
+    rows += [extract(_drug_trial(10 + i, "Lilly", "Tirzepatide")) for i in range(3)]
+    net = build_network(rows, D.SPONSOR, D.INTERVENTION, top_n=1, max_citations=1)
+    sponsors = {n.label: n.size for n in net.data.nodes if n.type == "sponsor"}
+    assert sponsors == {"Lilly": 3}  # Big Academic Center leads 8 trials but links to only one drug trial

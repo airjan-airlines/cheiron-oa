@@ -16,13 +16,14 @@ from typing import TypedDict
 from langgraph.graph import END, START, StateGraph
 
 from app.config import get_settings
-from app.ctgov.client import CTGovClient
+from app.ctgov.bucket_counts import EXACT_DIMENSIONS, MAX_BUCKET_REQUESTS, exact_counts
+from app.ctgov.client import PAGE_SIZE_MAX, CTGovClient
 from app.ctgov.extract import extract
 from app.ctgov.query_builder import build_params, normalize_filters
 from app.engine import response_builder
 from app.engine.executor import execute
-from app.engine.types import FetchedQuery
-from app.errors import UpstreamRejectedQuery
+from app.engine.types import ExactBuckets, FetchedQuery
+from app.errors import UpstreamRejectedQuery, UpstreamUnavailable
 from app.planner.llm_planner import Message, OpenAIPlanner, PlannerLLM
 from app.planner.llm_schema import QueryPlanLLM
 from app.planner.prompts import SYSTEM_PROMPT, repair_message, user_message
@@ -89,16 +90,27 @@ def build_graph(llm: PlannerLLM, client: CTGovClient):
             filters, changes = normalize_filters(filters)
             notes.extend(changes)
             specs.append((label, filters, build_params(filters)))
+        # If the chart can use exact per-bucket counts, one page is enough to discover which values occur
+        # in a huge cohort; the full fetch is only worth its requests when the cohort fits under the cap.
+        countable = plan.analysis in EXACT_ANALYSES and plan.group_by in EXACT_DIMENSIONS
+        first_cap = min(PAGE_SIZE_MAX, cap) if countable else cap
+
+        async def fetch(params: dict[str, str]):
+            first = await client.search(params, first_cap)
+            if first_cap < first.total_count <= cap:
+                return await client.search(params, cap)
+            return first
+
         try:
-            results, data_as_of = await asyncio.gather(
-                asyncio.gather(*(client.search(params, cap) for _, _, params in specs)), client.data_timestamp()
-            )
+            results, data_as_of = await asyncio.gather(asyncio.gather(*(fetch(params) for _, _, params in specs)), client.data_timestamp())
+            queries = [
+                FetchedQuery(label, filters, params, result.total_count, [extract(s) for s in result.studies])
+                for (label, filters, params), result in zip(specs, results)
+            ]
+            if countable:
+                notes.extend(await _add_exact_counts(client, plan, queries, request.max_citations_per_datum))
         except UpstreamRejectedQuery as exc:
             return {"response": response_builder.error("query_rejected", f"ClinicalTrials.gov rejected the search: {exc}", notes, plan)}
-        queries = [
-            FetchedQuery(label, filters, params, result.total_count, [extract(s) for s in result.studies])
-            for (label, filters, params), result in zip(specs, results)
-        ]
         update: PipelineState = {"queries": queries, "notes": notes, "data_as_of": data_as_of}
         # A count of zero is an answer (metric 0), not a failed search.
         if plan.analysis != Analysis.COUNT and all(q.total_matching == 0 for q in queries):
@@ -129,6 +141,38 @@ def build_graph(llm: PlannerLLM, client: CTGovClient):
     graph.add_conditional_edges("fetch", done_or("execute"), ["execute", END])
     graph.add_edge("execute", END)
     return graph.compile()
+
+
+EXACT_ANALYSES = {Analysis.DISTRIBUTION, Analysis.TIME_TREND, Analysis.COMPARISON}
+
+
+async def _add_exact_counts(client: CTGovClient, plan: QueryPlan, queries: list[FetchedQuery], max_citations: int) -> list[str]:
+    """For searches over the record cap, replace sampled bucket counts with exact registry counts (D20).
+
+    Best effort: if the registry rate-limits us, the chart falls back to the (clearly labelled) sample.
+    """
+    capped = [q for q in queries if q.truncated]
+    if not capped:
+        return []
+    budget = MAX_BUCKET_REQUESTS // len(capped)
+    dim = plan.group_by
+    notes: list[str] = []
+
+    async def count(q: FetchedQuery) -> None:
+        seen = {v.key for row in q.rows for v in row.get(dim)}
+        year_range = (q.filters.start_year_min, q.filters.start_year_max)
+        try:
+            exact = await exact_counts(client, q.api_params, dim, q.total_matching, seen, max_citations, year_range, budget)
+        except UpstreamUnavailable:
+            notes.append(f"{f'{q.label!r}: ' if q.label else ''}exact per-bucket counts were unavailable (the registry is rate-limiting requests), so the counts below are a sample.")
+            return
+        if exact is None:
+            return
+        samples = {k: [extract(s) for s in studies] for k, studies in exact.samples.items()}
+        q.exact = ExactBuckets(exact.counts, samples, exact.unclassified, exact.excluded)
+
+    await asyncio.gather(*(count(q) for q in capped))
+    return notes
 
 
 _default_graph = None

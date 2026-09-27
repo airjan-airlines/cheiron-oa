@@ -91,3 +91,9 @@ def test_every_recorded_study_extracts_with_an_nct_id_and_phase():
             row = extract(study)
             assert row.nct_id.startswith("NCT")
             assert len(row.get(D.PHASE)) == 1  # phase is always exactly one bucket
+
+
+def test_salt_or_ester_names_group_with_the_parent_drug():
+    study = _study(armsInterventionsModule={"interventions": [{"type": "DRUG", "name": "Fludarabine phosphate"}]})
+    study["derivedSection"] = {"interventionBrowseModule": {"meshes": [{"term": "fludarabine phosphate"}, {"term": "Fludarabine"}]}}
+    assert [v.label for v in extract(study).get(D.INTERVENTION)] == ["Fludarabine"]

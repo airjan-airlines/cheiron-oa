@@ -123,3 +123,23 @@ def test_count_with_zero_matches_is_a_metric_of_zero():
     resp = run(llm, FixtureRegistry(), query="How many?")
     assert resp.status == "ok" and resp.visualization.type == "metric"
     assert resp.visualization.data[0].model_extra["trial_count"] == 0
+
+
+class RateLimitedCounts(FixtureRegistry):
+    """Serves the main search, but every per-bucket count query is rate-limited."""
+
+    async def search(self, params, max_records):
+        if "AND (" in params.get("filter.advanced", "") or params.get("filter.advanced", "").startswith("AREA[Phase]"):
+            from app.errors import UpstreamUnavailable
+
+            raise UpstreamUnavailable("HTTP 429")
+        return await super().search(params, max_records)
+
+
+def test_rate_limited_exact_counts_degrade_to_a_labelled_sample():
+    llm = ScriptedLLM(draft(analysis="distribution", group_by="phase", filters={"intervention": "tirzepatide"}))
+    resp = run(llm, RateLimitedCounts("tirzepatide"), query="q", max_records=100)
+    assert resp.status == "ok"
+    assert resp.meta.coverage.aggregation_mode == "sample"
+    assert "among the first 100 of 290" in resp.visualization.encoding.y.label
+    assert any("rate-limiting" in n for n in resp.meta.notes)

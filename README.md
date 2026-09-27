@@ -110,13 +110,22 @@ Every response has the same envelope, and every pipeline outcome returns HTTP 20
 | `ok` | A visualization was produced. |
 | `no_data` | The search ran but matched no trials; `meta.queries` shows exactly what was searched. |
 | `unsupported` | The question is not about clinical trials. |
-| `error` | The question could not be planned into a valid query. No guessed chart is returned. |
+| `error` | No chart was produced; `error.code` says why (below). No guessed chart is ever returned. |
+
+| `error.code` | Meaning |
+|---|---|
+| `invalid_plan` | The question could not be turned into a valid query, even after one repair attempt. |
+| `conflicting_constraints` | The request contradicts itself, e.g. `drug_name: "pembrolizumab"` with "compare semaglutide vs tirzepatide". Nothing is fetched. |
+| `query_rejected` | ClinicalTrials.gov rejected the search terms (HTTP 400 upstream). |
+| `upstream_unavailable` / `planner_unavailable` | ClinicalTrials.gov or the LLM provider failed after retries (HTTP 502). |
+| `internal_error` | A bug on our side (HTTP 500), still returned in this envelope. |
 
 | HTTP | When |
 |---|---|
-| 200 | Any of the statuses above. |
+| 200 | `ok`, `no_data`, `unsupported`, and `error` for the first three codes above. |
 | 422 | The request body failed validation. |
-| 502 | ClinicalTrials.gov or the LLM provider was unreachable after retries (body is the envelope with `status: "error"`). |
+| 502 | ClinicalTrials.gov or the LLM provider was unreachable after retries. |
+| 500 | Unexpected server error (`internal_error`). |
 
 ### 3.1 `visualization`
 
@@ -149,8 +158,9 @@ Every datum (bar, time bucket, histogram bin, node, edge) carries its evidence:
 ```jsonc
 {
   "phase": "PHASE3", "phase_label": "Phase 3", "trial_count": 41,
-  "supporting_nct_ids": ["NCT01234567", "..."],   // every contributing trial, never truncated
-  "citation_count": 41,
+  "supporting_nct_ids": ["NCT01234567", "..."],   // contributing trials
+  "supporting_nct_ids_complete": true,             // false only in exact-count mode (see below)
+  "citation_count": 41,                            // always equals the plotted count
   "citations": [                                   // first max_citations_per_datum trials
     {
       "nct_id": "NCT01234567",
@@ -166,13 +176,17 @@ Every datum (bar, time bucket, histogram bin, node, edge) carries its evidence:
 `excerpt` is the exact field value that placed the trial in this datum (lists are JSON-encoded). For a
 derived bucket such as "Phase 1/Phase 2", the excerpt is the raw `["PHASE1", "PHASE2"]`.
 
+`supporting_nct_ids` lists every contributing trial, except for cohorts too large to fetch that are
+counted with exact per-bucket registry totals (`coverage.aggregation_mode: "exact_counts"`). Then it
+lists the cited example trials, and `supporting_nct_ids_complete` is `false`.
+
 ### 3.3 `meta`
 
 | Field | Meaning |
 |---|---|
-| `interpretation` | What was computed, in words. Generated from the plan, never an LLM statement about results. |
+| `interpretation` | What was computed, in words, built from the plan by a template (it never states results). |
 | `queries[]` | Each ClinicalTrials.gov search that fed the chart (one per cohort in a comparison): `label`, normalized `filters`, the exact `api_params` sent, `total_matching` (the API's own count), `records_analyzed`, `truncated`. |
-| `coverage` | How the numbers relate to the trials: `groupby_semantics` (`partition` = each trial in exactly one bucket, so buckets sum to the total; `overlapping` = a trial can be in several, e.g. multi-country trials), `bucket_sum`, `unclassified_count`, `overlap_note`, `excluded[]` (trials left out, by reason), `buckets_not_shown` (counted but beyond `top_n`). |
+| `coverage` | How the numbers relate to the trials: `aggregation_mode` (`all_records` = every matching trial analyzed; `exact_counts` = too many to fetch, so each bar is the registry's exact per-bucket total; `sample` = counts cover only the first `records_analyzed` trials, and the y-axis label says so), `groupby_semantics` (`partition` = each trial in exactly one bucket, so buckets sum to the total; `overlapping` = a trial can be in several, e.g. multi-country trials), `bucket_sum`, `unclassified_count`, `overlap_note`, `excluded[]` (trials left out, by reason), `buckets_not_shown` (counted but beyond `top_n`). |
 | `render` | Drawing hints: `sort` {`field`, `order`}, `time_granularity`, `units` per channel, `grouping` (the series key), `pruning` (for networks). |
 | `visualization_rationale` | The chosen `type`, where it came from (`request`, `llm` or `rule_default`), any overridden suggestion, and why. |
 | `assumptions[]` | Interpretation choices a reader would otherwise have to guess. |
@@ -186,7 +200,8 @@ derived bucket such as "Phase 1/Phase 2", the excerpt is the raw `["PHASE1", "PH
 
 Actual outputs from live runs (OpenAI `gpt-4.1-mini` planner, registry data as of
 2026-09-25). Each file in [`examples/outputs/`](examples/outputs/) holds the request and the exact
-JSON the API returned. None of these hit the record cap: every count covers all matching trials.
+JSON the API returned. None of these hit the record cap, so every count covers all matching trials
+(`aggregation_mode: "all_records"`). Exact-count mode for bigger cohorts is shown in §6.
 
 | # | Query | Type | Result (abridged) |
 |---|---|---|---|
@@ -340,11 +355,25 @@ an unrenderable spec.
 with the exact messages; if the second draft still fails, the response is `status: "error"` and no
 chart. Unambiguous slips are fixed in code and noted, which saves an LLM round trip.
 
-**Fetch records and count locally, rather than asking the API for counts.** Counting locally is
-what makes deep citations and networks possible: every datum knows exactly which trials produced
-it. *Tradeoff:* the record cap (default 5,000). Above it, bucket counts cover only the first 5,000
-records in the API's order; `truncated` and a note say so. Count questions are the exception: they
-use the API's exact `totalCount` and fetch only enough records to cite.
+**Fetch records and count locally; switch to exact registry counts when that can't scale.**
+Counting fetched records is what makes complete citations and networks possible: every datum knows
+exactly which trials produced it. It stops working above the record cap (default 5,000). "How many
+cancer trials started each year?" matches 123,589 trials, and counting the first 5,000 showed 237
+for 2020 against a real 6,351. So above the cap, the service picks one of two paths:
+- **Dimensions with a fixed set of values** (phase, status, sponsor type, intervention type, start
+  year) switch to *exact-count mode*. Each bar is the registry's own total for that bucket: one
+  `countTotal` request per bucket, with the bucket's condition ANDed onto the search. For cancer, the
+  nine phase buckets sum to exactly 123,589, and 2020 now shows 6,351. The same request returns a few
+  trials to cite, so evidence stays real. Only one 1,000-record page is fetched first, to learn
+  which values occur.
+- **Open dimensions** (country, sponsor, drug) and networks stay a *sample*. The y-axis label itself
+  says "among the first 5,000 of N matching trials", so the undercount can't be missed.
+
+The registry's rate limit is undocumented. It returned 429s after roughly 40–60 quick requests, so
+exact mode is capped at 20 count requests per response, which covers the latest ~16 years for a time
+series (earlier years are reported under `excluded`). If the registry rate-limits anyway, the chart
+falls back to the labelled sample with a note rather than failing. Count questions always use the
+API's exact `totalCount`.
 
 **Say what the numbers mean.** `coverage.groupby_semantics` distinguishes a *partition* (phase,
 status, year, sponsor: each trial in one bucket, so bars sum to the total) from *overlapping*
@@ -363,11 +392,24 @@ which found real problems with the reference notes we were given
 - Location spelling matters: "USA" matches 729 trials, "United States" 195,650; Korean script
   matches 0. A small alias map covers only the variants that measurably change results.
 
+**Comparisons: cohorts narrow the caller's filters and never contradict them.** Each cohort's
+filters are merged with the shared ones and validated.
+- A structured field that no cohort varies applies to every cohort.
+- Phases, statuses and year ranges intersect, so a cohort can't widen what the caller asked for.
+- A text field that contradicts every cohort (`drug_name: "pembrolizumab"` with "semaglutide vs
+  tirzepatide") is `conflicting_constraints`. Re-asking the LLM can't fix the caller's own
+  contradiction, so nothing is fetched.
+- The one allowance: when the caller's value is itself one side of the comparison
+  (`drug_name: "semaglutide"` with the same question), that's treated as intended and noted.
+
 **Intervention names are messy; MeSH terms tidy them up.** "Pembrolizumab 200 mg IV" and
 "5-Fluorouracil" are grouped under the MeSH terms the registry assigns to the record (whole-word
 matching, so "IV" never matches "Ivermectin"). A combination entry like "Docetaxel and capecitabine"
-yields one node per drug. Networks keep only drug-type interventions and drop placebo and
-standard-of-care comparators, which would otherwise link to everything.
+yields one node per drug, and salt forms group with the parent drug ("Fludarabine phosphate" →
+Fludarabine). Networks keep only drug-type interventions and drop placebo and standard-of-care
+comparators, which would otherwise link to everything. Nodes are ranked by the weight of their links,
+not by raw trial count, so a sponsor whose many trials are behavioral can't crowd out the companies
+that actually run the drug trials.
 
 **Thin LangGraph layer.** The graph adds explicit state, the repair loop and early exits. Every node
 is a plain function tested without LangGraph, so the framework handles only control flow.
@@ -385,17 +427,29 @@ encoded field exists in every row. That lets a renderer be written from `/openap
 
 ## 7. Limitations and what I would improve
 
-- **Record cap on very large cohorts.** Above 5,000 matching trials, bucket counts cover a prefix
-  of the results (clearly flagged). The next step would be an exact-count mode for dimensions with
-  a fixed set of values (phase, status, sponsor type, year): one `countTotal` request per bucket. A
-  live check on breast cancer (16,853 trials) confirmed 9 such requests reconcile to the exact total.
+- **LLM-written text is echoed.** Cohort labels and the chart rationale are written by the model. A
+  prompt-injection test got fabricated numbers into them ("Keytruda (12,345 trials)"). The plotted
+  values stay correct, since those are always computed, but the labels are not. Planned fix:
+  generate labels from the filters and treat the rationale as untrusted model text.
+- **Very large cohorts on open dimensions are sampled.** Exact-count mode covers dimensions with a
+  fixed value set. Country, sponsor and drug breakdowns, and networks, over more than 5,000 trials
+  describe the first 5,000 (labelled on the axis). Time series with a longer history count the
+  latest ~16 years exactly and report the rest under `excluded`.
+- **No two-level breakdowns yet.** "How has the phase mix changed over time?" needs year × phase in
+  one chart. The plan has no secondary dimension, so this returns a plain time trend and a note
+  saying the phase breakdown was dropped.
 - **Matching is the registry's.** The API expands search terms itself: `query.intr=tirzepatide`
   also returns a 2007 observational study whose only listed interventions are "GLP-1 Receptor
-  Agonists" and "DPP-4 Inhibitors". The service reports what the registry matches and adds no synonym
-  expansion of its own; brand-to-generic mapping relies on the LLM.
+  Agonists" and "DPP-4 Inhibitors". "Hodgkin lymphoma" also matches non-Hodgkin trials. The
+  service reports what the registry matches and adds no synonym expansion of its own; brand-to-generic
+  mapping relies on the LLM.
+- **Ambiguous names aren't resolved.**
+  - "Merck" matches both MSD and Merck KGaA.
+  - "Georgia" matches the US state and the country.
+  - Regions like "Europe" aren't expanded into countries.
 - **Intervention resolution stops at MeSH.** Drugs without a MeSH term in their record (often
-  investigational codes such as "Adebrelimab + SHR-8068") stay as raw names, and a combination
-  entry is split only for the drugs MeSH covers.
+  investigational codes such as "Adebrelimab + SHR-8068") stay as raw names. Condition networks can
+  link a MeSH parent and child ("Diabetes Mellitus" and "Diabetes Mellitus, Type 2").
 - **Co-occurrence is not co-administration.** Two drugs in one trial may be in different arms. The
   response states this rather than implying combination therapy.
 - **Citations are verified by an offline audit, not per request.** `scripts/verify_examples.py`
@@ -403,10 +457,12 @@ encoded field exists in every row. That lets a renderer be written from `/openap
   cost extra API calls.
 - **In-memory cache, single process.** A shared cache (e.g. Postgres or Redis) would help a
   multi-instance deployment. There is no auth or rate limiting in front of the service.
-- **Cohort filters override shared ones.** In a comparison, a cohort's own filter wins for that
-  cohort, even over a structured request field; a stricter version would reject the contradiction.
-- **With more time:** the exact-count mode above, a small eval set of questions with expected plans
-  for regression-testing prompt changes, and a reference renderer driven only by the spec.
+- **With more time:**
+  - the LLM-text fix above;
+  - a secondary breakdown dimension;
+  - an eval set of questions with expected plans (including adversarial ones) for regression-testing
+    prompt changes;
+  - a reference renderer driven only by the spec.
 
 ---
 

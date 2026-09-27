@@ -132,6 +132,9 @@ def _interventions(ps: dict, mesh_terms: list[str]) -> tuple[tuple[DimValue, ...
             continue
         folded = _name_key(raw_name)
         matches = [t for t in mesh_terms if _names_match(t.casefold(), folded)]
+        # "Fludarabine phosphate" matches both "Fludarabine" and "fludarabine phosphate": keep the
+        # more general term so salt/ester variants group with the parent drug.
+        matches = [t for t in matches if not any(o != t and _names_match(o.casefold(), t.casefold()) and len(o) < len(t) for o in matches)]
         resolved = [(t.casefold(), _display(t)) for t in matches] or [(folded, raw_name)]
         for key, label in resolved:
             if key not in names:

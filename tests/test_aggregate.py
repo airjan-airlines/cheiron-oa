@@ -8,7 +8,7 @@ def test_phase_buckets_partition_the_trials_exactly():
     q = fetched("korea_gastric_recruiting")
     g = group(q.rows, D.PHASE, top_n=15)
     assert sum(b.count for b in g.buckets) == len(q.rows) == q.total_matching
-    assert g.unclassified == []
+    assert g.unclassified_count == 0
 
 
 def test_phase_buckets_follow_clinical_order_not_count():
@@ -34,7 +34,8 @@ def test_years_are_zero_filled_within_filter_bounds():
 def test_trials_without_a_value_are_unclassified_not_dropped_silently():
     rows = [extract(trial(1, statusModule={"startDateStruct": {"date": "2016"}})), extract(trial(2))]
     g = group(rows, D.START_YEAR, top_n=15)
-    assert [r.nct_id for r in g.unclassified] == ["NCT00000002"]
+    assert g.unclassified_count == 1
+    assert [b.key for b in g.buckets] == ["2016"]
 
 
 def test_evidence_lists_every_trial_but_caps_excerpts():

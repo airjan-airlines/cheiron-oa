@@ -4,7 +4,7 @@
 
 Take-home for Cheiron (AI-native OS for drug programs; stack: Python/FastAPI/Postgres/LangGraph/OpenAI; values grounded, typed, citable agent outputs). Build a backend that turns a natural-language clinical-trial question (+ optional structured fields) into a **structured visualization spec** backed by ClinicalTrials.gov API v2 data, with spec-level deep citations. Due tomorrow (~24h).
 
-Workspace (greenfield, not a git repo): `clinicaltrials-take-home-assignment.md` (the OA), `api_reference.md` (corrected against the live API: no `filter.phase` → use `filter.advanced=AREA[Phase]PHASE3`; `nextPageToken`; `countTotal=true`; plain-text errors), `openai-rules.md` (allowed models), `cheiron-extensions.md` (research), `.env` (`OPENAI_API_KEY`).
+Workspace at planning time (greenfield, before `git init`): `clinicaltrials-take-home-assignment.md` (the OA), `api_reference.md` (corrected against the live API: no `filter.phase` → use `filter.advanced=AREA[Phase]PHASE3`; `nextPageToken`; `countTotal=true`; plain-text errors), `openai-rules.md` (allowed models), `.env` (`OPENAI_API_KEY`).
 
 Grading: System Design 35%, AI/Agent Design 20%, Code Quality 20%, Query/Viz Coverage 15%, I/O Design 10%, bonus citations. Plan reviewed against the OA by a subagent; all must-fix findings incorporated below.
 
@@ -78,7 +78,7 @@ On failure the errors go back to the LLM once. If it still fails, the response i
 - If `total_matching > max_records`, set `meta.truncated=true` and add a note that the sample is the API's default order and may be biased.
 - `httpx` with timeout, exponential backoff on 429/5xx, and an in-memory TTL cache. (On this machine, Python's stdlib `urllib` fails SSL verification but the `certifi` bundle works; `httpx` uses `certifi` by default, so never use bare `urllib`.)
 - `pageToken` values must be URL-encoded (a raw token silently returned an empty body in testing).
-- Rejected alternative: one `countTotal` call per bucket. It can't produce citations or networks.
+- One `countTotal` call per bucket can't produce complete citations or networks, so it is used only above the record cap (D20).
 
 **D8. Rules for multi-valued fields** (stated in `meta.assumptions`):
 - **Phase:** `["PHASE1","PHASE2"]` becomes one "Phase 1/Phase 2" bucket, so no double counting. **An explicit `NA` phase ("Not applicable", 237,522 trials registry-wide) and a missing phase field ("Not specified", 143,294) are separate buckets, never merged.**
@@ -143,7 +143,7 @@ These came from studying how other implementations of the same problem handled t
 
 **D19. Commit history as the build narrative.** One commit per build step, and the message says *why*, not just what (e.g. "Split NA and missing phase buckets: 237k vs 143k trials, merging them hides a real category"). OA §8 rewards "evidence of thoughtful construction, testing, and iteration."
 
-**D20. Exact-count mode for large cohorts (OPTIONAL, ~2h; decided: build only after step 5, once the core, saved examples and README are done).** When `total_matching > max_records` and the group-by dimension is closed (phase, status, sponsor class, intervention type, start year within a bounded range), send one `countTotal=true&pageSize=K` request per bucket with that bucket's filter added (`filter.advanced=AREA[Phase]PHASE3`). Each response returns the exact count *and* K citation records in the same call. Combined phase buckets use `AND` queries (e.g. `AREA[Phase]PHASE1 AND AREA[Phase]PHASE2`), and single-phase buckets subtract them. Verified live: for breast cancer (16,853 trials), 9 queries give exact partition buckets summing to exactly 16,853. Open dimensions (country, sponsor name, drug) keep fetch mode with truncation disclosed. `meta.coverage.aggregation_mode` is `records` or `bucket_counts`.
+**D20. Exact-count mode for large cohorts (built after an independent review showed "cancer trials per year" undercounting 2020 by 27x).** When `total_matching > max_records` and the group-by dimension is closed (phase, status, sponsor class, intervention type, start year within a bounded range), send one `countTotal=true&pageSize=K` request per bucket with that bucket's filter added (`filter.advanced=AREA[Phase]PHASE3`). Each response returns the exact count *and* K citation records in the same call. Combined phase buckets use `AND` queries (e.g. `AREA[Phase]PHASE1 AND AREA[Phase]PHASE2`), and single-phase buckets subtract them. Verified live: for breast cancer (16,853 trials), 9 queries give exact partition buckets summing to exactly 16,853. Open dimensions (country, sponsor name, drug) keep fetch mode with truncation disclosed. `meta.coverage.aggregation_mode` is `records` or `bucket_counts`.
 
 ---
 

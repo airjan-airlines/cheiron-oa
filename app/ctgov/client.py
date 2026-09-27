@@ -32,9 +32,9 @@ class CTGovClient:
         self,
         base_url: str = "https://clinicaltrials.gov/api/v2",
         timeout_s: float = 30.0,
-        max_attempts: int = 3,
+        max_attempts: int = 4,
         cache_ttl_s: float = 900.0,
-        max_concurrency: int = 4,
+        max_concurrency: int = 3,
         transport: httpx.AsyncBaseTransport | None = None,
         sleep: Callable[[float], Awaitable[None]] = asyncio.sleep,
     ) -> None:
@@ -103,7 +103,8 @@ class CTGovClient:
                 if resp.status_code not in _RETRYABLE_STATUS:
                     raise UpstreamUnavailable(f"ClinicalTrials.gov returned HTTP {resp.status_code}: {resp.text[:200]}")
                 last_problem = f"HTTP {resp.status_code}"
-                delay = _retry_after(resp) or 2 ** (attempt - 1)
+                # Rate limiting (429) needs a longer pause than a transient 5xx.
+                delay = _retry_after(resp) or (2**attempt if resp.status_code == 429 else 2 ** (attempt - 1))
             if attempt < self._max_attempts:
                 await self._sleep(delay)
         raise UpstreamUnavailable(f"ClinicalTrials.gov failed after {self._max_attempts} attempts ({last_problem}).")

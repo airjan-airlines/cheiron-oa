@@ -35,7 +35,7 @@ class Settings(BaseSettings):
 
     ctgov_base_url: str = "https://clinicaltrials.gov/api/v2"
     ctgov_timeout_s: float = 30.0
-    ctgov_max_retries: int = 3
+    ctgov_max_retries: int = 4  # total attempts per request
     ctgov_cache_ttl_s: int = 900
 
     @field_validator("openai_model")

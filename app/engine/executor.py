@@ -5,7 +5,7 @@ dimension registry, not per-question code, so a new dimension needs no new branc
 """
 
 from app.ctgov.extract import ENROLLMENT_PATH, DimValue, TrialRow
-from app.engine.aggregate import Bucket, collect, evidence, fill_years, group, order_keys, overlap_note
+from app.engine.aggregate import Bucket, bucket_label, collect, evidence, fill_years, group, group_exact, order_keys, overlap_note
 from app.engine.chart_rules import choose_chart
 from app.engine.describe import capitalize, subject, year_span
 from app.engine.dimensions import DIMENSIONS
@@ -90,10 +90,26 @@ def _sort(dim: Dimension) -> SortSpec:
     return SortSpec(field=spec.field, order="ascending")
 
 
-def _exclusions(dim: Dimension, unclassified: int) -> list[Exclusion]:
-    if not unclassified:
-        return []
-    return [Exclusion(reason=f"no {DIMENSIONS[dim].axis_label.lower()} recorded", count=unclassified)]
+def _exclusions(dim: Dimension, unclassified: int, extra: list[tuple[str, int]] = ()) -> list[Exclusion]:
+    out = [Exclusion(reason=f"no {DIMENSIONS[dim].axis_label.lower()} recorded", count=unclassified)] if unclassified else []
+    return out + [Exclusion(reason=reason, count=count) for reason, count in extra]
+
+
+def _mode(queries: list[FetchedQuery]) -> str:
+    """How the counts were obtained, across all searches feeding the chart."""
+    if any(q.truncated and q.exact is None for q in queries):
+        return "sample"
+    return "exact_counts" if any(q.exact is not None for q in queries) else "all_records"
+
+
+def _y_channel(partition: bool, queries: list[FetchedQuery]) -> Channel:
+    base = TRIALS_Y if partition else OVERLAP_Y
+    if _mode(queries) != "sample":
+        return base
+    # Counts cover only the fetched records: say so on the axis, where no reader can miss it.
+    sampled = [q for q in queries if q.truncated and q.exact is None]
+    detail = f"among the first {len(sampled[0].rows):,} of {sampled[0].total_matching:,} matching trials" if len(sampled) == 1 else "sampled: see meta.notes"
+    return base.model_copy(update={"label": f"{base.label} ({detail})"})
 
 
 def _year_range(queries: list[FetchedQuery]) -> tuple[int | None, int | None]:
@@ -111,9 +127,9 @@ def _categorical(plan: QueryPlan, q: FetchedQuery, rationale: VisualizationRatio
     """distribution, time_trend, geographic: one search, one group-by."""
     dim = plan.group_by
     spec = DIMENSIONS[dim]
-    grouping = group(q.rows, dim, plan.top_n, _year_range([q]))
-    rows = [DataRow(**_row_key(dim, b), trial_count=b.count, **evidence(b.members, max_citations)) for b in grouping.buckets]
-    encoding_args = {"x": _x_channel(dim), "y": TRIALS_Y if spec.partition else OVERLAP_Y}
+    grouping = group_exact(q.exact, dim, plan.top_n) if q.exact else group(q.rows, dim, plan.top_n, _year_range([q]))
+    rows = [DataRow(**_row_key(dim, b), trial_count=b.count, **evidence(b.members, max_citations, b.total)) for b in grouping.buckets]
+    encoding_args = {"x": _x_channel(dim), "y": _y_channel(spec.partition, [q])}
     what = subject(q.filters)
     if rationale.chosen == VizType.TIME_SERIES:
         span = year_span(q.filters)
@@ -125,11 +141,12 @@ def _categorical(plan: QueryPlan, q: FetchedQuery, rationale: VisualizationRatio
         visualization=viz,
         interpretation=f"Counted {what} in the registry, grouped by {spec.axis_label.lower()}.",
         coverage=Coverage(
+            aggregation_mode=_mode([q]),
             groupby_semantics="partition" if spec.partition else "overlapping",
             bucket_sum=sum(b.count for b in grouping.buckets),
-            unclassified_count=len(grouping.unclassified),
-            overlap_note=overlap_note(q.rows, dim),
-            excluded=_exclusions(dim, len(grouping.unclassified)),
+            unclassified_count=grouping.unclassified_count,
+            overlap_note=overlap_note(q.rows, dim) if q.exact is None else (None if spec.partition else "A trial can be counted in several bars."),
+            excluded=_exclusions(dim, grouping.unclassified_count, grouping.excluded),
             buckets_not_shown=grouping.not_shown,
         ),
         render=RenderHints(
@@ -149,7 +166,7 @@ def _comparison(plan: QueryPlan, queries: list[FetchedQuery], rationale: Visuali
 
     if plan.group_by is None:  # "how many trials: A vs B" -> one bar per cohort
         rows = [
-            DataRow(cohort=q.label, trial_count=q.total_matching, **evidence(((r, _title_value(r)) for r in q.rows), max_citations))
+            DataRow(cohort=q.label, trial_count=q.total_matching, **evidence(((r, _title_value(r)) for r in q.rows), max_citations, q.total_matching))
             for q in queries
         ]
         viz = BarChart(
@@ -170,10 +187,19 @@ def _comparison(plan: QueryPlan, queries: list[FetchedQuery], rationale: Visuali
     spec = DIMENSIONS[dim]
     per_cohort: list[dict[str, Bucket]] = []
     unclassified = 0
+    excluded: list[tuple[str, int]] = []
     for q in queries:
-        buckets, missing = collect(q.rows, dim)
+        if q.exact is not None:
+            buckets = {
+                k: Bucket(k, bucket_label(dim, k), [(r, v) for r in q.exact.samples.get(k, []) for v in r.get(dim) if v.key == k], total=n)
+                for k, n in q.exact.counts.items()
+            }
+            unclassified += q.exact.unclassified
+            excluded += [(f"{q.label}: {reason}", n) for reason, n in q.exact.excluded]
+        else:
+            buckets, missing = collect(q.rows, dim)
+            unclassified += len(missing)
         per_cohort.append(buckets)
-        unclassified += len(missing)
     totals: dict[str, int] = {}
     for buckets in per_cohort:
         for key, b in buckets.items():
@@ -190,10 +216,10 @@ def _comparison(plan: QueryPlan, queries: list[FetchedQuery], rationale: Visuali
     for key in shown:
         for q, buckets in zip(queries, per_cohort):
             b = buckets.get(key) or Bucket(key, labels_by_key.get(key, key))
-            rows.append(DataRow(**_row_key(dim, b), cohort=q.label, trial_count=b.count, **evidence(b.members, max_citations)))
+            rows.append(DataRow(**_row_key(dim, b), cohort=q.label, trial_count=b.count, **evidence(b.members, max_citations, b.total)))
 
     series = Channel(field="cohort", type="nominal", label="Cohort")
-    y = TRIALS_Y if spec.partition else OVERLAP_Y
+    y = _y_channel(spec.partition, queries)
     title = f"{spec.axis_label}: {versus}"
     if rationale.chosen == VizType.TIME_SERIES:
         viz = TimeSeries(title=f"Trials per year: {versus}", encoding=OptionalSeriesEncoding(x=_x_channel(dim), y=y, series=series), data=rows)
@@ -207,9 +233,10 @@ def _comparison(plan: QueryPlan, queries: list[FetchedQuery], rationale: Visuali
         coverage=Coverage(
             groupby_semantics="partition" if spec.partition else "overlapping",
             bucket_sum=sum(r.model_extra["trial_count"] for r in rows),
+            aggregation_mode=_mode(queries),
             unclassified_count=unclassified,
             overlap_note=None if spec.partition else f"Within a cohort, a trial can appear under several {spec.axis_label.lower()} values.",
-            excluded=_exclusions(dim, unclassified),
+            excluded=_exclusions(dim, unclassified, excluded),
             buckets_not_shown=len(keys) - len(shown),
         ),
         render=RenderHints(
@@ -244,7 +271,7 @@ def _histogram(q: FetchedQuery, rationale: VisualizationRationale, max_citations
         encoding=HistogramEncoding(
             x=Channel(field="bin_start", type="quantitative", label="Enrollment (participants)", label_field="bin_label"),
             x2=Channel(field="bin_end", type="quantitative", label="Enrollment (participants)"),
-            y=TRIALS_Y,
+            y=_y_channel(True, [q]),
         ),
         data=rows,
     )
@@ -252,6 +279,7 @@ def _histogram(q: FetchedQuery, rationale: VisualizationRationale, max_citations
         visualization=viz,
         interpretation=f"Binned {what} by enrollment size.",
         coverage=Coverage(
+            aggregation_mode=_mode([q]),
             groupby_semantics="partition",
             bucket_sum=len(with_enrollment),
             unclassified_count=missing,
@@ -296,7 +324,7 @@ def _network(plan: QueryPlan, q: FetchedQuery, rationale: VisualizationRationale
             if source == target
             else f"Built a network linking each {src_label.lower()} to the {tgt_label.lower()}s in its {what}."
         ),
-        coverage=None,
+        coverage=Coverage(aggregation_mode=_mode([q])),  # a network from a sample shows only the sampled trials' links
         render=RenderHints(units={"node.size": "trials", "edge.weight": "trials"}, pruning=result.pruning),
         rationale=rationale,
         assumptions=assumptions,
@@ -306,7 +334,7 @@ def _network(plan: QueryPlan, q: FetchedQuery, rationale: VisualizationRationale
 
 def _metric(q: FetchedQuery, rationale: VisualizationRationale, max_citations: int) -> ExecutionResult:
     what = subject(q.filters)
-    row = DataRow(trial_count=q.total_matching, **evidence(((r, _title_value(r)) for r in q.rows), max_citations))
+    row = DataRow(trial_count=q.total_matching, **evidence(((r, _title_value(r)) for r in q.rows), max_citations, q.total_matching))
     return ExecutionResult(
         visualization=MetricViz(
             title=f"Number of {what}",

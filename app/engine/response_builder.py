@@ -25,11 +25,20 @@ def applied_queries(queries: list[FetchedQuery]) -> list[AppliedQuery]:
 def truncation_notes(queries: list[FetchedQuery]) -> list[str]:
     notes = []
     for q in queries:
-        if q.truncated:
-            name = f"'{q.label}': " if q.label else ""
+        if not q.truncated:
+            continue
+        name = f"'{q.label}': " if q.label else ""
+        if q.exact is not None:
+            notes.append(
+                f"{name}{q.total_matching:,} trials match, too many to fetch, so each bar's count is the registry's own "
+                "exact total for that bucket (one count query per bucket). Citations list example trials per bar "
+                "rather than every contributing trial (see supporting_nct_ids_complete)."
+            )
+        else:
             notes.append(
                 f"{name}{q.total_matching:,} trials match, but only the first {len(q.rows):,} (in the API's default "
-                "order) were analyzed because of the record cap. Bucket counts cover those records only."
+                "order) were analyzed because of the record cap. Counts cover those records only: treat them as a "
+                "sample, not registry totals."
             )
     return notes
 

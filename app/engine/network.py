@@ -5,7 +5,7 @@
 - source != target (e.g. sponsor <-> intervention): bipartite. A sponsor is linked to a
   drug when it leads a trial of that drug.
 
-Pruning keeps the `top_n` busiest entities per side and the strongest edges among them,
+Pruning keeps the `top_n` best-connected entities per side and the strongest edges among them,
 and reports everything it dropped, so a readable graph never hides that it was trimmed.
 """
 
@@ -94,9 +94,15 @@ def build_network(rows: list[TrialRow], source: Dimension, target: Dimension, to
         for a, b in pairs:
             edge_members[(_node_id(source, a.key), _node_id(target, b.key))].append((row, a, b))
 
-    # Keep the busiest entities on each side, then the strongest edges among them.
+    # Rank entities by how strongly they connect (weighted degree), not by raw trial count, so
+    # a sponsor with many unrelated trials can't crowd out one that actually runs these drugs.
+    # Keep the top entities on each side, then the strongest edges among them.
+    strength: dict[str, int] = defaultdict(int)
+    for (s, t), members in edge_members.items():
+        strength[s] += len(members)
+        strength[t] += len(members)
     by_type: dict[str, list[str]] = defaultdict(list)
-    for nid in sorted(node_members, key=lambda n: (-len(node_members[n]), n)):
+    for nid in sorted(node_members, key=lambda n: (-strength[n], -len(node_members[n]), n)):
         by_type[node_meta[nid][1]].append(nid)
     keep = {nid for ids in by_type.values() for nid in ids[:top_n]}
     candidate_edges = sorted(

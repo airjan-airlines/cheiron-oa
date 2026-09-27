@@ -35,9 +35,12 @@ class Evidence(BaseModel):
     """Traceability attached to every datum: bar, time bucket, histogram bin, node and edge."""
 
     supporting_nct_ids: list[str] = Field(
-        default_factory=list, description="Every trial that contributed to this datum (complete, never truncated)."
+        default_factory=list,
+        description="Trials that contributed to this datum. Complete unless `supporting_nct_ids_complete` is false "
+        "(large cohorts counted with per-bucket registry counts, where only example trials are listed).",
     )
-    citation_count: int = Field(0, ge=0, description="len(supporting_nct_ids).")
+    supporting_nct_ids_complete: bool = Field(True, description="True when `supporting_nct_ids` lists every contributing trial.")
+    citation_count: int = Field(0, ge=0, description="Number of contributing trials (equals the plotted count).")
     citations: list[Citation] = Field(
         default_factory=list, description="Excerpts for the first `max_citations_per_datum` supporting trials."
     )
@@ -227,6 +230,12 @@ class Exclusion(BaseModel):
 class Coverage(BaseModel):
     """How the plotted numbers relate to the underlying trials (D15)."""
 
+    aggregation_mode: Literal["all_records", "exact_counts", "sample"] = Field(
+        "all_records",
+        description="`all_records`: every matching trial was analyzed. `exact_counts`: too many trials to fetch, so each "
+        "bucket's count came from the registry's own per-bucket total. `sample`: counts cover only the first "
+        "`records_analyzed` trials (dimensions without a fixed value set, e.g. country); the y-axis label says so.",
+    )
     groupby_semantics: Literal["partition", "overlapping"] | None = Field(
         None,
         description="`partition`: each trial is in exactly one bucket, so buckets sum to the trial count. "
