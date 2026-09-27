@@ -246,6 +246,130 @@ Extra runs covering the remaining types and an out-of-scope question:
   running that are currently recruiting?" → 47, no chart needed);
 - an [unsupported question](examples/outputs/09_extra_unsupported.json) (weather → `status: "unsupported"`).
 
+**One complete example, unedited.** This is the full file for extra run 8, the smallest one, pasted
+exactly as the API returned it. The value 47 is the registry's exact total, so the service fetches
+only the 3 trials it cites. That is why `records_analyzed` is 3, `truncated` is true, and
+`supporting_nct_ids_complete` is false.
+
+```json
+{
+  "request": {
+    "query": "How many Phase 3 trials is Pfizer running that are currently recruiting?"
+  },
+  "http_status": 200,
+  "response": {
+    "schema_version": "1.0",
+    "status": "ok",
+    "visualization": {
+      "type": "metric",
+      "title": "Number of recruiting Phase 3 trials led by Pfizer",
+      "encoding": {
+        "value": {
+          "field": "trial_count",
+          "type": "quantitative",
+          "label": "Number of trials"
+        }
+      },
+      "data": [
+        {
+          "supporting_nct_ids": [
+            "NCT07768345",
+            "NCT07062965",
+            "NCT07222800"
+          ],
+          "supporting_nct_ids_complete": false,
+          "citation_count": 47,
+          "citations": [
+            {
+              "nct_id": "NCT07768345",
+              "field": "protocolSection.identificationModule.briefTitle",
+              "excerpt": "A Study to Learn About Revaccination With a Vaccine Called RSVpreF in Immunocompromised Adults",
+              "title": "A Study to Learn About Revaccination With a Vaccine Called RSVpreF in Immunocompromised Adults",
+              "url": "https://clinicaltrials.gov/study/NCT07768345"
+            },
+            {
+              "nct_id": "NCT07062965",
+              "field": "protocolSection.identificationModule.briefTitle",
+              "excerpt": "A Study to Learn About the Study Medicine Called PF-07248144 in Combination With Fulvestrant in People With HR-positive, HER2-negative Advanced or Metastatic Breast Cancer Who Progressed After a Prior Line of Treatment.",
+              "title": "A Study to Learn About the Study Medicine Called PF-07248144 in Combination With Fulvestrant in People With HR-positive, HER2-negative Advanced or Metastatic Breast Cancer Who Progressed After a Prior Line of Treatment.",
+              "url": "https://clinicaltrials.gov/study/NCT07062965"
+            },
+            {
+              "nct_id": "NCT07222800",
+              "field": "protocolSection.identificationModule.briefTitle",
+              "excerpt": "Symbiotic-GI-03: A Study to Learn About the Study Medicine Called PF-08634404 in Combination With Chemotherapy in Adult Participants With Metastatic Colorectal Cancer",
+              "title": "Symbiotic-GI-03: A Study to Learn About the Study Medicine Called PF-08634404 in Combination With Chemotherapy in Adult Participants With Metastatic Colorectal Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT07222800"
+            }
+          ],
+          "trial_count": 47
+        }
+      ]
+    },
+    "meta": {
+      "interpretation": "Counted recruiting Phase 3 trials led by Pfizer. A single number answers this, so no chart is needed.",
+      "queries": [
+        {
+          "filters": {
+            "sponsor": "Pfizer",
+            "phases": [
+              "PHASE3"
+            ],
+            "statuses": [
+              "RECRUITING"
+            ]
+          },
+          "api_params": {
+            "query.lead": "Pfizer",
+            "filter.overallStatus": "RECRUITING",
+            "filter.advanced": "AREA[Phase]PHASE3"
+          },
+          "total_matching": 47,
+          "records_analyzed": 3,
+          "truncated": true
+        }
+      ],
+      "render": {
+        "units": {
+          "value": "trials"
+        }
+      },
+      "visualization_rationale": {
+        "chosen": "metric",
+        "source": "llm",
+        "reason": "A single number metric chart is appropriate to show the count of Phase 3 recruiting trials by Pfizer."
+      },
+      "assumptions": [
+        "The value is the registry's own total match count for this search.",
+        "A phase filter matches every trial that lists that phase, including combined phases: 'Phase 3' also matches Phase 2/Phase 3 trials."
+      ],
+      "notes": [],
+      "plan": {
+        "supported": true,
+        "analysis": "count",
+        "metric": "trial_count",
+        "filters": {
+          "sponsor": "Pfizer",
+          "phases": [
+            "PHASE3"
+          ],
+          "statuses": [
+            "RECRUITING"
+          ]
+        },
+        "compare": [],
+        "top_n": 15,
+        "chart_type_suggestion": "metric",
+        "chart_rationale": "A single number metric chart is appropriate to show the count of Phase 3 recruiting trials by Pfizer."
+      },
+      "source": "ClinicalTrials.gov API v2",
+      "data_as_of": "2026-09-25T09:00:04",
+      "generated_at": "2026-09-27T10:37:23.246009Z"
+    }
+  }
+}
+```
+
 **Example 5, abridged.** One of seven bars and one of three citations are shown; `meta.plan`, empty
 lists and `generated_at` are omitted. Full file:
 [`05_korean_gastric_cancer_phases.json`](examples/outputs/05_korean_gastric_cancer_phases.json).
