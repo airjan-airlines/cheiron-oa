@@ -13,7 +13,7 @@ from dataclasses import dataclass, field
 
 from pydantic import ValidationError
 
-from app.planner.llm_schema import QueryPlanLLM
+from app.planner.llm_schema import QueryPlanLLM, Unanswered
 from app.schemas.enums import Analysis, Dimension, Metric
 from app.schemas.plan import Cohort, Filters, NetworkSpec, QueryPlan
 from app.schemas.request import VisualizeRequest
@@ -35,6 +35,29 @@ TEXT_FIELDS = ("condition", "intervention", "sponsor", "location")
 LIST_FIELDS = ("phases", "statuses")
 
 
+# Fixed text, so nothing the model writes ends up in these notes.
+UNANSWERED_NOTES = {
+    Unanswered.SECOND_QUESTION: "The question asks more than one thing; this chart answers the main part only. Ask the rest separately.",
+    Unanswered.STATISTIC: "Averages, medians and percentages aren't computed; the chart shows trial counts (or the enrollment distribution) instead.",
+    Unanswered.REGION: "Regions aren't searchable; only countries are.",
+    Unanswered.TWO_LEVEL_BREAKDOWN: "Breaking down by two categories at once (e.g. phase mix over time) isn't supported yet; the chart shows one breakdown.",
+    Unanswered.OTHER: "Part of the question can't be answered from the registry's structured fields and was left out.",
+}
+REGIONS = {
+    "europe", "asia", "africa", "north america", "south america", "latin america", "central america",
+    "middle east", "oceania", "scandinavia", "eu", "european union", "asia pacific", "apac", "emea",
+}
+REGION_MESSAGE = (
+    "Regions such as '{region}' aren't supported: the registry is searched by country. "
+    "Ask about specific countries instead (e.g. Germany, France, Spain)."
+)
+
+
+def _region_in(draft: QueryPlanLLM, request: VisualizeRequest) -> str | None:
+    candidates = [request.country, draft.filters.location, draft.question_mentions.location] + [c.filters.location for c in draft.compare]
+    return next((c for c in candidates if c and c.strip().casefold() in REGIONS), None)
+
+
 @dataclass
 class PlanCheck:
     plan: QueryPlan | None
@@ -54,15 +77,24 @@ def _same(a, b) -> bool:
     return a == b
 
 
-def _apply_structured_fields(inferred: dict, request: VisualizeRequest, notes: list[str]) -> dict:
+def _apply_structured_fields(inferred: dict, mentioned: dict, request: VisualizeRequest, notes: list[str]) -> dict:
+    """Structured fields win. A conflict is noted when the question itself named something different.
+
+    `mentioned` is what the question text names (reported separately by the planner), because the
+    planner already applies structured fields to `inferred`, which would otherwise hide the conflict.
+    """
     forced = request.structured_filters().model_dump()
     merged = dict(inferred)
     for name, value in forced.items():
         if _empty(value):
             continue
-        if not _empty(inferred.get(name)) and not _same(inferred[name], value):
+        in_question = mentioned.get(name)
+        if _empty(in_question):
+            in_question = inferred.get(name)
+        if not _empty(in_question) and not _same(in_question, value):
             notes.append(
-                f"Request field '{REQUEST_FIELD_NAMES[name]}' ({value}) overrides '{inferred[name]}' inferred from the question."
+                f"Request field '{REQUEST_FIELD_NAMES[name]}' ({_fmt(value)}) is used instead of "
+                f"'{_fmt(in_question)}' from the question."
             )
         merged[name] = value
     return merged
@@ -77,7 +109,10 @@ def finalize(draft: QueryPlanLLM, request: VisualizeRequest) -> PlanCheck:
         reason = draft.unsupported_reason or "The question is not about clinical trials in the registry."
         return PlanCheck(QueryPlan(supported=False, unsupported_reason=reason))
 
-    notes: list[str] = []
+    notes: list[str] = [UNANSWERED_NOTES[u] for u in dict.fromkeys(draft.unanswered)]
+    region = _region_in(draft, request)
+    if region:
+        return PlanCheck(QueryPlan(supported=False, unsupported_reason=REGION_MESSAGE.format(region=region)))
     top_n = request.top_n if "top_n" in request.model_fields_set else (draft.top_n or 15)
     if not 1 <= top_n <= 50:
         notes.append(f"top_n {top_n} is outside 1–50; clamped.")
@@ -87,7 +122,7 @@ def finalize(draft: QueryPlanLLM, request: VisualizeRequest) -> PlanCheck:
             analysis=draft.analysis,
             group_by=draft.group_by,
             metric=draft.metric or Metric.TRIAL_COUNT,
-            filters=Filters(**_apply_structured_fields(draft.filters.model_dump(), request, notes)),
+            filters=Filters(**_apply_structured_fields(draft.filters.model_dump(), draft.question_mentions.model_dump(), request, notes)),
             compare=[Cohort(label=c.label, filters=Filters(**c.filters.model_dump())) for c in draft.compare],
             network=NetworkSpec(**draft.network.model_dump()) if draft.network else None,
             top_n=top_n,

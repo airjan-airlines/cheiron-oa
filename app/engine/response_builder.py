@@ -43,6 +43,15 @@ def truncation_notes(queries: list[FetchedQuery]) -> list[str]:
     return notes
 
 
+def _filter_assumptions(queries: list[FetchedQuery]) -> list[str]:
+    if any(q.filters.phases for q in queries):
+        return [
+            "A phase filter matches every trial that lists that phase, including combined phases: "
+            "'Phase 3' also matches Phase 2/Phase 3 trials."
+        ]
+    return []
+
+
 def ok(
     plan: QueryPlan,
     queries: list[FetchedQuery],
@@ -59,7 +68,7 @@ def ok(
             coverage=result.coverage,
             render=result.render,
             visualization_rationale=result.rationale,
-            assumptions=result.assumptions,
+            assumptions=result.assumptions + _filter_assumptions(queries),
             # A count reads the API's exact total and fetches records only to cite, so it is never "truncated".
             notes=notes + ([] if plan.analysis == Analysis.COUNT else truncation_notes(queries)) + result.notes,
             plan=plan,

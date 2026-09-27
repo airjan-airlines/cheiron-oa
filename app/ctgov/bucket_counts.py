@@ -12,6 +12,7 @@ buckets sum to exactly 123,589.
 """
 
 import asyncio
+from datetime import date
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -71,15 +72,13 @@ async def _count(client: CTGovClient, params: dict[str, str], clause: str, sampl
     return result.total_count, result.studies
 
 
-async def _year_bounds(client: CTGovClient, params: dict[str, str]) -> tuple[int | None, int | None]:
-    """Earliest and latest start year among matching trials, via two sorted one-record searches."""
-    async def edge(order: str) -> int | None:
-        result = await client.search({**params, "filter.advanced": _and(params.get("filter.advanced"), "NOT AREA[StartDate]MISSING"), "sort": f"StartDate:{order}"}, max_records=1)
-        if not result.studies:
-            return None
-        return start_year(result.studies[0].get("protocolSection", {}).get("statusModule", {}).get("startDateStruct", {}).get("date"))
-
-    return tuple(await asyncio.gather(edge("asc"), edge("desc")))  # type: ignore[return-value]
+async def _earliest_year(client: CTGovClient, params: dict[str, str]) -> int | None:
+    """Earliest start year among matching trials, via one sorted one-record search."""
+    clause = _and(params.get("filter.advanced"), "NOT AREA[StartDate]MISSING")
+    result = await client.search({**params, "filter.advanced": clause, "sort": "StartDate:asc"}, max_records=1)
+    if not result.studies:
+        return None
+    return start_year(result.studies[0].get("protocolSection", {}).get("statusModule", {}).get("startDateStruct", {}).get("date"))
 
 
 async def exact_counts(
@@ -91,14 +90,17 @@ async def exact_counts(
     sample_size: int,
     year_range: tuple[int | None, int | None],
     request_budget: int,
+    current_year: int | None = None,
 ) -> ExactCounts | None:
     """Exact bucket counts for `dim`, or None if it can't be counted exactly within budget.
 
-    `seen_keys` are the values present in the fetched records (a 5,000-trial sample). Enum
-    dimensions count only those values; for partition dimensions the rest is an exact
-    remainder bucket (total minus everything counted), so no trial goes missing.
+    `seen_keys` are the values present in the fetched records of every cohort (their union, so
+    all cohorts count the same values and a missing bar is a true zero). Enum dimensions count
+    only those values; for partition dimensions the rest is an exact remainder bucket (total
+    minus everything counted), so no trial goes missing.
     """
     sample_size = max(sample_size, 1)
+    current_year = current_year or date.today().year
     excluded: list[tuple[str, int]] = []
     extra = 0
     if dim == Dimension.PHASE:
@@ -108,12 +110,18 @@ async def exact_counts(
         clauses = {v: f"AREA[{area}]{v}" for v in values if v in seen_keys}
     elif dim == Dimension.START_YEAR:
         lo, hi = year_range
-        if lo is None or hi is None:
-            found_lo, found_hi = await _year_bounds(client, params)
-            extra += 2
-            lo = lo if lo is not None else found_lo
-            hi = hi if hi is not None else found_hi
-        if lo is None or hi is None:
+        if hi is None:
+            # Anchor at the current year: anticipated future starts must not crowd real years out
+            # of the window. They are counted once and reported, not plotted.
+            hi = current_year
+            later, _ = await _count(client, params, _year_expr(f"{hi + 1}-01-01", "MAX"), 1)
+            extra += 1
+            if later:
+                excluded.append((f"planned to start after {hi} (anticipated dates)", later))
+        if lo is None:
+            lo = await _earliest_year(client, params)
+            extra += 1
+        if lo is None or lo > hi:
             return None
         max_years = request_budget - extra - 2  # room for the "missing" and "earlier" counts
         if max_years < 5:

@@ -16,10 +16,13 @@ def draft(**overrides) -> QueryPlanLLM:
         "is_about_clinical_trials": True, "unsupported_reason": None, "analysis": None, "group_by": None,
         "metric": None, "filters": NO_FILTERS, "compare": [], "network": None, "top_n": None,
         "chart_type_suggestion": None, "chart_rationale": None,
+        "question_mentions": {"condition": None, "intervention": None, "sponsor": None, "location": None},
+        "unanswered": [],
     }
     filters = overrides.pop("filters", {})
     fields.update(overrides)
     fields["filters"] = {**NO_FILTERS, **filters}
+    fields["question_mentions"] = {"condition": None, "intervention": None, "sponsor": None, "location": None, **overrides.get("question_mentions", {})}
     fields["compare"] = [{"label": c["label"], "filters": {**NO_FILTERS, **c["filters"]}} for c in fields["compare"]]
     return QueryPlanLLM(**fields)
 

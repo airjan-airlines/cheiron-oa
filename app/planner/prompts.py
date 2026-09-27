@@ -51,6 +51,14 @@ bar_chart, grouped_bar_chart (comparisons), time_series (years), histogram (enro
 network_graph (networks), metric (a single number). Give a one-sentence chart_rationale about fit,
 never about results.
 
+## question_mentions and unanswered
+- question_mentions: the condition, drug, sponsor and country exactly as the QUESTION names them
+  (translated to English), ignoring the caller's structured fields. Null when the question doesn't name one.
+- unanswered: list anything the plan cannot answer instead of silently rewriting the question:
+  second_question (the question also asks something else), statistic (averages, medians, percentages),
+  region (a region such as Europe or Asia; only countries can be searched), two_level_breakdown
+  (a breakdown by two categories at once, e.g. phase mix over time), other. Empty if nothing is left out.
+
 ## unsupported
 If the question is not about clinical trials in a registry (weather, medical advice for a patient,
 drug prices), set is_about_clinical_trials=false, give unsupported_reason, and leave the rest null/empty.

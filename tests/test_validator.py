@@ -184,3 +184,36 @@ def test_cohort_repeating_the_caller_value_does_not_strip_it_from_other_cohorts(
     assert [c.filters.intervention for c in check.plan.compare] == ["semaglutide", "semaglutide"]
     assert check.plan.filters.intervention == "semaglutide"
     assert not any("one of the compared cohorts" in n for n in check.notes)
+
+
+# --- review round 2 ---
+
+def test_override_is_noted_even_when_the_planner_already_applied_the_structured_field():
+    # Reviewer repro: "nivolumab trials by phase" + drug_name=atezolizumab. The planner put atezolizumab
+    # in filters (as instructed), so only the question mention reveals the conflict.
+    req = VisualizeRequest(query="How are nivolumab trials distributed by phase?", drug_name="atezolizumab")
+    d = draft(analysis="distribution", group_by="phase", filters={"intervention": "atezolizumab"}, question_mentions={"intervention": "nivolumab"})
+    check = finalize(d, req)
+    assert check.plan.filters.intervention == "atezolizumab"
+    assert check.notes == ["Request field 'drug_name' (atezolizumab) is used instead of 'nivolumab' from the question."]
+
+
+def test_notes_show_plain_values_not_python_enum_reprs():
+    req = VisualizeRequest(query="q", trial_phases=["PHASE3"])
+    check = finalize(draft(analysis="distribution", group_by="phase", filters={"phases": ["PHASE2"]}), req)
+    assert check.notes == ["Request field 'trial_phases' (PHASE3) is used instead of 'PHASE2' from the question."]
+
+
+def test_regions_are_unsupported_with_a_fixed_message():
+    # Reviewer repro: "countries in Europe" returned no_data with "check spelling", implying no trials exist.
+    check = finalize(draft(analysis="distribution", group_by="sponsor", filters={"location": "Europe"}), Q)
+    assert check.plan.supported is False
+    assert "Regions such as 'Europe' aren't supported" in check.plan.unsupported_reason
+
+
+def test_unanswered_parts_become_fixed_notes_not_model_text():
+    check = finalize(draft(analysis="time_trend", group_by="start_year", unanswered=["second_question", "statistic", "second_question"]), Q)
+    assert check.notes == [
+        "The question asks more than one thing; this chart answers the main part only. Ask the rest separately.",
+        "Averages, medians and percentages aren't computed; the chart shows trial counts (or the enrollment distribution) instead.",
+    ]

@@ -64,17 +64,22 @@ def test_partition_enum_counts_seen_values_and_an_exact_remainder():
     assert len(stub.calls) == 2  # unseen statuses cost no requests
 
 
-def test_long_year_ranges_count_the_latest_window_and_report_the_rest():
+def test_year_window_is_anchored_at_the_current_year_not_future_anticipated_starts():
+    # Reviewer case: "cancer trials per year" counted 2015-2030, spending 4 of 16 slots on future
+    # anticipated starts and pushing 2011-2014 into "excluded".
     by_clause = {f"AREA[StartDate]RANGE[{y}-01-01,{y}-12-31]": 10 for y in range(1960, 2031)}
     by_clause["AREA[StartDate]MISSING"] = 3
-    by_clause["AREA[StartDate]RANGE[MIN,2010-12-31]"] = 510  # a 24-request budget leaves a 2011-2030 window
+    by_clause["AREA[StartDate]RANGE[2027-01-01,MAX]"] = 40  # anticipated future starts
+    by_clause["AREA[StartDate]RANGE[MIN,2006-12-31]"] = 470  # before the 20-year window
     stub = StubCounts(by_clause, bounds=(1960, 2030))
-    ec = run(exact_counts(stub, {}, D.START_YEAR, 999, set(), 1, (None, None), 24))
+    ec = run(exact_counts(stub, {}, D.START_YEAR, 999, set(), 1, (None, None), 24, current_year=2026))
     years = sorted(int(k) for k in ec.counts)
-    assert years[-1] == 2030 and len(years) == 24 - 2 - 2
+    assert (years[0], years[-1], len(years)) == (2007, 2026, 20)
     assert ec.unclassified == 3
-    assert years[0] == 2011
-    assert ec.excluded == [("started before 2011 (outside the 20-year window counted exactly)", 510)]
+    assert ec.excluded == [
+        ("planned to start after 2026 (anticipated dates)", 40),
+        ("started before 2007 (outside the 20-year window counted exactly)", 470),
+    ]
 
 
 def test_dimension_that_cannot_fit_the_budget_falls_back_to_sampling():
@@ -113,3 +118,40 @@ def test_remainder_never_collides_with_a_real_value_called_other():
     assert ec.counts["OTHER"] == 9000
     assert ec.counts[REMAINDER_KEY] == 500
     assert sum(ec.counts.values()) == 13500
+
+
+def test_comparison_never_plots_uncounted_years_as_zero():
+    # Reviewer repro: lung vs breast cancer per year since 2018; the budget counted only 2021-2026,
+    # and 2018-2020 were zero-filled and marked complete. Now they're not plotted, and that's stated.
+    lung, breast = fetched("tirzepatide", "Lung", limit=100), fetched("kras_nsclc", "Breast", limit=100)
+    for q, base in ((lung, 700), (breast, 500)):
+        q.filters = q.filters.model_copy(update={"start_year_min": 2018})
+        q.exact = ExactBuckets(
+            counts={str(y): base + y - 2021 for y in range(2021, 2027)},
+            samples={},
+            excluded=[("started before 2021 (outside the 6-year window counted exactly)", 2100)],
+        )
+    plan = QueryPlan(analysis="comparison", group_by="start_year", compare=[{"label": "Lung", "filters": {"condition": "a"}}, {"label": "Breast", "filters": {"condition": "b"}}])
+    result = execute(plan, [lung, breast], None, 1)
+    out = response_builder.ok(plan, [lung, breast], result, [], None).model_dump(mode="json")
+    years = sorted({r["start_year"] for r in out["visualization"]["data"]})
+    assert years == list(range(2021, 2027))
+    assert all(r["trial_count"] > 0 for r in out["visualization"]["data"])
+    assert out["visualization"]["encoding"]["x"]["label"] == "Start year (2021–2026 counted exactly)"
+    assert any(n.startswith("Only 2021–2026 is plotted") for n in out["meta"]["notes"])
+    assert "Not plotted for Lung: 2,100 trials started before 2021 (outside the 6-year window counted exactly)." in out["meta"]["notes"]
+
+
+def test_cohorts_count_the_union_of_values_so_missing_bars_are_true_zeros():
+    # Reviewer repro: breast-cancer FED showed 0 because FED only appeared in the lung-cancer sample.
+    from app.graph import _add_exact_counts
+
+    a, b = fetched("kras_nsclc", "A", limit=100), fetched("tirzepatide", "B", limit=100)
+    a_classes = {v.key for r in a.rows for v in r.get(D.SPONSOR_CLASS)}
+    b_classes = {v.key for r in b.rows for v in r.get(D.SPONSOR_CLASS)}
+    only_b = b_classes - a_classes
+    assert only_b  # a class seen in just one cohort's sample
+    stub = StubCounts({f"AREA[LeadSponsorClass]{c}": 3 for c in a_classes | b_classes})
+    plan = QueryPlan(analysis="comparison", group_by="sponsor_class", compare=[{"label": "A", "filters": {"condition": "a"}}, {"label": "B", "filters": {"condition": "b"}}])
+    run(_add_exact_counts(stub, plan, [a, b], 1, 5000))
+    assert a.exact is not None and all(a.exact.counts[c] == 3 for c in only_b)  # counted for A too

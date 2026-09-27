@@ -49,4 +49,5 @@ def unsupported_plan(reason: str) -> QueryPlanLLM:
     return QueryPlanLLM(
         is_about_clinical_trials=False, unsupported_reason=reason, analysis=None, group_by=None, metric=None,
         filters=empty_filters, compare=[], network=None, top_n=None, chart_type_suggestion=None, chart_rationale=None,
+        question_mentions={"condition": None, "intervention": None, "sponsor": None, "location": None}, unanswered=[],
     )

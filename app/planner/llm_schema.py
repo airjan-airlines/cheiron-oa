@@ -5,6 +5,8 @@ so this mirrors `QueryPlan` with nullable fields and no constraints. The real
 constraints are applied when it is converted to `QueryPlan` in `validator.py`.
 """
 
+from enum import StrEnum
+
 from pydantic import BaseModel, Field
 
 from app.schemas.enums import Analysis, Dimension, Metric, Phase, Status, VizType
@@ -19,6 +21,28 @@ class FiltersLLM(BaseModel):
     statuses: list[Status] = Field(description="Only if the question restricts status, e.g. RECRUITING for 'recruiting' or 'currently enrolling'; otherwise empty.")
     start_year_min: int | None = Field(description="Earliest trial start year, e.g. 2015 for 'since 2015'.")
     start_year_max: int | None = Field(description="Latest trial start year.")
+
+
+class QuestionMentions(BaseModel):
+    """Entities exactly as the question text names them, ignoring the caller's structured fields.
+
+    Lets code (not the model) detect when a structured field overrides what the question asked.
+    """
+
+    condition: str | None
+    intervention: str | None
+    sponsor: str | None
+    location: str | None
+
+
+class Unanswered(StrEnum):
+    """Parts of a question the plan cannot answer. A fixed list, so notes are templated, not model prose."""
+
+    SECOND_QUESTION = "second_question"  # "...and which countries?" alongside another question
+    STATISTIC = "statistic"  # averages, medians, percentages, rates
+    REGION = "region"  # "Europe", "Asia": only countries are searchable
+    TWO_LEVEL_BREAKDOWN = "two_level_breakdown"  # e.g. phase mix over time
+    OTHER = "other"
 
 
 class CohortLLM(BaseModel):
@@ -43,3 +67,5 @@ class QueryPlanLLM(BaseModel):
     top_n: int | None = Field(description="Only if the question asks for a specific number, e.g. 'top 10 countries'.")
     chart_type_suggestion: VizType | None
     chart_rationale: str | None = Field(description="One sentence on why the suggested chart fits. Never state results or numbers.")
+    question_mentions: QuestionMentions = Field(description="Entities as written in the question itself, before applying structured fields.")
+    unanswered: list[Unanswered] = Field(description="Parts of the question this plan does not answer; empty if it answers everything.")

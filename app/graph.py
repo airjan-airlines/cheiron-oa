@@ -108,7 +108,7 @@ def build_graph(llm: PlannerLLM, client: CTGovClient):
                 for (label, filters, params), result in zip(specs, results)
             ]
             if countable:
-                notes.extend(await _add_exact_counts(client, plan, queries, request.max_citations_per_datum))
+                notes.extend(await _add_exact_counts(client, plan, queries, request.max_citations_per_datum, cap))
         except UpstreamRejectedQuery as exc:
             return {"response": response_builder.error("query_rejected", f"ClinicalTrials.gov rejected the search: {exc}", notes, plan)}
         update: PipelineState = {"queries": queries, "notes": notes, "data_as_of": data_as_of}
@@ -146,30 +146,40 @@ def build_graph(llm: PlannerLLM, client: CTGovClient):
 EXACT_ANALYSES = {Analysis.DISTRIBUTION, Analysis.TIME_TREND, Analysis.COMPARISON}
 
 
-async def _add_exact_counts(client: CTGovClient, plan: QueryPlan, queries: list[FetchedQuery], max_citations: int) -> list[str]:
+async def _add_exact_counts(
+    client: CTGovClient, plan: QueryPlan, queries: list[FetchedQuery], max_citations: int, max_records: int
+) -> list[str]:
     """For searches over the record cap, replace sampled bucket counts with exact registry counts (D20).
 
-    Best effort: if the registry rate-limits us, the chart falls back to the (clearly labelled) sample.
+    Best effort. When a cohort can't be counted exactly (over budget, or rate-limited), it gets the
+    full `max_records` fetch instead, so the labelled sample is as large as the cap allows.
     """
     capped = [q for q in queries if q.truncated]
     if not capped:
         return []
     budget = MAX_BUCKET_REQUESTS // len(capped)
     dim = plan.group_by
+    # Every cohort counts the same values: a bar missing from one cohort is then a true zero.
+    seen = {v.key for q in queries for row in q.rows for v in row.get(dim)}
     notes: list[str] = []
 
     async def count(q: FetchedQuery) -> None:
-        seen = {v.key for row in q.rows for v in row.get(dim)}
         year_range = (q.filters.start_year_min, q.filters.start_year_max)
         try:
             exact = await exact_counts(client, q.api_params, dim, q.total_matching, seen, max_citations, year_range, budget)
         except UpstreamUnavailable:
             notes.append(f"{f'{q.label!r}: ' if q.label else ''}exact per-bucket counts were unavailable (the registry is rate-limiting requests), so the counts below are a sample.")
+            exact = None
+        if exact is not None:
+            samples = {k: [extract(s) for s in studies] for k, studies in exact.samples.items()}
+            q.exact = ExactBuckets(exact.counts, samples, exact.unclassified, exact.excluded)
             return
-        if exact is None:
-            return
-        samples = {k: [extract(s) for s in studies] for k, studies in exact.samples.items()}
-        q.exact = ExactBuckets(exact.counts, samples, exact.unclassified, exact.excluded)
+        if len(q.rows) < min(max_records, q.total_matching):
+            try:
+                result = await client.search(q.api_params, max_records)
+                q.rows = [extract(s) for s in result.studies]
+            except UpstreamUnavailable:
+                pass  # keep the smaller sample; the axis label reports its real size
 
     await asyncio.gather(*(count(q) for q in capped))
     return notes

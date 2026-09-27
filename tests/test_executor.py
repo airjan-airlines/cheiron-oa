@@ -4,6 +4,7 @@ import json
 
 from app.engine import response_builder
 from app.engine.executor import execute
+from app.schemas.enums import Phase
 from app.schemas.plan import QueryPlan
 from app.schemas.response import VisualizeResponse
 from tests.helpers import fetched
@@ -100,3 +101,10 @@ def test_truncation_is_disclosed():
     out = _ok(QueryPlan(analysis="distribution", group_by="phase"), [q])
     assert out["meta"]["queries"][0]["truncated"] is True
     assert any("record cap" in n for n in out["meta"]["notes"])
+
+
+def test_phase_filters_disclose_that_they_match_combined_phases():
+    q = fetched("korea_gastric_recruiting")
+    q.filters = q.filters.model_copy(update={"phases": [Phase.PHASE3]})
+    out = _ok(QueryPlan(analysis="distribution", group_by="status"), [q])
+    assert any("also matches Phase 2/Phase 3" in a for a in out["meta"]["assumptions"])

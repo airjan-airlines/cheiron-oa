@@ -70,9 +70,22 @@ def _title_value(row: TrialRow) -> DimValue:
     return DimValue(row.nct_id, row.title or row.nct_id, TITLE_PATH, row.title or "")
 
 
-def _x_channel(dim: Dimension) -> Channel:
+def _x_channel(dim: Dimension, counted_years: list[str] | None = None) -> Channel:
     spec = DIMENSIONS[dim]
-    return Channel(field=spec.field, type=spec.field_type, label=spec.axis_label, label_field=spec.label_field)
+    label = spec.axis_label
+    if counted_years:
+        label += f" ({min(counted_years, key=int)}–{max(counted_years, key=int)} counted exactly)"
+    return Channel(field=spec.field, type=spec.field_type, label=label, label_field=spec.label_field)
+
+
+def _counted_years(queries: list[FetchedQuery]) -> set[str] | None:
+    """Years counted in every exact-count cohort, or None when no cohort used exact counts."""
+    sets = [set(q.exact.counts) for q in queries if q.exact is not None]
+    return set.intersection(*sets) if sets else None
+
+
+def _exclusion_notes(excluded: list[tuple[str, int]]) -> list[str]:
+    return [f"Not plotted: {n:,} trials {reason}." for reason, n in excluded]
 
 
 def _row_key(dim: Dimension, bucket: Bucket) -> dict:
@@ -129,7 +142,8 @@ def _categorical(plan: QueryPlan, q: FetchedQuery, rationale: VisualizationRatio
     spec = DIMENSIONS[dim]
     grouping = group_exact(q.exact, dim, plan.top_n) if q.exact else group(q.rows, dim, plan.top_n, _year_range([q]))
     rows = [DataRow(**_row_key(dim, b), trial_count=b.count, **evidence(b.members, max_citations, b.total)) for b in grouping.buckets]
-    encoding_args = {"x": _x_channel(dim), "y": _y_channel(spec.partition, [q])}
+    counted = [b.key for b in grouping.buckets] if dim == Dimension.START_YEAR and q.exact is not None else None
+    encoding_args = {"x": _x_channel(dim, counted), "y": _y_channel(spec.partition, [q])}
     what = subject(q.filters)
     if rationale.chosen == VizType.TIME_SERIES:
         span = year_span(q.filters)
@@ -156,6 +170,7 @@ def _categorical(plan: QueryPlan, q: FetchedQuery, rationale: VisualizationRatio
         ),
         rationale=rationale,
         assumptions=[spec.assumption] if spec.assumption else [],
+        notes=_exclusion_notes(grouping.excluded),
     )
 
 
@@ -188,6 +203,7 @@ def _comparison(plan: QueryPlan, queries: list[FetchedQuery], rationale: Visuali
     per_cohort: list[dict[str, Bucket]] = []
     unclassified = 0
     excluded: list[tuple[str, int]] = []
+    exclusion_notes: list[str] = []
     for q in queries:
         if q.exact is not None:
             buckets = {
@@ -196,6 +212,7 @@ def _comparison(plan: QueryPlan, queries: list[FetchedQuery], rationale: Visuali
             }
             unclassified += q.exact.unclassified
             excluded += [(f"{q.label}: {reason}", n) for reason, n in q.exact.excluded]
+            exclusion_notes += [f"Not plotted for {q.label}: {n:,} trials {reason}." for reason, n in q.exact.excluded]
         else:
             buckets, missing = collect(q.rows, dim)
             unclassified += len(missing)
@@ -204,9 +221,20 @@ def _comparison(plan: QueryPlan, queries: list[FetchedQuery], rationale: Visuali
     for buckets in per_cohort:
         for key, b in buckets.items():
             totals[key] = totals.get(key, 0) + b.count
+    window_notes: list[str] = []
     if dim == Dimension.START_YEAR:
         lo, hi = _year_range(queries)
         years = fill_years({k: Bucket(k, k) for k in totals}, lo, hi)
+        counted = _counted_years(queries)
+        if counted is not None:
+            # Only plot years every cohort actually counted: a zero must mean zero trials, never "not counted".
+            dropped = [y for y in years if y not in counted]
+            years = {y: b for y, b in years.items() if y in counted}
+            if dropped:
+                window_notes.append(
+                    f"Only {min(counted)}–{max(counted)} is plotted: those are the years counted exactly for every cohort "
+                    f"within the request budget. {len(dropped)} other year(s) in range are not shown (see coverage.excluded)."
+                )
         totals = {k: totals.get(k, 0) for k in years}
     keys = order_keys(totals, spec)
     shown = keys[: plan.top_n] if spec.order == "count" else keys
@@ -221,10 +249,11 @@ def _comparison(plan: QueryPlan, queries: list[FetchedQuery], rationale: Visuali
     series = Channel(field="cohort", type="nominal", label="Cohort")
     y = _y_channel(spec.partition, queries)
     title = f"{spec.axis_label}: {versus}"
+    x = _x_channel(dim, shown if dim == Dimension.START_YEAR and _counted_years(queries) is not None else None)
     if rationale.chosen == VizType.TIME_SERIES:
-        viz = TimeSeries(title=f"Trials per year: {versus}", encoding=OptionalSeriesEncoding(x=_x_channel(dim), y=y, series=series), data=rows)
+        viz = TimeSeries(title=f"Trials per year: {versus}", encoding=OptionalSeriesEncoding(x=x, y=y, series=series), data=rows)
     else:
-        viz = GroupedBarChart(title=title, encoding=SeriesEncoding(x=_x_channel(dim), y=y, series=series), data=rows)
+        viz = GroupedBarChart(title=title, encoding=SeriesEncoding(x=x, y=y, series=series), data=rows)
     if spec.assumption:
         assumptions.append(spec.assumption)
     return ExecutionResult(
@@ -247,6 +276,7 @@ def _comparison(plan: QueryPlan, queries: list[FetchedQuery], rationale: Visuali
         ),
         rationale=rationale,
         assumptions=assumptions,
+        notes=window_notes + exclusion_notes,
     )
 
 
