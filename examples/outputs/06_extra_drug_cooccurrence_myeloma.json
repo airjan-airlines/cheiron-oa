@@ -3747,7 +3747,7 @@
       "visualization_rationale": {
         "chosen": "network_graph",
         "source": "llm",
-        "reason": "A network graph is suitable to visualize the relationships and co-occurrence patterns between drugs in combination studies for multiple myeloma trials."
+        "reason": "A network graph effectively visualizes the relationships and co-occurrence patterns between drugs in combination studies for multiple myeloma trials started since 2022."
       },
       "assumptions": [
         "Two interventions are linked when one trial lists both; edge weight is the number of such trials.",
@@ -3772,11 +3772,11 @@
         },
         "top_n": 15,
         "chart_type_suggestion": "network_graph",
-        "chart_rationale": "A network graph is suitable to visualize the relationships and co-occurrence patterns between drugs in combination studies for multiple myeloma trials."
+        "chart_rationale": "A network graph effectively visualizes the relationships and co-occurrence patterns between drugs in combination studies for multiple myeloma trials started since 2022."
       },
       "source": "ClinicalTrials.gov API v2",
       "data_as_of": "2026-09-25T09:00:04",
-      "generated_at": "2026-09-27T03:11:06.138014Z"
+      "generated_at": "2026-09-27T10:37:19.571520Z"
     }
   }
 }

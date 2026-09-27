@@ -3362,7 +3362,7 @@
       "visualization_rationale": {
         "chosen": "time_series",
         "source": "llm",
-        "reason": "A time series chart is appropriate to show how the number of pembrolizumab trials has changed each year since 2015."
+        "reason": "A time series chart effectively shows the trend in the number of pembrolizumab trials started each year since 2015."
       },
       "assumptions": [
         "Start year comes from the registry start date, which is the anticipated date for trials that have not started yet."
@@ -3382,11 +3382,11 @@
         "compare": [],
         "top_n": 15,
         "chart_type_suggestion": "time_series",
-        "chart_rationale": "A time series chart is appropriate to show how the number of pembrolizumab trials has changed each year since 2015."
+        "chart_rationale": "A time series chart effectively shows the trend in the number of pembrolizumab trials started each year since 2015."
       },
       "source": "ClinicalTrials.gov API v2",
       "data_as_of": "2026-09-25T09:00:04",
-      "generated_at": "2026-09-27T03:10:55.155852Z"
+      "generated_at": "2026-09-27T10:37:06.966844Z"
     }
   }
 }

@@ -716,11 +716,12 @@
       "visualization_rationale": {
         "chosen": "histogram",
         "source": "llm",
-        "reason": "A histogram is suitable to show the distribution of enrollment sizes across completed Phase 3 psoriasis trials."
+        "reason": "A histogram effectively shows the distribution of enrollment sizes across completed Phase 3 psoriasis trials, highlighting the frequency of different enrollment ranges."
       },
       "assumptions": [
         "Enrollment is the registry's enrollment count: actual for completed trials, anticipated otherwise.",
-        "Bins widen with size because enrollment spans several orders of magnitude."
+        "Bins widen with size because enrollment spans several orders of magnitude.",
+        "A phase filter matches every trial that lists that phase, including combined phases: 'Phase 3' also matches Phase 2/Phase 3 trials."
       ],
       "notes": [],
       "plan": {
@@ -739,11 +740,11 @@
         "compare": [],
         "top_n": 15,
         "chart_type_suggestion": "histogram",
-        "chart_rationale": "A histogram is suitable to show the distribution of enrollment sizes across completed Phase 3 psoriasis trials."
+        "chart_rationale": "A histogram effectively shows the distribution of enrollment sizes across completed Phase 3 psoriasis trials, highlighting the frequency of different enrollment ranges."
       },
       "source": "ClinicalTrials.gov API v2",
       "data_as_of": "2026-09-25T09:00:04",
-      "generated_at": "2026-09-27T03:11:07.572481Z"
+      "generated_at": "2026-09-27T10:37:21.699162Z"
     }
   }
 }

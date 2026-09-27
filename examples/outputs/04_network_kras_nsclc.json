@@ -2221,7 +2221,7 @@
       "visualization_rationale": {
         "chosen": "network_graph",
         "source": "llm",
-        "reason": "A network graph effectively visualizes relationships between sponsors and drugs in KRAS-mutant non-small cell lung cancer trials."
+        "reason": "A network graph effectively visualizes the relationships between sponsors and drugs in KRAS-mutant non-small cell lung cancer trials, showing connections and collaborations."
       },
       "assumptions": [
         "A lead sponsor is linked to a intervention when they appear in the same trial; edge weight is the number of such trials.",
@@ -2245,11 +2245,11 @@
         },
         "top_n": 15,
         "chart_type_suggestion": "network_graph",
-        "chart_rationale": "A network graph effectively visualizes relationships between sponsors and drugs in KRAS-mutant non-small cell lung cancer trials."
+        "chart_rationale": "A network graph effectively visualizes the relationships between sponsors and drugs in KRAS-mutant non-small cell lung cancer trials, showing connections and collaborations."
       },
       "source": "ClinicalTrials.gov API v2",
       "data_as_of": "2026-09-25T09:00:04",
-      "generated_at": "2026-09-27T03:11:02.774661Z"
+      "generated_at": "2026-09-27T10:37:15.171954Z"
     }
   }
 }

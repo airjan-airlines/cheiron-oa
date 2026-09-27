@@ -16,7 +16,8 @@ traced to specific trial records.
   quoting the field value that put each trial there. A live audit re-fetched all 260 cited trials and
   confirmed all 498 excerpts in the example outputs ([`examples/verification.json`](examples/verification.json)).
 - Questions in any language (one example is Korean); structured fields always override the LLM.
-- 125 offline tests, including one proving no trial data ever reaches the LLM.
+- 134 offline tests, including one proving no trial data ever reaches the LLM, plus opt-in live tests
+  that check exact-count output against independent registry counts.
 
 Design notes, written before any code: [`docs/implementation-plan.md`](docs/implementation-plan.md).
 The commit history records the build step by step.
@@ -50,8 +51,8 @@ curl -s -X POST localhost:8000/v1/visualize \
 Tests run offline (no API key, no network), against recorded registry responses and a scripted LLM:
 
 ```bash
-pytest            # 125 unit, contract and pipeline tests
-pytest -m live    # opt-in: calls the real ClinicalTrials.gov API
+pytest            # 134 unit, contract and pipeline tests
+pytest -m live    # opt-in: checks against the real ClinicalTrials.gov API (~40 requests, ~1 min)
 ```
 
 Reproduce the example outputs and audit their citations against the live registry:
@@ -184,7 +185,7 @@ lists the cited example trials, and `supporting_nct_ids_complete` is `false`.
 
 | Field | Meaning |
 |---|---|
-| `interpretation` | What was computed, in words, built from the plan by a template (it never states results). |
+| `interpretation` | What was computed, in words, built from the plan by a template. In comparisons it includes the cohort labels, which the planner writes (see §7). |
 | `queries[]` | Each ClinicalTrials.gov search that fed the chart (one per cohort in a comparison): `label`, normalized `filters`, the exact `api_params` sent, `total_matching` (the API's own count), `records_analyzed`, `truncated`. |
 | `coverage` | How the numbers relate to the trials: `aggregation_mode` (`all_records` = every matching trial analyzed; `exact_counts` = too many to fetch, so each bar is the registry's exact per-bucket total; `sample` = counts cover only the first `records_analyzed` trials, and the y-axis label says so), `groupby_semantics` (`partition` = each trial in exactly one bucket, so buckets sum to the total; `overlapping` = a trial can be in several, e.g. multi-country trials), `bucket_sum`, `unclassified_count`, `overlap_note`, `excluded[]` (trials left out, by reason), `buckets_not_shown` (counted but beyond `top_n`). |
 | `render` | Drawing hints: `sort` {`field`, `order`}, `time_granularity`, `units` per channel, `grouping` (the series key), `pruning` (for networks). |
@@ -365,15 +366,21 @@ for 2020 against a real 6,351. So above the cap, the service picks one of two pa
   `countTotal` request per bucket, with the bucket's condition ANDed onto the search. For cancer, the
   nine phase buckets sum to exactly 123,589, and 2020 now shows 6,351. The same request returns a few
   trials to cite, so evidence stays real. Only one 1,000-record page is fetched first, to learn
-  which values occur.
+  which values occur. All cohorts in a comparison count the same values, so a missing bar is a real
+  zero.
 - **Open dimensions** (country, sponsor, drug) and networks stay a *sample*. The y-axis label itself
   says "among the first 5,000 of N matching trials", so the undercount can't be missed.
 
 The registry's rate limit is undocumented. It returned 429s after roughly 40–60 quick requests, so
-exact mode is capped at 20 count requests per response, which covers the latest ~16 years for a time
-series (earlier years are reported under `excluded`). If the registry rate-limits anyway, the chart
-falls back to the labelled sample with a note rather than failing. Count questions always use the
-API's exact `totalCount`.
+exact mode is capped at 20 count requests per response.
+- **Time series** are counted over a window ending at the current year. Anticipated future starts,
+  and years before the window, are counted once and reported as not plotted. A year that wasn't
+  counted is never drawn as zero: the x-axis label and `notes` state the counted window.
+- **If exact counting can't run** (over budget, or rate-limited), the cohort gets the full 5,000-record
+  fetch and the chart is a labelled sample.
+- **Count questions** always use the API's exact `totalCount`.
+
+Opt-in live tests (`pytest -m live`) re-check exact-mode output against independent registry counts.
 
 **Say what the numbers mean.** `coverage.groupby_semantics` distinguishes a *partition* (phase,
 status, year, sponsor: each trial in one bucket, so bars sum to the total) from *overlapping*
@@ -427,17 +434,22 @@ encoded field exists in every row. That lets a renderer be written from `/openap
 
 ## 7. Limitations and what I would improve
 
-- **LLM-written text is echoed.** Cohort labels and the chart rationale are written by the model. A
-  prompt-injection test got fabricated numbers into them ("Keytruda (12,345 trials)"). The plotted
-  values stay correct, since those are always computed, but the labels are not. Planned fix:
-  generate labels from the filters and treat the rationale as untrusted model text.
+- **LLM-written text is echoed.** Cohort labels, the chart rationale and unsupported-question reasons
+  are written by the model. A prompt-injection test got fabricated numbers into them ("Keytruda
+  (12,345 trials)"), and cohort labels also flow into titles and `interpretation`. The plotted values
+  stay correct, since those are always computed, but the text is not. Planned fix: generate labels
+  from the filters, and treat the rationale as untrusted model text (or drop it). Notes about
+  unanswered parts already avoid this, because they're chosen from a fixed list.
 - **Very large cohorts on open dimensions are sampled.** Exact-count mode covers dimensions with a
   fixed value set. Country, sponsor and drug breakdowns, and networks, over more than 5,000 trials
-  describe the first 5,000 (labelled on the axis). Time series with a longer history count the
-  latest ~16 years exactly and report the rest under `excluded`.
-- **No two-level breakdowns yet.** "How has the phase mix changed over time?" needs year × phase in
-  one chart. The plan has no secondary dimension, so this returns a plain time trend and a note
-  saying the phase breakdown was dropped.
+  describe the first 5,000 (labelled on the axis). A natural next step is exact counts for the top
+  candidates found in the sample. Time series with a long history plot only the counted window.
+- **Parts of a question can go unanswered, but never silently.**
+  - Two-level breakdowns ("phase mix over time") aren't supported yet.
+  - Averages and medians aren't computed.
+  - Compound questions ("…and which countries?") answer only the main part.
+
+  The planner flags each of these from a fixed list, and the response says what was left out.
 - **Matching is the registry's.** The API expands search terms itself: `query.intr=tirzepatide`
   also returns a 2007 observational study whose only listed interventions are "GLP-1 Receptor
   Agonists" and "DPP-4 Inhibitors". "Hodgkin lymphoma" also matches non-Hodgkin trials. The
@@ -446,7 +458,7 @@ encoded field exists in every row. That lets a renderer be written from `/openap
 - **Ambiguous names aren't resolved.**
   - "Merck" matches both MSD and Merck KGaA.
   - "Georgia" matches the US state and the country.
-  - Regions like "Europe" aren't expanded into countries.
+  - Regions like "Europe" are refused with a clear `unsupported` message rather than expanded into countries.
 - **Intervention resolution stops at MeSH.** Drugs without a MeSH term in their record (often
   investigational codes such as "Adebrelimab + SHR-8068") stay as raw names. Condition networks can
   link a MeSH parent and child ("Diabetes Mellitus" and "Diabetes Mellitus, Type 2").
@@ -478,7 +490,7 @@ then had it reviewed against the assignment for gaps. Implementation followed th
 time, one commit per step, with each commit message recording why as well as what.
 
 **How correctness was validated.**
-- **Offline tests (125).** They run on registry responses recorded with the service's own client, plus
+- **Offline tests (134).** They run on registry responses recorded with the service's own client, plus
   a scripted LLM. They cover:
   - schema contracts
   - query building

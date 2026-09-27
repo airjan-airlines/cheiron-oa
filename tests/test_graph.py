@@ -143,3 +143,13 @@ def test_rate_limited_exact_counts_degrade_to_a_labelled_sample():
     assert resp.meta.coverage.aggregation_mode == "sample"
     assert "among the first 100 of 290" in resp.visualization.encoding.y.label
     assert any("rate-limiting" in n for n in resp.meta.notes)
+
+
+def test_region_question_is_unsupported_not_a_crash():
+    # Reviewer repro: "Which countries in Europe..." crashed (no chart rules for an unsupported plan).
+    registry = FixtureRegistry()
+    llm = ScriptedLLM(draft(analysis="geographic", group_by="country", filters={"condition": "melanoma", "location": "Europe"}))
+    resp = run(llm, registry, query="Which countries in Europe have the most recruiting melanoma trials?")
+    assert resp.status == "unsupported"
+    assert "Regions such as 'Europe' aren't supported" in resp.meta.interpretation
+    assert registry.searches == []

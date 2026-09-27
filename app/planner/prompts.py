@@ -52,12 +52,15 @@ network_graph (networks), metric (a single number). Give a one-sentence chart_ra
 never about results.
 
 ## question_mentions and unanswered
-- question_mentions: the condition, drug, sponsor and country exactly as the QUESTION names them
-  (translated to English), ignoring the caller's structured fields. Null when the question doesn't name one.
+- question_mentions: the same fields as `filters`, but only what the QUESTION TEXT itself asks for
+  (condition, drug, sponsor, country, phases, statuses, years), ignoring the caller's structured fields.
+  Null/empty for anything the question doesn't state.
 - unanswered: list anything the plan cannot answer instead of silently rewriting the question:
   second_question (the question also asks something else), statistic (averages, medians, percentages),
   region (a region such as Europe or Asia; only countries can be searched), two_level_breakdown
   (a breakdown by two categories at once, e.g. phase mix over time), other. Empty if nothing is left out.
+  List every item that applies: "How has the phase mix changed over time, and which countries run the
+  most?" -> [two_level_breakdown, second_question].
 
 ## unsupported
 If the question is not about clinical trials in a registry (weather, medical advice for a patient,

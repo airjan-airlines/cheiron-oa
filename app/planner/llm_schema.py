@@ -23,18 +23,6 @@ class FiltersLLM(BaseModel):
     start_year_max: int | None = Field(description="Latest trial start year.")
 
 
-class QuestionMentions(BaseModel):
-    """Entities exactly as the question text names them, ignoring the caller's structured fields.
-
-    Lets code (not the model) detect when a structured field overrides what the question asked.
-    """
-
-    condition: str | None
-    intervention: str | None
-    sponsor: str | None
-    location: str | None
-
-
 class Unanswered(StrEnum):
     """Parts of a question the plan cannot answer. A fixed list, so notes are templated, not model prose."""
 
@@ -67,5 +55,7 @@ class QueryPlanLLM(BaseModel):
     top_n: int | None = Field(description="Only if the question asks for a specific number, e.g. 'top 10 countries'.")
     chart_type_suggestion: VizType | None
     chart_rationale: str | None = Field(description="One sentence on why the suggested chart fits. Never state results or numbers.")
-    question_mentions: QuestionMentions = Field(description="Entities as written in the question itself, before applying structured fields.")
+    # Same shape as `filters`, but only what the question text itself says, ignoring the caller's
+    # structured fields. Lets code (not the model) detect when a structured field overrides the question.
+    question_mentions: FiltersLLM = Field(description="What the question itself asks for, ignoring the caller's structured fields.")
     unanswered: list[Unanswered] = Field(description="Parts of the question this plan does not answer; empty if it answers everything.")

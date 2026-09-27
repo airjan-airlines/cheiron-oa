@@ -83,10 +83,11 @@
       "visualization_rationale": {
         "chosen": "metric",
         "source": "llm",
-        "reason": "A single number metric chart is appropriate to show the count of currently recruiting Phase 3 trials by Pfizer."
+        "reason": "A single number metric chart is appropriate to show the count of Phase 3 recruiting trials by Pfizer."
       },
       "assumptions": [
-        "The value is the registry's own total match count for this search."
+        "The value is the registry's own total match count for this search.",
+        "A phase filter matches every trial that lists that phase, including combined phases: 'Phase 3' also matches Phase 2/Phase 3 trials."
       ],
       "notes": [],
       "plan": {
@@ -105,11 +106,11 @@
         "compare": [],
         "top_n": 15,
         "chart_type_suggestion": "metric",
-        "chart_rationale": "A single number metric chart is appropriate to show the count of currently recruiting Phase 3 trials by Pfizer."
+        "chart_rationale": "A single number metric chart is appropriate to show the count of Phase 3 recruiting trials by Pfizer."
       },
       "source": "ClinicalTrials.gov API v2",
       "data_as_of": "2026-09-25T09:00:04",
-      "generated_at": "2026-09-27T03:11:08.732165Z"
+      "generated_at": "2026-09-27T10:37:23.246009Z"
     }
   }
 }

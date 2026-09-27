@@ -217,3 +217,10 @@ def test_unanswered_parts_become_fixed_notes_not_model_text():
         "The question asks more than one thing; this chart answers the main part only. Ask the rest separately.",
         "Averages, medians and percentages aren't computed; the chart shows trial counts (or the enrollment distribution) instead.",
     ]
+
+
+def test_phase_override_is_noted_from_the_question_mentions():
+    # Reviewer repro: "Show Phase 2 melanoma trials by status" + trial_phases=[PHASE3] gave no note.
+    req = VisualizeRequest(query="Show Phase 2 melanoma trials by status", trial_phases=["PHASE3"])
+    d = draft(analysis="distribution", group_by="status", filters={"condition": "melanoma", "phases": ["PHASE3"]}, question_mentions={"condition": "melanoma", "phases": ["PHASE2"]})
+    assert finalize(d, req).notes == ["Request field 'trial_phases' (PHASE3) is used instead of 'PHASE2' from the question."]

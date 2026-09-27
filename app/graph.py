@@ -69,6 +69,8 @@ def build_graph(llm: PlannerLLM, client: CTGovClient):
 
     def validate_node(state: PipelineState) -> PipelineState:
         check = finalize(state["draft"], state["request"])
+        if check.plan is not None and not check.plan.supported:  # e.g. a region, refused by code
+            return {"plan": check.plan, "response": response_builder.unsupported(check.plan, check.plan.unsupported_reason)}
         if check.plan is not None:
             return {"plan": check.plan, "errors": [], "notes": check.notes}
         if check.conflicts:  # the caller's own input contradicts itself; re-asking the LLM can't fix that
