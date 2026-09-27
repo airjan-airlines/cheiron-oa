@@ -9,7 +9,7 @@
     "status": "ok",
     "visualization": {
       "type": "time_series",
-      "title": "Pembrolizumab trials starting 2015 or later per year",
+      "title": "Pembrolizumab trials per year, 2015 onward",
       "encoding": {
         "x": {
           "field": "start_year",
@@ -3372,7 +3372,7 @@
       },
       "source": "ClinicalTrials.gov API v2",
       "data_as_of": "2026-09-25T09:00:04",
-      "generated_at": "2026-09-27T00:30:20.989014Z"
+      "generated_at": "2026-09-27T00:31:48.742689Z"
     }
   }
 }

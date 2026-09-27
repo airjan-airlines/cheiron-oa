@@ -3656,7 +3656,7 @@
       }
     },
     "meta": {
-      "interpretation": "Built a intervention–intervention network from multiple myeloma trials starting 2022 or later.",
+      "interpretation": "Built a network of interventions that appear together in multiple myeloma trials starting 2022 or later.",
       "queries": [
         {
           "filters": {
@@ -3718,7 +3718,7 @@
       },
       "source": "ClinicalTrials.gov API v2",
       "data_as_of": "2026-09-25T09:00:04",
-      "generated_at": "2026-09-27T00:30:31.112592Z"
+      "generated_at": "2026-09-27T00:31:58.580315Z"
     }
   }
 }

@@ -7,7 +7,7 @@ dimension registry, not per-question code, so a new dimension needs no new branc
 from app.ctgov.extract import ENROLLMENT_PATH, DimValue, TrialRow
 from app.engine.aggregate import Bucket, collect, evidence, fill_years, group, order_keys, overlap_note
 from app.engine.chart_rules import choose_chart
-from app.engine.describe import capitalize, subject
+from app.engine.describe import capitalize, subject, year_span
 from app.engine.dimensions import DIMENSIONS
 from app.engine.network import build_network
 from app.engine.types import ExecutionResult, FetchedQuery
@@ -116,7 +116,9 @@ def _categorical(plan: QueryPlan, q: FetchedQuery, rationale: VisualizationRatio
     encoding_args = {"x": _x_channel(dim), "y": TRIALS_Y if spec.partition else OVERLAP_Y}
     what = subject(q.filters)
     if rationale.chosen == VizType.TIME_SERIES:
-        viz = TimeSeries(title=f"{capitalize(what)} per year", encoding=OptionalSeriesEncoding(**encoding_args), data=rows)
+        span = year_span(q.filters)
+        title = f"{capitalize(subject(q.filters, include_years=False))} per year" + (f", {span}" if span else "")
+        viz = TimeSeries(title=title, encoding=OptionalSeriesEncoding(**encoding_args), data=rows)
     else:
         viz = BarChart(title=f"{capitalize(what)} by {spec.axis_label.lower()}", encoding=XYEncoding(**encoding_args), data=rows)
     return ExecutionResult(
@@ -289,7 +291,11 @@ def _network(plan: QueryPlan, q: FetchedQuery, rationale: VisualizationRationale
     notes = [] if result.data.edges else ["No two entities appeared in the same trial, so the network has no edges."]
     return ExecutionResult(
         visualization=NetworkGraph(title=capitalize(title), data=result.data),
-        interpretation=f"Built a {src_label.lower()}–{tgt_label.lower()} network from {what}.",
+        interpretation=(
+            f"Built a network of {src_label.lower()}s that appear together in {what}."
+            if source == target
+            else f"Built a network linking each {src_label.lower()} to the {tgt_label.lower()}s in its {what}."
+        ),
         coverage=None,
         render=RenderHints(units={"node.size": "trials", "edge.weight": "trials"}, pruning=result.pruning),
         rationale=rationale,

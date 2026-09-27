@@ -1708,7 +1708,7 @@
       "visualization_rationale": {
         "chosen": "grouped_bar_chart",
         "source": "llm",
-        "reason": "A grouped bar chart clearly shows the distribution of trial phases side by side for semaglutide and tirzepatide trials, facilitating direct comparison."
+        "reason": "A grouped bar chart effectively compares the distribution of trial phases between semaglutide and tirzepatide trials side by side."
       },
       "assumptions": [
         "Each cohort is a separate search; a trial matching more than one cohort is counted in each.",
@@ -1744,11 +1744,11 @@
         ],
         "top_n": 15,
         "chart_type_suggestion": "grouped_bar_chart",
-        "chart_rationale": "A grouped bar chart clearly shows the distribution of trial phases side by side for semaglutide and tirzepatide trials, facilitating direct comparison."
+        "chart_rationale": "A grouped bar chart effectively compares the distribution of trial phases between semaglutide and tirzepatide trials side by side."
       },
       "source": "ClinicalTrials.gov API v2",
       "data_as_of": "2026-09-25T09:00:04",
-      "generated_at": "2026-09-27T00:30:26.504125Z"
+      "generated_at": "2026-09-27T00:31:54.036357Z"
     }
   }
 }

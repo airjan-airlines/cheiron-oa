@@ -1952,7 +1952,7 @@
       }
     },
     "meta": {
-      "interpretation": "Built a lead sponsor–intervention network from KRAS-mutant non-small cell lung cancer trials.",
+      "interpretation": "Built a network linking each lead sponsor to the interventions in its KRAS-mutant non-small cell lung cancer trials.",
       "queries": [
         {
           "filters": {
@@ -2011,7 +2011,7 @@
       },
       "source": "ClinicalTrials.gov API v2",
       "data_as_of": "2026-09-25T09:00:04",
-      "generated_at": "2026-09-27T00:30:27.836231Z"
+      "generated_at": "2026-09-27T00:31:55.374257Z"
     }
   }
 }
